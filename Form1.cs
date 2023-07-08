@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -27,6 +28,7 @@ namespace PortalSpreLumeaMuzicii
             ["sol"] = 110,
             ["la"] = 100,
             ["si"] = 90,
+            ["sib"] = 92,
             ["do2"] = 80,
             ["re2"] = 70,
             ["mi2"] = 60,
@@ -40,7 +42,36 @@ namespace PortalSpreLumeaMuzicii
         public void Form1_Load(object sender, EventArgs e)
         {
             StreamReader sr = new StreamReader(@"Cantece.txt");
-            while (!sr.EndOfStream)
+            int nrCantece = Convert.ToInt32(sr.ReadLine());
+            for (int i = 0; i < nrCantece; i++)
+            {
+                string nume = sr.ReadLine();
+                //titlu.Text = nume;
+                string valori = sr.ReadLine();
+                List<List<int>> note = new List<List<int>>();
+                int linie = 0;
+                while (valori[0] != '.')
+                {
+                    string[] bits = valori.Split(' ');
+                    List <int> portativ = new List<int>();
+                    foreach (var bit in bits)
+                        portativ.Add(convertireNote[bit]);
+                    note.Add(portativ);
+                    linie++;
+                    valori = sr.ReadLine();
+                }
+                Form6.cantece.Add(new Cantec(nume, linie, note));
+            }
+            /*foreach (List<int> portativ in Form6.cantece[0]._note)
+            {
+                foreach (int elem in portativ)
+                {
+                    //label1.Visible = true;
+                    titlu.Text = titlu.Text + ' ' + Convert.ToString(elem);
+                }
+                titlu.Text = titlu.Text + '\n';
+            }*/
+            /*while (!sr.EndOfStream)
             {
                 string nume = sr.ReadLine();
                 //titlu.Text = nume;
@@ -53,7 +84,7 @@ namespace PortalSpreLumeaMuzicii
                 Form6.cantece.Add(new Cantec(nume, note));
                 //foreach (var notes in note)
                     //titlu.Text = titlu.Text + Convert.ToString(notes);
-            }
+            }*/
             sr.Close();
         }
 

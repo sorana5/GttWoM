@@ -26,7 +26,7 @@ namespace PortalSpreLumeaMuzicii
         Random random = new Random();
 
         public static List<Cantec> cantece = new List<Cantec>();
-        List <int> cantec = new List<int>();
+        List < List < int > > cantec = new List<List<int>>();
 
         /*List<int> cantec = new List<int> { 80, 110, 110, 80, 100, 100, 100,
         90, 80, 70, 90, 80, 60, 80,
@@ -39,7 +39,7 @@ namespace PortalSpreLumeaMuzicii
         //List<int> cantate = new List<int>();
 
         Pen pen = new Pen(Color.MediumPurple, 5);
-        int nr, nrPortativ = 0, locatie = 100, element = 0;
+        int nr, nrPortativ = 0, locatie = 100, element = 0, nrPortative;
 
         private Dictionary<int, int> nrNote = new Dictionary<int, int>()
         {
@@ -82,9 +82,21 @@ namespace PortalSpreLumeaMuzicii
             Image newImage = Image.FromFile(@"extra\cheie.png");
             g.DrawImage(newImage, 75, 25, 90, 155);
 
-            int nrCantec = random.Next(0, 1);
+            int nrCantec = random.Next(0, 2);
             cantec = cantece[nrCantec]._note;
-            label1.Text = cantece[nrCantec]._titlu;
+            label1.Text = "Ați cântat " + cantece[nrCantec]._titlu + "!";
+            nrPortative = cantece[nrCantec]._nrPortative;
+            /*int nota = 100;
+            //foreach (List<int> portativ in cantec)
+            //{
+                foreach (int elem in cantec[0])
+                {
+                    label1.Visible = true;
+                nota++;
+                    label1.Text = label1.Text + ' ' + Convert.ToString(elem) + ' ' + Convert.ToString(nota) + '\n';
+                }
+                label1.Text = label1.Text + '\n';
+            //}*/
         }
 
         private void webBrowser1_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
@@ -96,7 +108,8 @@ namespace PortalSpreLumeaMuzicii
         void apasare_nota(object sender, EventArgs e, int nota)
         {
             locatie += 100;
-            if (nrPortativ <= 8 && locatie <= (nrNote[nrPortativ-1]+1) * 100)
+            //if (nrPortativ <= 8 && locatie <= (nrNote[nrPortativ-1]+1) * 100
+            if (nrPortativ <= 8 && locatie <= (cantec[nrPortativ-1].Count()+1) * 100)
             {
                 Point point = new Point(locatie, nota);
                 draw_note(sender, e, point, pen);
@@ -296,7 +309,6 @@ namespace PortalSpreLumeaMuzicii
         private void button1_Click(object sender, EventArgs e)
         {
             g.Clear(BackColor);
-            nrPortativ = 1;
             locatie = 100;
             element = 0;
             Pen p = new Pen(Color.Black, 5);
@@ -314,6 +326,7 @@ namespace PortalSpreLumeaMuzicii
             g.DrawLine(p, p4, p4 + new Size(1100, 0));
             g.DrawLine(p, p5, p5 + new Size(1100, 0));
 
+
             //g.DrawLine(p, new Point(1190, 58), new Point(1190, 143));
             //g.DrawLine(new Pen(Color.Black, 10), new Point(1200, 58), new Point(1200, 143));
 
@@ -323,13 +336,33 @@ namespace PortalSpreLumeaMuzicii
 
             int nota = 100;
             //Pen p = new Pen(Color.Black, 5);
-            for (int i = 0; i < nrNote[nrPortativ]; i++)
+            /*foreach (List <int> portativ in cantec)
+            {
+                foreach (int elem in portativ)
+                {
+                    label1.Visible = true;
+                    label1.Text = label1.Text + Convert.ToString(elem);
+                }
+
+            }*/
+            Image bemol = Image.FromFile(@"extra\bemol.png");
+            foreach (int element in cantec[0])
+            {
+                //label1.Visible = true;
+                //label1.Text = label1.Text + Convert.ToString(element);
+                nota += 100;
+                Point point = new Point(nota, element / 10 * 10);
+                if (element % 10 == 2)
+                    g.DrawImage(bemol, nota - 40, element - 15, 35, 35);
+                draw_note(sender, e, point, p);
+            }
+            /*for (int i = 0; i < nrNote[nrPortativ]; i++)
             {
                 nota += 100;
-                Point point = new Point(nota, cantec[element]);
-                draw_note(sender, e, point, p);
+                ///Point point = new Point(nota, cantec[element]);
+                ///draw_note(sender, e, point, p);
                 element++;
-            }
+            }*/
             nrPortativ++;
             button3.Visible = true;
             label1.Visible = false;
@@ -391,27 +424,46 @@ namespace PortalSpreLumeaMuzicii
             g.DrawImage(newImage, 75, 25, 90, 155);
 
             int nota = 100;
-            label1.Text = Convert.ToString(nrPortativ);
+            Image bemol = Image.FromFile(@"extra\bemol.png");
+            //label1.Text = Convert.ToString(nrPortative);
+
             //Pen p = new Pen(Color.Black, 5);
-            if (nrPortativ < 8)
+            if (nrPortativ < nrPortative)
             {
-                for (int i = 0; i < nrNote[nrPortativ]; i++)
+                foreach (int element in cantec[nrPortativ])
                 {
                     nota += 100;
-                    Point point = new Point(nota, cantec[element]);
+                    Point point = new Point(nota, element / 10 * 10);
+                    if (element % 10 == 2)
+                        g.DrawImage(bemol, nota - 40, element - 15, 35, 35);
                     draw_note(sender, e, point, p);
-                    element++;
                 }
                 nrPortativ++;
                 locatie = 100;
+                if (nrPortativ == nrPortative)
+                {
+                    //g.DrawLine(p, new Point(1150, 58), new Point(1150, 143));
+                    g.DrawLine(p, new Point(1190, 58), new Point(1190, 143));
+                    g.DrawLine(new Pen(Color.Black, 10), new Point(1200, 58), new Point(1200, 143));
+                    button3.Visible = false;
+                    label1.Visible = true;
+                    //label1.Text = Convert.ToString(nrPortativ);
+                }
+                /*for (int i = 0; i < nrNote[nrPortativ]; i++)
+                {
+                    nota += 100;
+                    ///Point point = new Point(nota, cantec[element]);
+                    ///draw_note(sender, e, point, p);
+                    element++;
+                }*/
             }
-            else
+            /*else
             {
                 for (int i = 0; i < nrNote[nrPortativ]; i++)
                 {
                     nota += 100;
-                    Point point = new Point(nota, cantec[element]);
-                    draw_note(sender, e, point, p);
+                    ///Point point = new Point(nota, cantec[element]);
+                    ///draw_note(sender, e, point, p);
                     element++;
                 }
                 locatie = 100;
@@ -419,7 +471,7 @@ namespace PortalSpreLumeaMuzicii
                 g.DrawLine(new Pen(Color.Black, 10), new Point(1200, 58), new Point(1200, 143));
                 button3.Visible = false;
                 label1.Visible = true;
-            }
+            }*/
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -507,8 +559,8 @@ namespace PortalSpreLumeaMuzicii
                 for (int elem = nrPortativ * 10; elem < nrPortativ * 10 + 10; elem++)
                 {
                     nr += 100;
-                    Point point = new Point(nr, cantec[elem]);
-                    draw_note(sender, e, point, p);
+                    ///Point point = new Point(nr, cantec[elem]);
+                    ///draw_note(sender, e, point, p);
                 }
                 nrPortativ++;
                 locatie = 100;
@@ -518,8 +570,8 @@ namespace PortalSpreLumeaMuzicii
                 for (int elem = nrPortativ * 10; elem < cantec.Count(); elem++)
                 {
                     nr += 100;
-                    Point point = new Point(nr, cantec[elem]);
-                    draw_note(sender, e, point, p);
+                    ///Point point = new Point(nr, cantec[elem]);
+                    ///draw_note(sender, e, point, p);
                 }
                 g.DrawLine(p, new Point(1190, 58), new Point(1190, 143));
                 g.DrawLine(new Pen(Color.Black, 10), new Point(1200, 58), new Point(1200, 143));

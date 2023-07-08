@@ -9,21 +9,26 @@ namespace PortalSpreLumeaMuzicii
     public class Cantec
     {
         public bool _cantat;
-        public List <int> _note = new List<int> ();
+        public int _nrPortative;
+        public List<List<int>> _note = new List<List<int>>();
         public string _titlu;
 
         public bool Cantat
         { get { return _cantat; } set { _cantat = value; } }
 
-        public List <int> Note
+        public List < List <int>> Note
         { get { return _note; } set { _note = value; } }
 
         public string Titlu
         { get { return _titlu; } set { _titlu = value; } }
 
-        public Cantec(string titlu, List<int> note)
+        public int NrPortative
+        { get { return _nrPortative; } set { _nrPortative = value; } }
+
+        public Cantec(string titlu, int nrPortative, List<List<int>> note)
         {
             Titlu = titlu;
+            NrPortative = nrPortative;
             Note = note;
         }
     }

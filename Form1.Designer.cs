@@ -41,7 +41,7 @@
             this.incepe.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.incepe.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.incepe.Location = new System.Drawing.Point(448, 431);
-            this.incepe.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.incepe.Margin = new System.Windows.Forms.Padding(4);
             this.incepe.Name = "incepe";
             this.incepe.Size = new System.Drawing.Size(149, 60);
             this.incepe.TabIndex = 0;
@@ -72,7 +72,7 @@
             this.ClientSize = new System.Drawing.Size(1295, 762);
             this.Controls.Add(this.titlu);
             this.Controls.Add(this.incepe);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Start";
             this.Text = "Start";
             this.Load += new System.EventHandler(this.Form1_Load);
