@@ -1,5 +1,6 @@
-4
+5
 Gaudeamus
+Do Major
 do2 sol sol do2 la la la
 si do2 re2 si do2 mi2 do2
 do2 sol sol do2 la la la
@@ -10,6 +11,7 @@ do2 si la fa2 mi2 re2 mi2 re2 do2
 do2 si la fa2 mi2 re2 sol2 si do2
 .
 Rapsodia română
+Do Major
 do do mi mi sol sol fa
 re mi fa mi fa sol mi
 do do mi mi sol sol fa
@@ -20,6 +22,7 @@ fa mi re re do re mi fa sol
 la fa mi fa sol mi
 .
 Sunetul muzicii
+Do Major
 do re mi do mi do mi mi
 re mi fa fa mi re fa
 mi fa sol mi sol mi sol sol
@@ -29,7 +32,26 @@ la re mi fa sol la si
 si mi fa sol la si do2
 si sib la fa si sol do2
 .
+Never gonna give you up
+Fa Major
+do2 re2 fa2 re2 la2 la2 sol2
+do2 re2 fa2 re2 sol2 sol2 fa2 mi2 re2
+do2 re2 fa2 re2 fa2 sol2 mi2 re2 do2
+do2 do2 sol2 fa2
+.
+Edelweiss
+Sol Major
+si re2 la2 sol2 re2 do2
+si si si do2 re2 mi2 re2
+si re2 la2 sol2 re2 do2
+si re2 re2 mi2 fa2 sol2 sol2
+la2 re2 re2 fa2 mi2 re2
+si re2 sol2 mi2 sol2 la2 sol2 fa2 re2
+si re2 la2 sol2 re2 do2
+si re2 re2 mi2 fa2 sol2 sol2
+.
 Sunetul muzicii1
+Do Major
 do re mi do mi do mi mi
 re mi fa fa mi re fa
 mi fa sol mi sol mi sol sol

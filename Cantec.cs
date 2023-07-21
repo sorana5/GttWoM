@@ -12,6 +12,7 @@ namespace PortalSpreLumeaMuzicii
         public int _nrPortative;
         public List<List<int>> _note = new List<List<int>>();
         public string _titlu;
+        public string _gama;
 
         public bool Cantat
         { get { return _cantat; } set { _cantat = value; } }
@@ -22,12 +23,16 @@ namespace PortalSpreLumeaMuzicii
         public string Titlu
         { get { return _titlu; } set { _titlu = value; } }
 
+        public string Gama
+        { get { return _gama; } set { _gama = value; } }
+
         public int NrPortative
         { get { return _nrPortative; } set { _nrPortative = value; } }
 
-        public Cantec(string titlu, int nrPortative, List<List<int>> note)
+        public Cantec(string titlu, string gama, int nrPortative, List<List<int>> note)
         {
             Titlu = titlu;
+            Gama = gama;
             NrPortative = nrPortative;
             Note = note;
         }

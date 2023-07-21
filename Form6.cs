@@ -25,6 +25,12 @@ namespace PortalSpreLumeaMuzicii
         Graphics g;
         Random random = new Random();
 
+        Image cheiaSol = Image.FromFile(@"extra\cheie.png");
+        Image bemol = Image.FromFile(@"extra\bemol.png");
+        Image diez = Image.FromFile(@"extra\diez.png");
+        //Image diezc = Image.FromFile(@"extra\diezc.png");
+        Image becar = Image.FromFile(@"extra\becar.png");
+
         public static List<Cantec> cantece = new List<Cantec>();
         List < List < int > > cantec = new List<List<int>>();
 
@@ -39,15 +45,15 @@ namespace PortalSpreLumeaMuzicii
         //List<int> cantate = new List<int>();
 
         Pen pen = new Pen(Color.MediumPurple, 5);
-        int nr, nrPortativ = 0, locatie = 100, element = 0, nrPortative;
+        int nr, nrPortativ = 0, locatie = 100, element = 0, nrPortative, nrCantec;
 
-        private Dictionary<int, int> nrNote = new Dictionary<int, int>()
+        /*private Dictionary<int, int> nrNote = new Dictionary<int, int>()
         {
             [-1] = 0, [0] = 0,
             [1] = 7, [2] = 7, [3] = 7, [4] = 7,
             [5] = 8, [6] = 8,
             [7] = 9, [8] = 9, [9] = 9
-        };
+        };*/
 
 
 
@@ -79,18 +85,19 @@ namespace PortalSpreLumeaMuzicii
             g.DrawLine(p, new Point(1190, 58), new Point(1190, 143));
             g.DrawLine(new Pen(Color.Black, 10), new Point(1200, 58), new Point(1200, 143));
                 
-            Image cheiasol = Image.FromFile(@"extra\cheie.png");
+            //Image cheiasol = Image.FromFile(@"extra\cheie.png");
             //Image becar = Image.FromFile(@"extra\becar.png");
-            g.DrawImage(cheiasol, 75, 25, 90, 155);
+            g.DrawImage(cheiaSol, 75, 25, 90, 155);
             //g.DrawImage(becar, 125, 50, 90, 155);
             //Image diez = Image.FromFile(@"extra\diez.png");
             //Image bemol = Image.FromFile(@"extra\bemol.png");
 
 
-            int nrCantec = random.Next(3, 3);
+            nrCantec = random.Next(3, 3);
             cantec = cantece[nrCantec]._note;
             label1.Text = "Ați cântat " + cantece[nrCantec]._titlu + "!";
             nrPortative = cantece[nrCantec]._nrPortative;
+            
             /*int nota = 100;
             //foreach (List<int> portativ in cantec)
             //{
@@ -194,6 +201,8 @@ namespace PortalSpreLumeaMuzicii
             string fileName = "a4sharp.wav";
             string path = Path.Combine(Environment.CurrentDirectory, @"note\", fileName);
             Play(path);
+            apasare_nota(sender, e, 100);
+            //g.DrawImage(diezc, locatie - 38, 100 - 8, 35, 35);
         }
 
         private void b4_Click(object sender, EventArgs e)
@@ -278,6 +287,8 @@ namespace PortalSpreLumeaMuzicii
             string fileName = "a5sharp.wav";
             string path = Path.Combine(Environment.CurrentDirectory, @"note\", fileName);
             Play(path);
+            //apasare_nota(sender, e, 30);
+            //g.DrawImage(diezc, locatie - 38, 30 - 8, 35, 35);
         }
 
         private void b5_Click(object sender, EventArgs e)
@@ -308,7 +319,8 @@ namespace PortalSpreLumeaMuzicii
             string fileName = "f5sharp.wav";
             string path = Path.Combine(Environment.CurrentDirectory, @"note\", fileName);
             Play(path);
-
+            apasare_nota(sender, e, 50);
+            //g.DrawImage(diez, locatie - 38, 50 - 8, 35, 35);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -316,6 +328,7 @@ namespace PortalSpreLumeaMuzicii
             g.Clear(BackColor);
             locatie = 100;
             element = 0;
+            nrPortativ = 0;
             Pen p = new Pen(Color.Black, 5);
             Point p1 = new Point(100, 60);
             Point p2 = new Point(100, 80);
@@ -335,9 +348,15 @@ namespace PortalSpreLumeaMuzicii
             //g.DrawLine(p, new Point(1190, 58), new Point(1190, 143));
             //g.DrawLine(new Pen(Color.Black, 10), new Point(1200, 58), new Point(1200, 143));
 
-            Image newImage = Image.FromFile(@"extra\cheie.png");
-            g.DrawImage(newImage, 75, 25, 90, 155);
-
+            //Image newImage = Image.FromFile(@"extra\cheie.png");
+            //Image bemol = Image.FromFile(@"extra\bemol.png");
+            //Image diez = Image.FromFile(@"extra\diez.png");
+            //Image becar = Image.FromFile(@"extra\becar.png");
+            g.DrawImage(cheiaSol, 75, 25, 90, 155);
+            if (cantece[nrCantec]._gama == "Sol Major")
+                g.DrawImage(diez, 140, 90, 33, 33);
+            if (cantece[nrCantec]._gama == "Fa Major")
+                g.DrawImage(bemol, 143, 78, 33, 33);
 
             int nota = 100;
             //Pen p = new Pen(Color.Black, 5);
@@ -350,9 +369,7 @@ namespace PortalSpreLumeaMuzicii
                 }
 
             }*/
-            Image bemol = Image.FromFile(@"extra\bemol.png");
-            Image diez = Image.FromFile(@"extra\diez.png");
-            Image becar = Image.FromFile(@"extra\becar.png");
+            
             foreach (int element in cantec[0])
             {
                 //label1.Visible = true;
@@ -431,13 +448,17 @@ namespace PortalSpreLumeaMuzicii
             g.DrawLine(p, p4, p4 + new Size(1100, 0));
             g.DrawLine(p, p5, p5 + new Size(1100, 0));
 
-            Image newImage = Image.FromFile(@"extra\cheie.png");
-            g.DrawImage(newImage, 75, 25, 90, 155);
+            //Image newImage = Image.FromFile(@"extra\cheie.png");
+            //Image bemol = Image.FromFile(@"extra\bemol.png");
+            //Image diez = Image.FromFile(@"extra\diez.png");
+            //Image becar = Image.FromFile(@"extra\becar.png");
+            g.DrawImage(cheiaSol, 75, 25, 90, 155);
+            if (cantece[nrCantec]._gama == "Sol Major")
+                g.DrawImage(diez, 140, 45, 33, 33);
+            if (cantece[nrCantec]._gama == "Fa Major")
+                g.DrawImage(bemol, 143, 78, 33, 33);
 
             int nota = 100;
-            Image bemol = Image.FromFile(@"extra\bemol.png");
-            Image diez = Image.FromFile(@"extra\diez.png");
-            Image becar = Image.FromFile(@"extra\becar.png");
             //label1.Text = Convert.ToString(nrPortative);
 
             //Pen p = new Pen(Color.Black, 5);

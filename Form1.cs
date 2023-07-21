@@ -48,6 +48,7 @@ namespace PortalSpreLumeaMuzicii
             for (int i = 0; i < nrCantece; i++)
             {
                 string nume = sr.ReadLine();
+                string gama = sr.ReadLine();
                 //titlu.Text = nume;
                 string valori = sr.ReadLine();
                 List<List<int>> note = new List<List<int>>();
@@ -62,7 +63,7 @@ namespace PortalSpreLumeaMuzicii
                     linie++;
                     valori = sr.ReadLine();
                 }
-                Form6.cantece.Add(new Cantec(nume, linie, note));
+                Form6.cantece.Add(new Cantec(nume, gama, linie, note));
             }
             /*foreach (List<int> portativ in Form6.cantece[0]._note)
             {
