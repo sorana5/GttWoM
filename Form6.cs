@@ -78,11 +78,16 @@ namespace PortalSpreLumeaMuzicii
 
             g.DrawLine(p, new Point(1190, 58), new Point(1190, 143));
             g.DrawLine(new Pen(Color.Black, 10), new Point(1200, 58), new Point(1200, 143));
+                
+            Image cheiasol = Image.FromFile(@"extra\cheie.png");
+            //Image becar = Image.FromFile(@"extra\becar.png");
+            g.DrawImage(cheiasol, 75, 25, 90, 155);
+            //g.DrawImage(becar, 125, 50, 90, 155);
+            //Image diez = Image.FromFile(@"extra\diez.png");
+            //Image bemol = Image.FromFile(@"extra\bemol.png");
 
-            Image newImage = Image.FromFile(@"extra\cheie.png");
-            g.DrawImage(newImage, 75, 25, 90, 155);
 
-            int nrCantec = random.Next(0, 2);
+            int nrCantec = random.Next(3, 3);
             cantec = cantece[nrCantec]._note;
             label1.Text = "Ați cântat " + cantece[nrCantec]._titlu + "!";
             nrPortative = cantece[nrCantec]._nrPortative;
@@ -346,6 +351,8 @@ namespace PortalSpreLumeaMuzicii
 
             }*/
             Image bemol = Image.FromFile(@"extra\bemol.png");
+            Image diez = Image.FromFile(@"extra\diez.png");
+            Image becar = Image.FromFile(@"extra\becar.png");
             foreach (int element in cantec[0])
             {
                 //label1.Visible = true;
@@ -354,6 +361,10 @@ namespace PortalSpreLumeaMuzicii
                 Point point = new Point(nota, element / 10 * 10);
                 if (element % 10 == 2)
                     g.DrawImage(bemol, nota - 40, element - 15, 35, 35);
+                if (element % 10 == 1)
+                    g.DrawImage(diez, nota - 38, element - 8, 35, 35);
+                if (element % 10 == 3)
+                    g.DrawImage(becar, nota - 35, element - 8, 25, 35);
                 draw_note(sender, e, point, p);
             }
             /*for (int i = 0; i < nrNote[nrPortativ]; i++)
@@ -425,6 +436,8 @@ namespace PortalSpreLumeaMuzicii
 
             int nota = 100;
             Image bemol = Image.FromFile(@"extra\bemol.png");
+            Image diez = Image.FromFile(@"extra\diez.png");
+            Image becar = Image.FromFile(@"extra\becar.png");
             //label1.Text = Convert.ToString(nrPortative);
 
             //Pen p = new Pen(Color.Black, 5);
@@ -436,6 +449,10 @@ namespace PortalSpreLumeaMuzicii
                     Point point = new Point(nota, element / 10 * 10);
                     if (element % 10 == 2)
                         g.DrawImage(bemol, nota - 40, element - 15, 35, 35);
+                    if (element % 10 == 1)
+                        g.DrawImage(diez, nota - 38, element - 8, 35, 35);
+                    if (element % 10 == 3)
+                        g.DrawImage(becar, nota - 35, element - 8, 25, 35);
                     draw_note(sender, e, point, p);
                 }
                 nrPortativ++;

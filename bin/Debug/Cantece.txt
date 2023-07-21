@@ -1,4 +1,4 @@
-3
+4
 Gaudeamus
 do2 sol sol do2 la la la
 si do2 re2 si do2 mi2 do2
@@ -19,7 +19,7 @@ sol fa fa fa fa mi mi
 fa mi re re do re mi fa sol
 la fa mi fa sol mi
 .
-Suntetul muzicii
+Sunetul muzicii
 do re mi do mi do mi mi
 re mi fa fa mi re fa
 mi fa sol mi sol mi sol sol
@@ -28,4 +28,14 @@ sol do re mi fa sol la
 la re mi fa sol la si
 si mi fa sol la si do2
 si sib la fa si sol do2
+.
+Sunetul muzicii1
+do re mi do mi do mi mi
+re mi fa fa mi re fa
+mi fa sol mi sol mi sol sol
+fa sol la la sol fa la
+sol do re mi fa sol la
+la re mi fa sol la si
+si mi fa sol la si do2
+si lad lan fa si sol do2
 .

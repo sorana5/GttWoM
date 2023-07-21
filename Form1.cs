@@ -27,6 +27,8 @@ namespace PortalSpreLumeaMuzicii
             ["fa"] = 120,
             ["sol"] = 110,
             ["la"] = 100,
+            ["lad"] = 101,
+            ["lan"] = 103,
             ["si"] = 90,
             ["sib"] = 92,
             ["do2"] = 80,
