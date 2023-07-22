@@ -8,11 +8,12 @@ namespace PortalSpreLumeaMuzicii
 {
     public class Cantec
     {
-        public bool _cantat;
         public int _nrPortative;
         public List<List<int>> _note = new List<List<int>>();
         public string _titlu;
         public string _gama;
+
+        public bool _cantat;
 
         public bool Cantat
         { get { return _cantat; } set { _cantat = value; } }

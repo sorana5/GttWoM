@@ -1,5 +1,5 @@
 5
-Gaudeamus
+Gaudeamus Igitur
 Do Major
 do2 sol sol do2 la la la
 si do2 re2 si do2 mi2 do2
@@ -32,13 +32,6 @@ la re mi fa sol la si
 si mi fa sol la si do2
 si sib la fa si sol do2
 .
-Never gonna give you up
-Fa Major
-do2 re2 fa2 re2 la2 la2 sol2
-do2 re2 fa2 re2 sol2 sol2 fa2 mi2 re2
-do2 re2 fa2 re2 fa2 sol2 mi2 re2 do2
-do2 do2 sol2 fa2
-.
 Edelweiss
 Sol Major
 si re2 la2 sol2 re2 do2
@@ -49,6 +42,13 @@ la2 re2 re2 fa2 mi2 re2
 si re2 sol2 mi2 sol2 la2 sol2 fa2 re2
 si re2 la2 sol2 re2 do2
 si re2 re2 mi2 fa2 sol2 sol2
+.
+Never gonna give you up
+Fa Major
+do2 re2 fa2 re2 la2 la2 sol2
+do2 re2 fa2 re2 sol2 sol2 fa2 mi2 re2
+do2 re2 fa2 re2 fa2 sol2 mi2 re2 do2
+do2 do2 sol2 fa2
 .
 Sunetul muzicii1
 Do Major

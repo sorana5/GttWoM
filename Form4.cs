@@ -37,6 +37,7 @@ namespace PortalSpreLumeaMuzicii
         private void Form4_Load(object sender, EventArgs e)
         {
             //webBrowser1.Navigate("www.wikipedia.com");
+            
             g = this.CreateGraphics();
             Pen p = new Pen(Color.Black, 5);
             Point p1 = new Point(100, 60);
@@ -44,9 +45,7 @@ namespace PortalSpreLumeaMuzicii
             Point p3 = new Point(100, 100);
             Point p4 = new Point(100, 120);
             Point p5 = new Point(100, 140);
-            Point[] points = new Point[] { p1, p2, p3, p4, p5 };
-            //g.DrawLine(p, p1, p1 + new Size(100, 0));
-            //g.DrawLines(p, points);
+            
             g.DrawLine(p, p1, p1 + new Size(1100, 0));
             g.DrawLine(p, p2, p2 + new Size(1100, 0));
             g.DrawLine(p, p3, p3 + new Size(1100, 0));
@@ -56,8 +55,12 @@ namespace PortalSpreLumeaMuzicii
             g.DrawLine(p, new Point(1190, 58), new Point(1190, 143));
             g.DrawLine(new Pen(Color.Black, 10), new Point(1200, 58), new Point(1200, 143));
 
-            Image newImage = Image.FromFile(@"extra\cheie.png");
-            g.DrawImage(newImage, 75, 25, 90, 155);
+            Image cheiaSol = Image.FromFile(@"extra\cheie.png");
+            g.DrawImage(cheiaSol, 75, 25, 90, 155);
+
+            //Point[] points = new Point[] { p1, p2, p3, p4, p5 };
+            //g.DrawLine(p, p1, p1 + new Size(100, 0));
+            //g.DrawLines(p, points);
         }
 
         private void webBrowser1_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
@@ -277,8 +280,8 @@ namespace PortalSpreLumeaMuzicii
             g.DrawLine(p, new Point(1190, 58), new Point(1190, 143));
             g.DrawLine(new Pen(Color.Black, 10), new Point(1200, 58), new Point(1200, 143));
 
-            Image newImage = Image.FromFile(@"extra\cheie.png");
-            g.DrawImage(newImage, 75, 25, 90, 155);
+            Image cheiaSol = Image.FromFile(@"extra\cheie.png");
+            g.DrawImage(cheiaSol, 75, 25, 90, 155);
 
             /*Brush brush = new SolidBrush(Color.Black);
             Pen pen = new Pen(Color.Black, 6);
@@ -354,17 +357,17 @@ namespace PortalSpreLumeaMuzicii
         {
             Pen p = new Pen(Color.MediumPurple, 5);
             int x = 100;
-            foreach (int elem in cantate)
+            foreach (int nota in cantate)
             {
                 x += 100;
                 if (x <= 1100)
                 {
-                    Point point = new Point(x, elem);
+                    Point point = new Point(x, nota);
                     draw_note(sender, e, point, p);
                 }
             }
         }
-
+        
         private void button2_Click_1(object sender, EventArgs e)
         {
             this.Close();

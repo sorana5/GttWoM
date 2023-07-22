@@ -22,9 +22,21 @@ namespace PortalSpreLumeaMuzicii
         private Dictionary<string, int> convertireNote = new Dictionary<string, int>()
         {
             ["do"] = 150,
+            ["dod"] = 151,
+            ["dob"] = 152,
+            ["don"] = 153,
             ["re"] = 140,
+            ["red"] = 141,
+            ["reb"] = 142,
+            ["ren"] = 143,
             ["mi"] = 130,
+            ["mid"] = 131,
+            ["mib"] = 132,
+            ["min"] = 133,
             ["fa"] = 120,
+            ["fad"] = 121,
+            ["fab"] = 122,
+            ["fan"] = 123,
             ["sol"] = 110,
             ["la"] = 100,
             ["lad"] = 101,
@@ -49,16 +61,15 @@ namespace PortalSpreLumeaMuzicii
             {
                 string nume = sr.ReadLine();
                 string gama = sr.ReadLine();
-                //titlu.Text = nume;
                 string valori = sr.ReadLine();
                 List<List<int>> note = new List<List<int>>();
                 int linie = 0;
                 while (valori[0] != '.')
                 {
-                    string[] bits = valori.Split(' ');
+                    string[] denumireNote = valori.Split(' ');
                     List <int> portativ = new List<int>();
-                    foreach (var bit in bits)
-                        portativ.Add(convertireNote[bit]);
+                    foreach (var denumire in denumireNote)
+                        portativ.Add(convertireNote[denumire]);
                     note.Add(portativ);
                     linie++;
                     valori = sr.ReadLine();
