@@ -93,7 +93,7 @@ namespace PortalSpreLumeaMuzicii
             //Image bemol = Image.FromFile(@"extra\bemol.png");
 
 
-            nrCantec = random.Next(4, 4);
+            nrCantec = random.Next(3, 3);
             cantec = cantece[nrCantec]._note;
             label1.Text = "Ați cântat " + cantece[nrCantec]._titlu + "!";
             nrPortative = cantece[nrCantec]._nrPortative;
@@ -335,7 +335,7 @@ namespace PortalSpreLumeaMuzicii
             Point p3 = new Point(100, 100);
             Point p4 = new Point(100, 120);
             Point p5 = new Point(100, 140);
-            Point[] points = new Point[] { p1, p2, p3, p4, p5 };
+            //Point[] points = new Point[] { p1, p2, p3, p4, p5 };
             //g.DrawLine(p, p1, p1 + new Size(100, 0));
             //g.DrawLines(p, points);
             g.DrawLine(p, p1, p1 + new Size(1100, 0));
@@ -343,6 +343,9 @@ namespace PortalSpreLumeaMuzicii
             g.DrawLine(p, p3, p3 + new Size(1100, 0));
             g.DrawLine(p, p4, p4 + new Size(1100, 0));
             g.DrawLine(p, p5, p5 + new Size(1100, 0));
+
+            button3.Visible = true;
+            label1.Visible = false;
 
 
             //g.DrawLine(p, new Point(1190, 58), new Point(1190, 143));
@@ -393,8 +396,6 @@ namespace PortalSpreLumeaMuzicii
                 element++;
             }*/
             nrPortativ++;
-            button3.Visible = true;
-            label1.Visible = false;
 
         }
 
