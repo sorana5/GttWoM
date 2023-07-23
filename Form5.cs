@@ -61,7 +61,10 @@ namespace PortalSpreLumeaMuzicii
             {
                 imageNumber++;
                 label1.Text = Texte[imageNumber];
+                button2.Visible = true;
             }
+            if (imageNumber == 20)
+                button1.Visible = false;
             LoadNextImage();
         }
 
@@ -71,7 +74,10 @@ namespace PortalSpreLumeaMuzicii
             {
                 imageNumber--;
                 label1.Text = Texte[imageNumber];
+                button1.Visible = true;
             }
+            if (imageNumber == 1)
+                button2.Visible = false;
             LoadNextImage();
         }
 

@@ -93,7 +93,7 @@ namespace PortalSpreLumeaMuzicii
             //Image bemol = Image.FromFile(@"extra\bemol.png");
 
 
-            nrCantec = random.Next(3, 3);
+            nrCantec = random.Next(0, Start.nrCantece);
             cantec = cantece[nrCantec]._note;
             label1.Text = "Ați cântat " + cantece[nrCantec]._titlu + "!";
             nrPortative = cantece[nrCantec]._nrPortative;
@@ -201,7 +201,7 @@ namespace PortalSpreLumeaMuzicii
             string fileName = "a4sharp.wav";
             string path = Path.Combine(Environment.CurrentDirectory, @"note\", fileName);
             Play(path);
-            apasare_nota(sender, e, 100);
+            apasare_nota(sender, e, 90);
             //g.DrawImage(diezc, locatie - 38, 100 - 8, 35, 35);
         }
 

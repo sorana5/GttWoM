@@ -262,13 +262,16 @@ namespace PortalSpreLumeaMuzicii
 
         private void button1_Click(object sender, EventArgs e)
         {
+            g.Clear(BackColor);
+            cantate.Clear();
+            //locatie = 100;
             Pen p = new Pen(Color.Black, 5);
             Point p1 = new Point(100, 60);
             Point p2 = new Point(100, 80);
             Point p3 = new Point(100, 100);
             Point p4 = new Point(100, 120);
             Point p5 = new Point(100, 140);
-            Point[] points = new Point[] { p1, p2, p3, p4, p5 };
+            //Point[] points = new Point[] { p1, p2, p3, p4, p5 };
             //g.DrawLine(p, p1, p1 + new Size(100, 0));
             //g.DrawLines(p, points);
             g.DrawLine(p, p1, p1 + new Size(1100, 0));
@@ -299,9 +302,9 @@ namespace PortalSpreLumeaMuzicii
 
             for (int i = 1; i <= 10; i++)
             {
-                int nr = random.Next(10, 150);
+                int nr = random.Next(10, 151);
                 while (nr % 10 != 0)
-                    nr = random.Next(10, 150);
+                    nr = random.Next(10, 151);
                 generate.Add(nr);
             }
 

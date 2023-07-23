@@ -19,6 +19,8 @@ namespace PortalSpreLumeaMuzicii
             InitializeComponent();
         }
 
+        public static int nrCantece;
+
         private Dictionary<string, int> convertireNote = new Dictionary<string, int>()
         {
             ["do"] = 150,
@@ -43,7 +45,7 @@ namespace PortalSpreLumeaMuzicii
             ["soln"] = 113,
             ["la"] = 100,
             ["lad"] = 101,
-            ["la"] = 102,
+            ["lab"] = 102,
             ["lan"] = 103,
             ["si"] = 90,
             ["sid"] = 91,
@@ -86,7 +88,7 @@ namespace PortalSpreLumeaMuzicii
         public void Form1_Load(object sender, EventArgs e)
         {
             StreamReader sr = new StreamReader(@"Cantece.txt");
-            int nrCantece = Convert.ToInt32(sr.ReadLine());
+            nrCantece = Convert.ToInt32(sr.ReadLine());
             for (int i = 0; i < nrCantece; i++)
             {
                 string nume = sr.ReadLine();

@@ -60,9 +60,10 @@
             // 
             this.webBrowser1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.webBrowser1.Location = new System.Drawing.Point(0, 0);
-            this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
+            this.webBrowser1.Margin = new System.Windows.Forms.Padding(4);
+            this.webBrowser1.MinimumSize = new System.Drawing.Size(27, 25);
             this.webBrowser1.Name = "webBrowser1";
-            this.webBrowser1.Size = new System.Drawing.Size(1553, 585);
+            this.webBrowser1.Size = new System.Drawing.Size(1924, 720);
             this.webBrowser1.TabIndex = 0;
             this.webBrowser1.DocumentCompleted += new System.Windows.Forms.WebBrowserDocumentCompletedEventHandler(this.webBrowser1_DocumentCompleted);
             // 
@@ -70,9 +71,10 @@
             // 
             this.c4.BackColor = System.Drawing.Color.White;
             this.c4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.c4.Location = new System.Drawing.Point(29, 12);
+            this.c4.Location = new System.Drawing.Point(39, 15);
+            this.c4.Margin = new System.Windows.Forms.Padding(4);
             this.c4.Name = "c4";
-            this.c4.Size = new System.Drawing.Size(100, 524);
+            this.c4.Size = new System.Drawing.Size(133, 645);
             this.c4.TabIndex = 1;
             this.c4.Text = "C";
             this.c4.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -83,9 +85,10 @@
             // 
             this.g4.BackColor = System.Drawing.Color.White;
             this.g4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.g4.Location = new System.Drawing.Point(429, 12);
+            this.g4.Location = new System.Drawing.Point(572, 15);
+            this.g4.Margin = new System.Windows.Forms.Padding(4);
             this.g4.Name = "g4";
-            this.g4.Size = new System.Drawing.Size(100, 524);
+            this.g4.Size = new System.Drawing.Size(133, 645);
             this.g4.TabIndex = 2;
             this.g4.Text = "G";
             this.g4.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -96,9 +99,10 @@
             // 
             this.c5.BackColor = System.Drawing.Color.White;
             this.c5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.c5.Location = new System.Drawing.Point(731, 12);
+            this.c5.Location = new System.Drawing.Point(975, 15);
+            this.c5.Margin = new System.Windows.Forms.Padding(4);
             this.c5.Name = "c5";
-            this.c5.Size = new System.Drawing.Size(100, 524);
+            this.c5.Size = new System.Drawing.Size(133, 645);
             this.c5.TabIndex = 3;
             this.c5.Text = "C";
             this.c5.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -109,9 +113,10 @@
             // 
             this.a4.BackColor = System.Drawing.Color.White;
             this.a4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.a4.Location = new System.Drawing.Point(529, 12);
+            this.a4.Location = new System.Drawing.Point(705, 15);
+            this.a4.Margin = new System.Windows.Forms.Padding(4);
             this.a4.Name = "a4";
-            this.a4.Size = new System.Drawing.Size(100, 524);
+            this.a4.Size = new System.Drawing.Size(133, 645);
             this.a4.TabIndex = 4;
             this.a4.Text = "A";
             this.a4.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -122,9 +127,10 @@
             // 
             this.b4.BackColor = System.Drawing.Color.White;
             this.b4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.b4.Location = new System.Drawing.Point(630, 12);
+            this.b4.Location = new System.Drawing.Point(840, 15);
+            this.b4.Margin = new System.Windows.Forms.Padding(4);
             this.b4.Name = "b4";
-            this.b4.Size = new System.Drawing.Size(100, 524);
+            this.b4.Size = new System.Drawing.Size(133, 645);
             this.b4.TabIndex = 5;
             this.b4.Text = "B";
             this.b4.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -135,9 +141,10 @@
             // 
             this.f4.BackColor = System.Drawing.Color.White;
             this.f4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.f4.Location = new System.Drawing.Point(329, 12);
+            this.f4.Location = new System.Drawing.Point(439, 15);
+            this.f4.Margin = new System.Windows.Forms.Padding(4);
             this.f4.Name = "f4";
-            this.f4.Size = new System.Drawing.Size(100, 524);
+            this.f4.Size = new System.Drawing.Size(133, 645);
             this.f4.TabIndex = 6;
             this.f4.Text = "F";
             this.f4.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -148,9 +155,10 @@
             // 
             this.e4.BackColor = System.Drawing.Color.White;
             this.e4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.e4.Location = new System.Drawing.Point(229, 12);
+            this.e4.Location = new System.Drawing.Point(305, 15);
+            this.e4.Margin = new System.Windows.Forms.Padding(4);
             this.e4.Name = "e4";
-            this.e4.Size = new System.Drawing.Size(100, 524);
+            this.e4.Size = new System.Drawing.Size(133, 645);
             this.e4.TabIndex = 7;
             this.e4.Text = "E";
             this.e4.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -161,9 +169,10 @@
             // 
             this.d4.BackColor = System.Drawing.Color.White;
             this.d4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.d4.Location = new System.Drawing.Point(129, 12);
+            this.d4.Location = new System.Drawing.Point(172, 15);
+            this.d4.Margin = new System.Windows.Forms.Padding(4);
             this.d4.Name = "d4";
-            this.d4.Size = new System.Drawing.Size(100, 524);
+            this.d4.Size = new System.Drawing.Size(133, 645);
             this.d4.TabIndex = 8;
             this.d4.Text = "D";
             this.d4.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -174,9 +183,10 @@
             // 
             this.e5.BackColor = System.Drawing.Color.White;
             this.e5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.e5.Location = new System.Drawing.Point(933, 12);
+            this.e5.Location = new System.Drawing.Point(1244, 15);
+            this.e5.Margin = new System.Windows.Forms.Padding(4);
             this.e5.Name = "e5";
-            this.e5.Size = new System.Drawing.Size(100, 524);
+            this.e5.Size = new System.Drawing.Size(133, 645);
             this.e5.TabIndex = 9;
             this.e5.Text = "E";
             this.e5.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -187,9 +197,10 @@
             // 
             this.d5.BackColor = System.Drawing.Color.White;
             this.d5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.d5.Location = new System.Drawing.Point(832, 12);
+            this.d5.Location = new System.Drawing.Point(1109, 15);
+            this.d5.Margin = new System.Windows.Forms.Padding(4);
             this.d5.Name = "d5";
-            this.d5.Size = new System.Drawing.Size(100, 524);
+            this.d5.Size = new System.Drawing.Size(133, 645);
             this.d5.TabIndex = 10;
             this.d5.Text = "D";
             this.d5.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -200,9 +211,10 @@
             // 
             this.f5.BackColor = System.Drawing.Color.White;
             this.f5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.f5.Location = new System.Drawing.Point(1034, 12);
+            this.f5.Location = new System.Drawing.Point(1379, 15);
+            this.f5.Margin = new System.Windows.Forms.Padding(4);
             this.f5.Name = "f5";
-            this.f5.Size = new System.Drawing.Size(100, 524);
+            this.f5.Size = new System.Drawing.Size(133, 645);
             this.f5.TabIndex = 11;
             this.f5.Text = "F";
             this.f5.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -213,9 +225,10 @@
             // 
             this.g5.BackColor = System.Drawing.Color.White;
             this.g5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.g5.Location = new System.Drawing.Point(1135, 12);
+            this.g5.Location = new System.Drawing.Point(1513, 15);
+            this.g5.Margin = new System.Windows.Forms.Padding(4);
             this.g5.Name = "g5";
-            this.g5.Size = new System.Drawing.Size(100, 524);
+            this.g5.Size = new System.Drawing.Size(133, 645);
             this.g5.TabIndex = 12;
             this.g5.Text = "G";
             this.g5.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -226,9 +239,10 @@
             // 
             this.c6.BackColor = System.Drawing.Color.White;
             this.c6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.c6.Location = new System.Drawing.Point(1439, 12);
+            this.c6.Location = new System.Drawing.Point(1919, 15);
+            this.c6.Margin = new System.Windows.Forms.Padding(4);
             this.c6.Name = "c6";
-            this.c6.Size = new System.Drawing.Size(100, 524);
+            this.c6.Size = new System.Drawing.Size(133, 645);
             this.c6.TabIndex = 13;
             this.c6.Text = "C";
             this.c6.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -239,9 +253,10 @@
             // 
             this.b5.BackColor = System.Drawing.Color.White;
             this.b5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.b5.Location = new System.Drawing.Point(1337, 12);
+            this.b5.Location = new System.Drawing.Point(1783, 15);
+            this.b5.Margin = new System.Windows.Forms.Padding(4);
             this.b5.Name = "b5";
-            this.b5.Size = new System.Drawing.Size(100, 524);
+            this.b5.Size = new System.Drawing.Size(133, 645);
             this.b5.TabIndex = 14;
             this.b5.Text = "B";
             this.b5.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -252,9 +267,10 @@
             // 
             this.a5.BackColor = System.Drawing.Color.White;
             this.a5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.a5.Location = new System.Drawing.Point(1236, 12);
+            this.a5.Location = new System.Drawing.Point(1648, 15);
+            this.a5.Margin = new System.Windows.Forms.Padding(4);
             this.a5.Name = "a5";
-            this.a5.Size = new System.Drawing.Size(100, 524);
+            this.a5.Size = new System.Drawing.Size(133, 645);
             this.a5.TabIndex = 15;
             this.a5.Text = "A";
             this.a5.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -265,9 +281,10 @@
             // 
             this.csharp.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.csharp.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.csharp.Location = new System.Drawing.Point(92, 12);
+            this.csharp.Location = new System.Drawing.Point(123, 15);
+            this.csharp.Margin = new System.Windows.Forms.Padding(4);
             this.csharp.Name = "csharp";
-            this.csharp.Size = new System.Drawing.Size(71, 303);
+            this.csharp.Size = new System.Drawing.Size(95, 373);
             this.csharp.TabIndex = 16;
             this.csharp.Text = "C#";
             this.csharp.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -278,9 +295,10 @@
             // 
             this.d4sharp.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.d4sharp.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.d4sharp.Location = new System.Drawing.Point(190, 12);
+            this.d4sharp.Location = new System.Drawing.Point(253, 15);
+            this.d4sharp.Margin = new System.Windows.Forms.Padding(4);
             this.d4sharp.Name = "d4sharp";
-            this.d4sharp.Size = new System.Drawing.Size(71, 303);
+            this.d4sharp.Size = new System.Drawing.Size(95, 373);
             this.d4sharp.TabIndex = 17;
             this.d4sharp.Text = "D#";
             this.d4sharp.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -291,9 +309,10 @@
             // 
             this.f4sharp.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.f4sharp.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.f4sharp.Location = new System.Drawing.Point(392, 12);
+            this.f4sharp.Location = new System.Drawing.Point(523, 15);
+            this.f4sharp.Margin = new System.Windows.Forms.Padding(4);
             this.f4sharp.Name = "f4sharp";
-            this.f4sharp.Size = new System.Drawing.Size(71, 303);
+            this.f4sharp.Size = new System.Drawing.Size(95, 373);
             this.f4sharp.TabIndex = 18;
             this.f4sharp.Text = "F#";
             this.f4sharp.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -304,9 +323,10 @@
             // 
             this.g4sharp.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.g4sharp.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.g4sharp.Location = new System.Drawing.Point(494, 12);
+            this.g4sharp.Location = new System.Drawing.Point(659, 15);
+            this.g4sharp.Margin = new System.Windows.Forms.Padding(4);
             this.g4sharp.Name = "g4sharp";
-            this.g4sharp.Size = new System.Drawing.Size(71, 303);
+            this.g4sharp.Size = new System.Drawing.Size(95, 373);
             this.g4sharp.TabIndex = 19;
             this.g4sharp.Text = "G#";
             this.g4sharp.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -317,9 +337,10 @@
             // 
             this.a4sharp.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.a4sharp.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.a4sharp.Location = new System.Drawing.Point(593, 12);
+            this.a4sharp.Location = new System.Drawing.Point(791, 15);
+            this.a4sharp.Margin = new System.Windows.Forms.Padding(4);
             this.a4sharp.Name = "a4sharp";
-            this.a4sharp.Size = new System.Drawing.Size(71, 303);
+            this.a4sharp.Size = new System.Drawing.Size(95, 373);
             this.a4sharp.TabIndex = 20;
             this.a4sharp.Text = "A#";
             this.a4sharp.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -330,9 +351,10 @@
             // 
             this.c5sharp.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.c5sharp.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.c5sharp.Location = new System.Drawing.Point(793, 12);
+            this.c5sharp.Location = new System.Drawing.Point(1057, 15);
+            this.c5sharp.Margin = new System.Windows.Forms.Padding(4);
             this.c5sharp.Name = "c5sharp";
-            this.c5sharp.Size = new System.Drawing.Size(71, 303);
+            this.c5sharp.Size = new System.Drawing.Size(95, 373);
             this.c5sharp.TabIndex = 21;
             this.c5sharp.Text = "C#";
             this.c5sharp.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -343,9 +365,10 @@
             // 
             this.d5sharp.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.d5sharp.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.d5sharp.Location = new System.Drawing.Point(892, 12);
+            this.d5sharp.Location = new System.Drawing.Point(1189, 15);
+            this.d5sharp.Margin = new System.Windows.Forms.Padding(4);
             this.d5sharp.Name = "d5sharp";
-            this.d5sharp.Size = new System.Drawing.Size(71, 303);
+            this.d5sharp.Size = new System.Drawing.Size(95, 373);
             this.d5sharp.TabIndex = 22;
             this.d5sharp.Text = "D#";
             this.d5sharp.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -356,9 +379,10 @@
             // 
             this.f5sharp.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.f5sharp.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.f5sharp.Location = new System.Drawing.Point(1086, 12);
+            this.f5sharp.Location = new System.Drawing.Point(1448, 15);
+            this.f5sharp.Margin = new System.Windows.Forms.Padding(4);
             this.f5sharp.Name = "f5sharp";
-            this.f5sharp.Size = new System.Drawing.Size(71, 303);
+            this.f5sharp.Size = new System.Drawing.Size(95, 373);
             this.f5sharp.TabIndex = 23;
             this.f5sharp.Text = "F#";
             this.f5sharp.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -369,9 +393,10 @@
             // 
             this.g5sharp.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.g5sharp.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.g5sharp.Location = new System.Drawing.Point(1200, 12);
+            this.g5sharp.Location = new System.Drawing.Point(1600, 15);
+            this.g5sharp.Margin = new System.Windows.Forms.Padding(4);
             this.g5sharp.Name = "g5sharp";
-            this.g5sharp.Size = new System.Drawing.Size(71, 303);
+            this.g5sharp.Size = new System.Drawing.Size(95, 373);
             this.g5sharp.TabIndex = 24;
             this.g5sharp.Text = "G#";
             this.g5sharp.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -382,9 +407,10 @@
             // 
             this.a5sharp.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.a5sharp.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.a5sharp.Location = new System.Drawing.Point(1298, 12);
+            this.a5sharp.Location = new System.Drawing.Point(1731, 15);
+            this.a5sharp.Margin = new System.Windows.Forms.Padding(4);
             this.a5sharp.Name = "a5sharp";
-            this.a5sharp.Size = new System.Drawing.Size(71, 303);
+            this.a5sharp.Size = new System.Drawing.Size(95, 373);
             this.a5sharp.TabIndex = 25;
             this.a5sharp.Text = "A#";
             this.a5sharp.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
@@ -393,10 +419,10 @@
             // 
             // Form3
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SlateBlue;
-            this.ClientSize = new System.Drawing.Size(1553, 585);
+            this.ClientSize = new System.Drawing.Size(1924, 720);
             this.Controls.Add(this.a5sharp);
             this.Controls.Add(this.g5sharp);
             this.Controls.Add(this.f5sharp);
@@ -424,8 +450,10 @@
             this.Controls.Add(this.c4);
             this.Controls.Add(this.webBrowser1);
             this.KeyPreview = true;
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form3";
             this.Text = "Pian";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Form3_Load);
             this.ResumeLayout(false);
 
