@@ -1,6 +1,6 @@
-﻿namespace PortalSpreLumeaMuzicii
+﻿namespace GatewayToTheWorldOfMusic
 {
-    partial class Form5
+    partial class Tutorial
     {
         /// <summary>
         /// Required designer variable.

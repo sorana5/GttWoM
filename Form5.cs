@@ -9,11 +9,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace PortalSpreLumeaMuzicii
+namespace GatewayToTheWorldOfMusic
 {
-    public partial class Form5 : Form
+    public partial class Tutorial : Form
     {
-        public Form5()
+        public Tutorial()
         {
             InitializeComponent();
             slidePic.ImageLocation = string.Format(@"poze\1.png");

@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace PortalSpreLumeaMuzicii.Properties
+namespace GatewayToTheWorldOfMusic.Properties
 {
 
 

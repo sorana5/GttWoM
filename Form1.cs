@@ -10,22 +10,18 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace PortalSpreLumeaMuzicii
+namespace GatewayToTheWorldOfMusic
 {
     public partial class Start : Form
     {
-
-        /// <summary>
-        /// worked
-        /// </summary>
         public Start()
         {
             InitializeComponent();
         }
 
-        public static int nrCantece;
+        public static int number_of_songs;
 
-        private Dictionary<string, int> convertireNote = new Dictionary<string, int>()
+        private Dictionary<string, int> convert_notes = new Dictionary<string, int>()
         {
             ["do"] = 150,
             ["dod"] = 151,
@@ -91,26 +87,27 @@ namespace PortalSpreLumeaMuzicii
 
         public void Form1_Load(object sender, EventArgs e)
         {
+            // reads the songs from the file
             StreamReader sr = new StreamReader(@"Cantece.txt");
-            nrCantece = Convert.ToInt32(sr.ReadLine());
-            for (int i = 0; i < nrCantece; i++)
+            number_of_songs = Convert.ToInt32(sr.ReadLine());
+            for (int i = 0; i < number_of_songs; i++)
             {
-                string nume = sr.ReadLine();
-                string gama = sr.ReadLine();
-                string valori = sr.ReadLine();
-                List<List<int>> note = new List<List<int>>();
-                int linie = 0;
-                while (valori[0] != '.')
+                string title = sr.ReadLine();
+                string scale = sr.ReadLine();
+                string values = sr.ReadLine();
+                List<List<int>> notes = new List<List<int>>();
+                int line = 0;
+                while (values[0] != '.')
                 {
-                    string[] denumireNote = valori.Split(' ');
-                    List <int> portativ = new List<int>();
-                    foreach (var denumire in denumireNote)
-                        portativ.Add(convertireNote[denumire]);
-                    note.Add(portativ);
-                    linie++;
-                    valori = sr.ReadLine();
+                    string[] notes_names = values.Split(' ');
+                    List <int> staff = new List<int>();
+                    foreach (var name in notes_names)
+                        staff.Add(convert_notes[name]);
+                    notes.Add(staff);
+                    line++;
+                    values = sr.ReadLine();
                 }
-                Form6.cantece.Add(new Cantec(nume, gama, linie, note));
+                Melody.songs.Add(new Song(title, scale, line, notes));
             }
             /*foreach (List<int> portativ in Form6.cantece[0]._note)
             {
@@ -149,7 +146,7 @@ namespace PortalSpreLumeaMuzicii
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            Form4 frm = new Form4();
+            Testing frm = new Testing();
             frm.Show(); 
         }
 

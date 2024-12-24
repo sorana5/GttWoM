@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PortalSpreLumeaMuzicii
+namespace GatewayToTheWorldOfMusic
 {
-    public class Cantec
+    public class Song
     {
         public int _nrPortative;
         public List<List<int>> _note = new List<List<int>>();
@@ -30,7 +30,7 @@ namespace PortalSpreLumeaMuzicii
         public int NrPortative
         { get { return _nrPortative; } set { _nrPortative = value; } }
 
-        public Cantec(string titlu, string gama, int nrPortative, List<List<int>> note)
+        public Song(string titlu, string gama, int nrPortative, List<List<int>> note)
         {
             Titlu = titlu;
             Gama = gama;

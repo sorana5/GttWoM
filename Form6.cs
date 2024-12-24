@@ -9,15 +9,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace PortalSpreLumeaMuzicii
+namespace GatewayToTheWorldOfMusic
 {
-    public partial class Form6 : Form
+    public partial class Melody : Form
     {
-        public Form6()
+        public Melody()
         {
             InitializeComponent();
-            string message = "Încearcă să îți dai seama ce melodie este.";
-            string title = "Distrează-te!";
+            string message = "Try to figure out the song.";
+            string title = "Have fun!";
             MessageBox.Show(message, title);
         }
 
@@ -31,8 +31,8 @@ namespace PortalSpreLumeaMuzicii
         //Image diezc = Image.FromFile(@"extra\diezc.png");
         Image becar = Image.FromFile(@"extra\becar.png");
 
-        public static List<Cantec> cantece = new List<Cantec>();
-        List < List < int > > cantec = new List<List<int>>();
+        public static List<Song> songs = new List<Song>();
+        List < List < int > > song = new List<List<int>>();
 
         /*List<int> cantec = new List<int> { 80, 110, 110, 80, 100, 100, 100,
         90, 80, 70, 90, 80, 60, 80,
@@ -93,10 +93,10 @@ namespace PortalSpreLumeaMuzicii
             //Image bemol = Image.FromFile(@"extra\bemol.png");
 
 
-            nrCantec = random.Next(0, Start.nrCantece);
-            cantec = cantece[nrCantec]._note;
-            label1.Text = "Ați cântat " + cantece[nrCantec]._titlu + "!";
-            nrPortative = cantece[nrCantec]._nrPortative;
+            nrCantec = random.Next(0, Start.number_of_songs);
+            song = songs[nrCantec]._note;
+            label1.Text = "Ați cântat " + songs[nrCantec]._titlu + "!";
+            nrPortative = songs[nrCantec]._nrPortative;
             
             /*int nota = 100;
             //foreach (List<int> portativ in cantec)
@@ -111,16 +111,16 @@ namespace PortalSpreLumeaMuzicii
             //}*/
         }
 
-        private void webBrowser1_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
-        {
-            this.Text = e.Url.ToString() + "is loading...";
+        //private void webBrowser1_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
+        //{
+        //    this.Text = e.Url.ToString() + "is loading...";
 
-        }
+        //}
 
-        void apasare_nota(object sender, EventArgs e, int nota)
+        void press_note(object sender, EventArgs e, int nota)
         {
             locatie += 100;
-            if (nrPortativ <= nrPortative && locatie <= (cantec[nrPortativ-1].Count()+1) * 100)
+            if (nrPortativ <= nrPortative && locatie <= (song[nrPortativ-1].Count()+1) * 100)
             {
                 Point point = new Point(locatie, nota);
                 draw_note(sender, e, point, pen);
@@ -132,7 +132,7 @@ namespace PortalSpreLumeaMuzicii
             string fileName = "f4.wav";
             string path = Path.Combine(Environment.CurrentDirectory, @"note\", fileName);
             Play(path);
-            apasare_nota(sender, e, 120);
+            press_note(sender, e, 120);
         }
 
         private void c4_Click(object sender, EventArgs e)
@@ -140,7 +140,7 @@ namespace PortalSpreLumeaMuzicii
             string fileName = "c4.wav";
             string path = Path.Combine(Environment.CurrentDirectory, @"note\", fileName);
             Play(path);
-            apasare_nota(sender, e, 150);
+            press_note(sender, e, 150);
         }
 
         private void csharp_Click(object sender, EventArgs e)
@@ -155,7 +155,7 @@ namespace PortalSpreLumeaMuzicii
             string fileName = "d4.wav";
             string path = Path.Combine(Environment.CurrentDirectory, @"note\", fileName);
             Play(path);
-            apasare_nota(sender, e, 140);
+            press_note(sender, e, 140);
         }
 
         private void d4sharp_Click(object sender, EventArgs e)
@@ -170,7 +170,7 @@ namespace PortalSpreLumeaMuzicii
             string fileName = "e4.wav";
             string path = Path.Combine(Environment.CurrentDirectory, @"note\", fileName);
             Play(path);
-            apasare_nota(sender, e, 130);
+            press_note(sender, e, 130);
         }
 
         private void g4_Click(object sender, EventArgs e)
@@ -178,7 +178,7 @@ namespace PortalSpreLumeaMuzicii
             string fileName = "g4.wav";
             string path = Path.Combine(Environment.CurrentDirectory, @"note\", fileName);
             Play(path);
-            apasare_nota(sender, e, 110);
+            press_note(sender, e, 110);
         }
 
         private void g4sharp_Click(object sender, EventArgs e)
@@ -193,7 +193,7 @@ namespace PortalSpreLumeaMuzicii
             string fileName = "a4.wav";
             string path = Path.Combine(Environment.CurrentDirectory, @"note\", fileName);
             Play(path);
-            apasare_nota(sender, e, 100);
+            press_note(sender, e, 100);
         }
 
         private void a4sharp_Click(object sender, EventArgs e)
@@ -201,7 +201,7 @@ namespace PortalSpreLumeaMuzicii
             string fileName = "a4sharp.wav";
             string path = Path.Combine(Environment.CurrentDirectory, @"note\", fileName);
             Play(path);
-            apasare_nota(sender, e, 90);
+            press_note(sender, e, 90);
             //g.DrawImage(diezc, locatie - 38, 100 - 8, 35, 35);
         }
 
@@ -210,7 +210,7 @@ namespace PortalSpreLumeaMuzicii
             string fileName = "b4.wav";
             string path = Path.Combine(Environment.CurrentDirectory, @"note\", fileName);
             Play(path);
-            apasare_nota(sender, e, 90);
+            press_note(sender, e, 90);
         }
 
         private void c5_Click(object sender, EventArgs e)
@@ -218,7 +218,7 @@ namespace PortalSpreLumeaMuzicii
             string fileName = "c5.wav";
             string path = Path.Combine(Environment.CurrentDirectory, @"note\", fileName);
             Play(path);
-            apasare_nota(sender, e, 80);
+            press_note(sender, e, 80);
         }
 
         private void c5sharp_Click(object sender, EventArgs e)
@@ -233,7 +233,7 @@ namespace PortalSpreLumeaMuzicii
             string fileName = "d5.wav";
             string path = Path.Combine(Environment.CurrentDirectory, @"note\", fileName);
             Play(path);
-            apasare_nota(sender, e, 70);
+            press_note(sender, e, 70);
         }
 
         private void d5sharp_Click(object sender, EventArgs e)
@@ -248,7 +248,7 @@ namespace PortalSpreLumeaMuzicii
             string fileName = "e5.wav";
             string path = Path.Combine(Environment.CurrentDirectory, @"note\", fileName);
             Play(path);
-            apasare_nota(sender, e, 60);
+            press_note(sender, e, 60);
         }
 
         private void f5_Click(object sender, EventArgs e)
@@ -256,7 +256,7 @@ namespace PortalSpreLumeaMuzicii
             string fileName = "f5.wav";
             string path = Path.Combine(Environment.CurrentDirectory, @"note\", fileName);
             Play(path);
-            apasare_nota(sender, e, 50);
+            press_note(sender, e, 50);
         }
 
         private void g5_Click(object sender, EventArgs e)
@@ -264,7 +264,7 @@ namespace PortalSpreLumeaMuzicii
             string fileName = "g5.wav";
             string path = Path.Combine(Environment.CurrentDirectory, @"note\", fileName);
             Play(path);
-            apasare_nota(sender, e, 40);
+            press_note(sender, e, 40);
         }
 
         private void g5sharp_Click(object sender, EventArgs e)
@@ -279,7 +279,7 @@ namespace PortalSpreLumeaMuzicii
             string fileName = "a5.wav";
             string path = Path.Combine(Environment.CurrentDirectory, @"note\", fileName);
             Play(path);
-            apasare_nota(sender, e, 30);
+            press_note(sender, e, 30);
         }
 
         private void a5sharp_Click(object sender, EventArgs e)
@@ -296,7 +296,7 @@ namespace PortalSpreLumeaMuzicii
             string fileName = "b5.wav";
             string path = Path.Combine(Environment.CurrentDirectory, @"note\", fileName);
             Play(path);
-            apasare_nota(sender, e, 20);
+            press_note(sender, e, 20);
         }
 
         private void c6_Click(object sender, EventArgs e)
@@ -304,7 +304,7 @@ namespace PortalSpreLumeaMuzicii
             string fileName = "c6.wav";
             string path = Path.Combine(Environment.CurrentDirectory, @"note\", fileName);
             Play(path);
-            apasare_nota(sender, e, 10);
+            press_note(sender, e, 10);
         }
 
         private void f4sharp_Click(object sender, EventArgs e)
@@ -319,7 +319,7 @@ namespace PortalSpreLumeaMuzicii
             string fileName = "f5sharp.wav";
             string path = Path.Combine(Environment.CurrentDirectory, @"note\", fileName);
             Play(path);
-            apasare_nota(sender, e, 50);
+            press_note(sender, e, 50);
             //g.DrawImage(diez, locatie - 38, 50 - 8, 35, 35);
         }
 
@@ -357,9 +357,9 @@ namespace PortalSpreLumeaMuzicii
             //Image becar = Image.FromFile(@"extra\becar.png");
 
             g.DrawImage(cheiaSol, 75, 25, 90, 155);
-            if (cantece[nrCantec]._gama == "Sol Major")
+            if (songs[nrCantec]._gama == "Sol Major")
                 g.DrawImage(diez, 140, 45, 33, 33);
-            if (cantece[nrCantec]._gama == "Fa Major")
+            if (songs[nrCantec]._gama == "Fa Major")
                 g.DrawImage(bemol, 143, 78, 33, 33);
 
             int nota = 100;
@@ -374,7 +374,7 @@ namespace PortalSpreLumeaMuzicii
 
             }*/
             
-            foreach (int element in cantec[0])
+            foreach (int element in song[0])
             {
                 nota += 100;
                 Point point = new Point(nota, element / 10 * 10);
@@ -455,9 +455,9 @@ namespace PortalSpreLumeaMuzicii
             //Image diez = Image.FromFile(@"extra\diez.png");
             //Image becar = Image.FromFile(@"extra\becar.png");
             g.DrawImage(cheiaSol, 75, 25, 90, 155);
-            if (cantece[nrCantec]._gama == "Sol Major")
+            if (songs[nrCantec]._gama == "Sol Major")
                 g.DrawImage(diez, 140, 45, 33, 33);
-            if (cantece[nrCantec]._gama == "Fa Major")
+            if (songs[nrCantec]._gama == "Fa Major")
                 g.DrawImage(bemol, 143, 78, 33, 33);
 
             int nota = 100;
@@ -466,7 +466,7 @@ namespace PortalSpreLumeaMuzicii
             //Pen p = new Pen(Color.Black, 5);
             if (nrPortativ < nrPortative)
             {
-                foreach (int element in cantec[nrPortativ])
+                foreach (int element in song[nrPortativ])
                 {
                     nota += 100;
                     Point point = new Point(nota, element / 10 * 10);
@@ -606,7 +606,7 @@ namespace PortalSpreLumeaMuzicii
             }
             else
             {
-                for (int elem = nrPortativ * 10; elem < cantec.Count(); elem++)
+                for (int elem = nrPortativ * 10; elem < song.Count(); elem++)
                 {
                     nr += 100;
                     ///Point point = new Point(nr, cantec[elem]);

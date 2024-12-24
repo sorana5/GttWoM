@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace PortalSpreLumeaMuzicii
+namespace GatewayToTheWorldOfMusic
 {
     public partial class Cuprins : Form
     {
@@ -30,9 +30,9 @@ namespace PortalSpreLumeaMuzicii
         private void button1_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Form5 form5 = new Form5();
-            form5.ShowDialog();
-            form5 = null;
+            Tutorial tutorial = new Tutorial();
+            tutorial.ShowDialog();
+            tutorial = null;
             this.Show();
         }
 
@@ -46,18 +46,18 @@ namespace PortalSpreLumeaMuzicii
         private void button2_Click(object sender, EventArgs e)
         {
             this.Hide();
-            Form3 form3 = new Form3();
-            form3.ShowDialog();
-            form3 = null;
+            Piano piano = new Piano();
+            piano.ShowDialog();
+            piano = null;
             this.Show();
         }
 
         private void button3_Click_1(object sender, EventArgs e)
         {
             this.Hide();
-            Form4 form4 = new Form4();
-            form4.ShowDialog();
-            form4 = null;
+            Testing testing = new Testing();
+            testing.ShowDialog();
+            testing = null;
             this.Show();
         }
     }

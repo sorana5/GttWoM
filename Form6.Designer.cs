@@ -1,6 +1,6 @@
-﻿namespace PortalSpreLumeaMuzicii
+﻿namespace GatewayToTheWorldOfMusic
 {
-    partial class Form6
+    partial class Melody
     {
         /// <summary>
         /// Required designer variable.
@@ -419,7 +419,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(133, 37);
             this.button1.TabIndex = 27;
-            this.button1.Text = "Începe";
+            this.button1.Text = "Start";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -434,7 +434,7 @@
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(133, 37);
             this.button3.TabIndex = 30;
-            this.button3.Text = "Mai departe";
+            this.button3.Text = "Continue";
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Visible = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
@@ -465,7 +465,7 @@
             this.label1.Visible = false;
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // Form6
+            // Melody
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -503,7 +503,7 @@
             this.Controls.Add(this.c4);
             this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "Form6";
+            this.Name = "Melody";
             this.Text = "Melodie";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Form6_Load);
