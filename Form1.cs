@@ -14,6 +14,10 @@ namespace PortalSpreLumeaMuzicii
 {
     public partial class Start : Form
     {
+
+        /// <summary>
+        /// worked
+        /// </summary>
         public Start()
         {
             InitializeComponent();
