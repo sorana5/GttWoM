@@ -25,11 +25,11 @@ namespace GatewayToTheWorldOfMusic
         Graphics g;
         Random random = new Random();
 
-        Image cheiaSol = Image.FromFile(@"extra\cheie.png");
-        Image bemol = Image.FromFile(@"extra\bemol.png");
-        Image diez = Image.FromFile(@"extra\diez.png");
+        Image treble_clef = Image.FromFile(@"extra\cheie.png");
+        Image flat = Image.FromFile(@"extra\bemol.png");
+        Image sharp = Image.FromFile(@"extra\diez.png");
         //Image diezc = Image.FromFile(@"extra\diezc.png");
-        Image becar = Image.FromFile(@"extra\becar.png");
+        Image natural = Image.FromFile(@"extra\becar.png");
 
         public static List<Song> songs = new List<Song>();
         List < List < int > > song = new List<List<int>>();
@@ -44,8 +44,8 @@ namespace GatewayToTheWorldOfMusic
         80, 90, 100, 50, 60, 70, 40, 90, 80};*/
         //List<int> cantate = new List<int>();
 
-        Pen pen = new Pen(Color.MediumPurple, 5);
-        int nr, nrPortativ = 0, locatie = 100, element = 0, nrPortative, nrCantec;
+        Pen purple_pen = new Pen(Color.MediumPurple, 5);
+        int nr, staff_number = 0, location = 100, element = 0, number_staffs, song_number;
 
         /*private Dictionary<int, int> nrNote = new Dictionary<int, int>()
         {
@@ -65,9 +65,8 @@ namespace GatewayToTheWorldOfMusic
 
         private void Form6_Load(object sender, EventArgs e)
         {
-            //webBrowser1.Navigate("www.wikipedia.com");
             g = this.CreateGraphics();
-            Pen p = new Pen(Color.Black, 5);
+            Pen black_pen = new Pen(Color.Black, 5);
             Point p1 = new Point(100, 60);
             Point p2 = new Point(100, 80);
             Point p3 = new Point(100, 100);
@@ -76,27 +75,27 @@ namespace GatewayToTheWorldOfMusic
             Point[] points = new Point[] { p1, p2, p3, p4, p5 };
             //g.DrawLine(p, p1, p1 + new Size(100, 0));
             //g.DrawLines(p, points);
-            g.DrawLine(p, p1, p1 + new Size(1100, 0));
-            g.DrawLine(p, p2, p2 + new Size(1100, 0));
-            g.DrawLine(p, p3, p3 + new Size(1100, 0));
-            g.DrawLine(p, p4, p4 + new Size(1100, 0));
-            g.DrawLine(p, p5, p5 + new Size(1100, 0));
+            g.DrawLine(black_pen, p1, p1 + new Size(1100, 0));
+            g.DrawLine(black_pen, p2, p2 + new Size(1100, 0));
+            g.DrawLine(black_pen, p3, p3 + new Size(1100, 0));
+            g.DrawLine(black_pen, p4, p4 + new Size(1100, 0));
+            g.DrawLine(black_pen, p5, p5 + new Size(1100, 0));
 
-            g.DrawLine(p, new Point(1190, 58), new Point(1190, 143));
+            g.DrawLine(black_pen, new Point(1190, 58), new Point(1190, 143));
             g.DrawLine(new Pen(Color.Black, 10), new Point(1200, 58), new Point(1200, 143));
                 
             //Image cheiasol = Image.FromFile(@"extra\cheie.png");
             //Image becar = Image.FromFile(@"extra\becar.png");
-            g.DrawImage(cheiaSol, 75, 25, 90, 155);
+            g.DrawImage(treble_clef, 75, 25, 90, 155);
             //g.DrawImage(becar, 125, 50, 90, 155);
             //Image diez = Image.FromFile(@"extra\diez.png");
             //Image bemol = Image.FromFile(@"extra\bemol.png");
 
 
-            nrCantec = random.Next(0, Start.number_of_songs);
-            song = songs[nrCantec]._note;
-            label1.Text = "Ați cântat " + songs[nrCantec]._titlu + "!";
-            nrPortative = songs[nrCantec]._nrPortative;
+            song_number = random.Next(0, Start.number_of_songs);
+            song = songs[song_number]._note;
+            label1.Text = "You just played " + songs[song_number]._title + "!";
+            number_staffs = songs[song_number]._number_of_staffs;
             
             /*int nota = 100;
             //foreach (List<int> portativ in cantec)
@@ -119,11 +118,11 @@ namespace GatewayToTheWorldOfMusic
 
         void press_note(object sender, EventArgs e, int nota)
         {
-            locatie += 100;
-            if (nrPortativ <= nrPortative && locatie <= (song[nrPortativ-1].Count()+1) * 100)
+            location += 100;
+            if (staff_number <= number_staffs && location <= (song[staff_number-1].Count()+1) * 100)
             {
-                Point point = new Point(locatie, nota);
-                draw_note(sender, e, point, pen);
+                Point point = new Point(location, nota);
+                draw_note(sender, e, point, purple_pen);
             }
         }
         //if (nrPortativ <= 8 && locatie <= (nrNote[nrPortativ-1]+1) * 100
@@ -326,10 +325,10 @@ namespace GatewayToTheWorldOfMusic
         private void button1_Click(object sender, EventArgs e)
         {
             g.Clear(BackColor);
-            locatie = 100;
+            location = 100;
             element = 0;
-            nrPortativ = 0;
-            Pen p = new Pen(Color.Black, 5);
+            staff_number = 0;
+            Pen black_pen = new Pen(Color.Black, 5);
             Point p1 = new Point(100, 60);
             Point p2 = new Point(100, 80);
             Point p3 = new Point(100, 100);
@@ -338,11 +337,11 @@ namespace GatewayToTheWorldOfMusic
             //Point[] points = new Point[] { p1, p2, p3, p4, p5 };
             //g.DrawLine(p, p1, p1 + new Size(100, 0));
             //g.DrawLines(p, points);
-            g.DrawLine(p, p1, p1 + new Size(1100, 0));
-            g.DrawLine(p, p2, p2 + new Size(1100, 0));
-            g.DrawLine(p, p3, p3 + new Size(1100, 0));
-            g.DrawLine(p, p4, p4 + new Size(1100, 0));
-            g.DrawLine(p, p5, p5 + new Size(1100, 0));
+            g.DrawLine(black_pen, p1, p1 + new Size(1100, 0));
+            g.DrawLine(black_pen, p2, p2 + new Size(1100, 0));
+            g.DrawLine(black_pen, p3, p3 + new Size(1100, 0));
+            g.DrawLine(black_pen, p4, p4 + new Size(1100, 0));
+            g.DrawLine(black_pen, p5, p5 + new Size(1100, 0));
 
             button3.Visible = true;
             label1.Visible = false;
@@ -356,13 +355,13 @@ namespace GatewayToTheWorldOfMusic
             //Image diez = Image.FromFile(@"extra\diez.png");
             //Image becar = Image.FromFile(@"extra\becar.png");
 
-            g.DrawImage(cheiaSol, 75, 25, 90, 155);
-            if (songs[nrCantec]._gama == "Sol Major")
-                g.DrawImage(diez, 140, 45, 33, 33);
-            if (songs[nrCantec]._gama == "Fa Major")
-                g.DrawImage(bemol, 143, 78, 33, 33);
+            g.DrawImage(treble_clef, 75, 25, 90, 155);
+            if (songs[song_number]._scale == "Sol Major")
+                g.DrawImage(sharp, 140, 45, 33, 33);
+            if (songs[song_number]._scale == "Fa Major")
+                g.DrawImage(flat, 143, 78, 33, 33);
 
-            int nota = 100;
+            int current_note = 100;
             //Pen p = new Pen(Color.Black, 5);
             /*foreach (List <int> portativ in cantec)
             {
@@ -376,15 +375,15 @@ namespace GatewayToTheWorldOfMusic
             
             foreach (int element in song[0])
             {
-                nota += 100;
-                Point point = new Point(nota, element / 10 * 10);
+                current_note += 100;
+                Point point = new Point(current_note, element / 10 * 10);
                 if (element % 10 == 1)
-                    g.DrawImage(diez, nota - 38, element - 8, 35, 35);
+                    g.DrawImage(sharp, current_note - 38, element - 8, 35, 35);
                 if (element % 10 == 2)
-                    g.DrawImage(bemol, nota - 40, element - 15, 35, 35);
+                    g.DrawImage(flat, current_note - 40, element - 15, 35, 35);
                 if (element % 10 == 3)
-                    g.DrawImage(becar, nota - 35, element - 8, 25, 35);
-                draw_note(sender, e, point, p);
+                    g.DrawImage(natural, current_note - 35, element - 8, 25, 35);
+                draw_note(sender, e, point, black_pen);
             }
             //label1.Visible = true;
             //label1.Text = label1.Text + Convert.ToString(element);
@@ -395,7 +394,7 @@ namespace GatewayToTheWorldOfMusic
                 ///draw_note(sender, e, point, p);
                 element++;
             }*/
-            nrPortativ++;
+            staff_number++;
 
         }
 
@@ -435,7 +434,7 @@ namespace GatewayToTheWorldOfMusic
         private void button3_Click(object sender, EventArgs e)
         {
             g.Clear(BackColor);
-            Pen p = new Pen(Color.Black, 5);
+            Pen black_pen = new Pen(Color.Black, 5);
             Point p1 = new Point(100, 60);
             Point p2 = new Point(100, 80);
             Point p3 = new Point(100, 100);
@@ -444,45 +443,45 @@ namespace GatewayToTheWorldOfMusic
             Point[] points = new Point[] { p1, p2, p3, p4, p5 };
             //g.DrawLine(p, p1, p1 + new Size(100, 0));
             //g.DrawLines(p, points);
-            g.DrawLine(p, p1, p1 + new Size(1100, 0));
-            g.DrawLine(p, p2, p2 + new Size(1100, 0));
-            g.DrawLine(p, p3, p3 + new Size(1100, 0));
-            g.DrawLine(p, p4, p4 + new Size(1100, 0));
-            g.DrawLine(p, p5, p5 + new Size(1100, 0));
+            g.DrawLine(black_pen, p1, p1 + new Size(1100, 0));
+            g.DrawLine(black_pen, p2, p2 + new Size(1100, 0));
+            g.DrawLine(black_pen, p3, p3 + new Size(1100, 0));
+            g.DrawLine(black_pen, p4, p4 + new Size(1100, 0));
+            g.DrawLine(black_pen, p5, p5 + new Size(1100, 0));
 
             //Image newImage = Image.FromFile(@"extra\cheie.png");
             //Image bemol = Image.FromFile(@"extra\bemol.png");
             //Image diez = Image.FromFile(@"extra\diez.png");
             //Image becar = Image.FromFile(@"extra\becar.png");
-            g.DrawImage(cheiaSol, 75, 25, 90, 155);
-            if (songs[nrCantec]._gama == "Sol Major")
-                g.DrawImage(diez, 140, 45, 33, 33);
-            if (songs[nrCantec]._gama == "Fa Major")
-                g.DrawImage(bemol, 143, 78, 33, 33);
+            g.DrawImage(treble_clef, 75, 25, 90, 155);
+            if (songs[song_number]._scale == "Sol Major")
+                g.DrawImage(sharp, 140, 45, 33, 33);
+            if (songs[song_number]._scale == "Fa Major")
+                g.DrawImage(flat, 143, 78, 33, 33);
 
             int nota = 100;
             //label1.Text = Convert.ToString(nrPortative);
 
             //Pen p = new Pen(Color.Black, 5);
-            if (nrPortativ < nrPortative)
+            if (staff_number < number_staffs)
             {
-                foreach (int element in song[nrPortativ])
+                foreach (int element in song[staff_number])
                 {
                     nota += 100;
                     Point point = new Point(nota, element / 10 * 10);
                     if (element % 10 == 1)
-                        g.DrawImage(diez, nota - 38, element - 8, 35, 35);
+                        g.DrawImage(sharp, nota - 38, element - 8, 35, 35);
                     if (element % 10 == 2)
-                        g.DrawImage(bemol, nota - 40, element - 15, 35, 35);
+                        g.DrawImage(flat, nota - 40, element - 15, 35, 35);
                     if (element % 10 == 3)
-                        g.DrawImage(becar, nota - 35, element - 8, 25, 35);
-                    draw_note(sender, e, point, p);
+                        g.DrawImage(natural, nota - 35, element - 8, 25, 35);
+                    draw_note(sender, e, point, black_pen);
                 }
-                nrPortativ++;
-                locatie = 100;
-                if (nrPortativ == nrPortative)
+                staff_number++;
+                location = 100;
+                if (staff_number == number_staffs)
                 {
-                    g.DrawLine(p, new Point(1190, 58), new Point(1190, 143));
+                    g.DrawLine(black_pen, new Point(1190, 58), new Point(1190, 143));
                     g.DrawLine(new Pen(Color.Black, 10), new Point(1200, 58), new Point(1200, 143));
                     button3.Visible = false;
                     label1.Visible = true;
@@ -573,7 +572,7 @@ namespace GatewayToTheWorldOfMusic
         void urmator(object sender, EventArgs e)
         {
             g.Clear(BackColor);
-            Pen p = new Pen(Color.Black, 5);
+            Pen black_pen = new Pen(Color.Black, 5);
             Point p1 = new Point(100, 60);
             Point p2 = new Point(100, 80);
             Point p3 = new Point(100, 100);
@@ -582,37 +581,37 @@ namespace GatewayToTheWorldOfMusic
             Point[] points = new Point[] { p1, p2, p3, p4, p5 };
             //g.DrawLine(p, p1, p1 + new Size(100, 0));
             //g.DrawLines(p, points);
-            g.DrawLine(p, p1, p1 + new Size(1100, 0));
-            g.DrawLine(p, p2, p2 + new Size(1100, 0));
-            g.DrawLine(p, p3, p3 + new Size(1100, 0));
-            g.DrawLine(p, p4, p4 + new Size(1100, 0));
-            g.DrawLine(p, p5, p5 + new Size(1100, 0));
+            g.DrawLine(black_pen, p1, p1 + new Size(1100, 0));
+            g.DrawLine(black_pen, p2, p2 + new Size(1100, 0));
+            g.DrawLine(black_pen, p3, p3 + new Size(1100, 0));
+            g.DrawLine(black_pen, p4, p4 + new Size(1100, 0));
+            g.DrawLine(black_pen, p5, p5 + new Size(1100, 0));
 
             Image newImage = Image.FromFile(@"extra\cheie.png");
             g.DrawImage(newImage, 75, 25, 90, 155);
 
             int nr = 100;
             //Pen p = new Pen(Color.Black, 5);
-            if (nrPortativ < 6)
+            if (staff_number < 6)
             {
-                for (int elem = nrPortativ * 10; elem < nrPortativ * 10 + 10; elem++)
+                for (int elem = staff_number * 10; elem < staff_number * 10 + 10; elem++)
                 {
                     nr += 100;
                     ///Point point = new Point(nr, cantec[elem]);
                     ///draw_note(sender, e, point, p);
                 }
-                nrPortativ++;
-                locatie = 100;
+                staff_number++;
+                location = 100;
             }
             else
             {
-                for (int elem = nrPortativ * 10; elem < song.Count(); elem++)
+                for (int elem = staff_number * 10; elem < song.Count(); elem++)
                 {
                     nr += 100;
                     ///Point point = new Point(nr, cantec[elem]);
                     ///draw_note(sender, e, point, p);
                 }
-                g.DrawLine(p, new Point(1190, 58), new Point(1190, 143));
+                g.DrawLine(black_pen, new Point(1190, 58), new Point(1190, 143));
                 g.DrawLine(new Pen(Color.Black, 10), new Point(1200, 58), new Point(1200, 143));
             }
         }

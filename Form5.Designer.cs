@@ -50,12 +50,12 @@
             this.button1.BackColor = System.Drawing.Color.MediumPurple;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(1000, 542);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
+            this.button1.Location = new System.Drawing.Point(1125, 678);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(133, 37);
+            this.button1.Size = new System.Drawing.Size(150, 46);
             this.button1.TabIndex = 1;
-            this.button1.Text = "Înainte";
+            this.button1.Text = "Next";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
@@ -65,12 +65,12 @@
             this.button2.BackColor = System.Drawing.Color.MediumPurple;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(323, 542);
-            this.button2.Margin = new System.Windows.Forms.Padding(4);
+            this.button2.Location = new System.Drawing.Point(363, 678);
+            this.button2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(133, 37);
+            this.button2.Size = new System.Drawing.Size(150, 46);
             this.button2.TabIndex = 2;
-            this.button2.Text = "Înapoi";
+            this.button2.Text = "Previous";
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Visible = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
@@ -78,10 +78,10 @@
             // slidePic
             // 
             this.slidePic.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.slidePic.Location = new System.Drawing.Point(-101, -41);
-            this.slidePic.Margin = new System.Windows.Forms.Padding(4);
+            this.slidePic.Location = new System.Drawing.Point(-114, -51);
+            this.slidePic.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.slidePic.Name = "slidePic";
-            this.slidePic.Size = new System.Drawing.Size(1755, 651);
+            this.slidePic.Size = new System.Drawing.Size(1974, 814);
             this.slidePic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.slidePic.TabIndex = 0;
             this.slidePic.TabStop = false;
@@ -93,10 +93,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.label1.Location = new System.Drawing.Point(16, 407);
+            this.label1.Location = new System.Drawing.Point(18, 509);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(1401, 131);
+            this.label1.Size = new System.Drawing.Size(1576, 164);
             this.label1.TabIndex = 3;
             this.label1.Text = "label1";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -107,29 +107,29 @@
             this.button3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button3.BackColor = System.Drawing.Color.Firebrick;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Location = new System.Drawing.Point(1327, 46);
-            this.button3.Margin = new System.Windows.Forms.Padding(4);
+            this.button3.Location = new System.Drawing.Point(1493, 58);
+            this.button3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(33, 31);
+            this.button3.Size = new System.Drawing.Size(37, 39);
             this.button3.TabIndex = 4;
             this.button3.Text = "X";
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
-            // Form5
+            // Tutorial
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(1519, 741);
+            this.ClientSize = new System.Drawing.Size(1709, 926);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.slidePic);
-            this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "Form5";
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Name = "Tutorial";
             this.Text = "Tutorial";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             ((System.ComponentModel.ISupportInitialize)(this.slidePic)).EndInit();
