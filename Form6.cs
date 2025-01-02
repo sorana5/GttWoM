@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PortalSpreLumeaMuzicii;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -23,6 +24,7 @@ namespace GatewayToTheWorldOfMusic
 
         string note = "";
         Graphics g;
+        Staff staff = new Staff();
         Random random = new Random();
 
         Image treble_clef = Image.FromFile(@"extra\cheie.png");
@@ -66,27 +68,28 @@ namespace GatewayToTheWorldOfMusic
         private void Form6_Load(object sender, EventArgs e)
         {
             g = this.CreateGraphics();
-            Pen black_pen = new Pen(Color.Black, 5);
-            Point p1 = new Point(100, 60);
-            Point p2 = new Point(100, 80);
-            Point p3 = new Point(100, 100);
-            Point p4 = new Point(100, 120);
-            Point p5 = new Point(100, 140);
-            Point[] points = new Point[] { p1, p2, p3, p4, p5 };
-            //g.DrawLine(p, p1, p1 + new Size(100, 0));
-            //g.DrawLines(p, points);
-            g.DrawLine(black_pen, p1, p1 + new Size(1100, 0));
-            g.DrawLine(black_pen, p2, p2 + new Size(1100, 0));
-            g.DrawLine(black_pen, p3, p3 + new Size(1100, 0));
-            g.DrawLine(black_pen, p4, p4 + new Size(1100, 0));
-            g.DrawLine(black_pen, p5, p5 + new Size(1100, 0));
+            staff.draw_staff(g, false);
+            //Pen black_pen = new Pen(Color.Black, 5);
+            //Point p1 = new Point(100, 60);
+            //Point p2 = new Point(100, 80);
+            //Point p3 = new Point(100, 100);
+            //Point p4 = new Point(100, 120);
+            //Point p5 = new Point(100, 140);
+            //Point[] points = new Point[] { p1, p2, p3, p4, p5 };
+            ////g.DrawLine(p, p1, p1 + new Size(100, 0));
+            ////g.DrawLines(p, points);
+            //g.DrawLine(black_pen, p1, p1 + new Size(1100, 0));
+            //g.DrawLine(black_pen, p2, p2 + new Size(1100, 0));
+            //g.DrawLine(black_pen, p3, p3 + new Size(1100, 0));
+            //g.DrawLine(black_pen, p4, p4 + new Size(1100, 0));
+            //g.DrawLine(black_pen, p5, p5 + new Size(1100, 0));
 
-            g.DrawLine(black_pen, new Point(1190, 58), new Point(1190, 143));
-            g.DrawLine(new Pen(Color.Black, 10), new Point(1200, 58), new Point(1200, 143));
-                
-            //Image cheiasol = Image.FromFile(@"extra\cheie.png");
-            //Image becar = Image.FromFile(@"extra\becar.png");
-            g.DrawImage(treble_clef, 75, 25, 90, 155);
+            //g.DrawLine(black_pen, new Point(1190, 58), new Point(1190, 143));
+            //g.DrawLine(new Pen(Color.Black, 10), new Point(1200, 58), new Point(1200, 143));
+
+            ////Image cheiasol = Image.FromFile(@"extra\cheie.png");
+            ////Image becar = Image.FromFile(@"extra\becar.png");
+            //g.DrawImage(treble_clef, 75, 25, 90, 155);
             //g.DrawImage(becar, 125, 50, 90, 155);
             //Image diez = Image.FromFile(@"extra\diez.png");
             //Image bemol = Image.FromFile(@"extra\bemol.png");
@@ -328,20 +331,21 @@ namespace GatewayToTheWorldOfMusic
             location = 100;
             element = 0;
             staff_number = 0;
+            staff.draw_staff(g, false);
             Pen black_pen = new Pen(Color.Black, 5);
-            Point p1 = new Point(100, 60);
-            Point p2 = new Point(100, 80);
-            Point p3 = new Point(100, 100);
-            Point p4 = new Point(100, 120);
-            Point p5 = new Point(100, 140);
+            //Point p1 = new Point(100, 60);
+            //Point p2 = new Point(100, 80);
+            //Point p3 = new Point(100, 100);
+            //Point p4 = new Point(100, 120);
+            //Point p5 = new Point(100, 140);
             //Point[] points = new Point[] { p1, p2, p3, p4, p5 };
             //g.DrawLine(p, p1, p1 + new Size(100, 0));
             //g.DrawLines(p, points);
-            g.DrawLine(black_pen, p1, p1 + new Size(1100, 0));
-            g.DrawLine(black_pen, p2, p2 + new Size(1100, 0));
-            g.DrawLine(black_pen, p3, p3 + new Size(1100, 0));
-            g.DrawLine(black_pen, p4, p4 + new Size(1100, 0));
-            g.DrawLine(black_pen, p5, p5 + new Size(1100, 0));
+            //g.DrawLine(black_pen, p1, p1 + new Size(1100, 0));
+            //g.DrawLine(black_pen, p2, p2 + new Size(1100, 0));
+            //g.DrawLine(black_pen, p3, p3 + new Size(1100, 0));
+            //g.DrawLine(black_pen, p4, p4 + new Size(1100, 0));
+            //g.DrawLine(black_pen, p5, p5 + new Size(1100, 0));
 
             button3.Visible = true;
             label1.Visible = false;
@@ -355,7 +359,7 @@ namespace GatewayToTheWorldOfMusic
             //Image diez = Image.FromFile(@"extra\diez.png");
             //Image becar = Image.FromFile(@"extra\becar.png");
 
-            g.DrawImage(treble_clef, 75, 25, 90, 155);
+            //g.DrawImage(treble_clef, 75, 25, 90, 155);
             if (songs[song_number]._scale == "Sol Major")
                 g.DrawImage(sharp, 140, 45, 33, 33);
             if (songs[song_number]._scale == "Fa Major")
@@ -431,29 +435,35 @@ namespace GatewayToTheWorldOfMusic
             }*/
         }
 
+        private void flowLayoutPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
         private void button3_Click(object sender, EventArgs e)
         {
             g.Clear(BackColor);
+            staff.draw_staff(g, true);
             Pen black_pen = new Pen(Color.Black, 5);
-            Point p1 = new Point(100, 60);
-            Point p2 = new Point(100, 80);
-            Point p3 = new Point(100, 100);
-            Point p4 = new Point(100, 120);
-            Point p5 = new Point(100, 140);
-            Point[] points = new Point[] { p1, p2, p3, p4, p5 };
-            //g.DrawLine(p, p1, p1 + new Size(100, 0));
-            //g.DrawLines(p, points);
-            g.DrawLine(black_pen, p1, p1 + new Size(1100, 0));
-            g.DrawLine(black_pen, p2, p2 + new Size(1100, 0));
-            g.DrawLine(black_pen, p3, p3 + new Size(1100, 0));
-            g.DrawLine(black_pen, p4, p4 + new Size(1100, 0));
-            g.DrawLine(black_pen, p5, p5 + new Size(1100, 0));
+            //Point p1 = new Point(100, 60);
+            //Point p2 = new Point(100, 80);
+            //Point p3 = new Point(100, 100);
+            //Point p4 = new Point(100, 120);
+            //Point p5 = new Point(100, 140);
+            //Point[] points = new Point[] { p1, p2, p3, p4, p5 };
+            ////g.DrawLine(p, p1, p1 + new Size(100, 0));
+            ////g.DrawLines(p, points);
+            //g.DrawLine(black_pen, p1, p1 + new Size(1100, 0));
+            //g.DrawLine(black_pen, p2, p2 + new Size(1100, 0));
+            //g.DrawLine(black_pen, p3, p3 + new Size(1100, 0));
+            //g.DrawLine(black_pen, p4, p4 + new Size(1100, 0));
+            //g.DrawLine(black_pen, p5, p5 + new Size(1100, 0));
 
             //Image newImage = Image.FromFile(@"extra\cheie.png");
             //Image bemol = Image.FromFile(@"extra\bemol.png");
             //Image diez = Image.FromFile(@"extra\diez.png");
             //Image becar = Image.FromFile(@"extra\becar.png");
-            g.DrawImage(treble_clef, 75, 25, 90, 155);
+            //g.DrawImage(treble_clef, 75, 25, 90, 155);
             if (songs[song_number]._scale == "Sol Major")
                 g.DrawImage(sharp, 140, 45, 33, 33);
             if (songs[song_number]._scale == "Fa Major")

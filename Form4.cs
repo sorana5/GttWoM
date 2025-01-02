@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PortalSpreLumeaMuzicii;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -23,6 +24,7 @@ namespace GatewayToTheWorldOfMusic
 
         string notes = "";
         Graphics g;
+        Staff staff = new Staff();
         Random random = new Random();
         List <int> generated = new List<int>();
         List <int> sung = new List<int>();
@@ -39,24 +41,25 @@ namespace GatewayToTheWorldOfMusic
             //webBrowser1.Navigate("www.wikipedia.com");
             
             g = this.CreateGraphics();
-            Pen p = new Pen(Color.Black, 5);
-            Point p1 = new Point(100, 60);
-            Point p2 = new Point(100, 80);
-            Point p3 = new Point(100, 100);
-            Point p4 = new Point(100, 120);
-            Point p5 = new Point(100, 140);
-            
-            g.DrawLine(p, p1, p1 + new Size(1100, 0));
-            g.DrawLine(p, p2, p2 + new Size(1100, 0));
-            g.DrawLine(p, p3, p3 + new Size(1100, 0));
-            g.DrawLine(p, p4, p4 + new Size(1100, 0));
-            g.DrawLine(p, p5, p5 + new Size(1100, 0));
+            staff.draw_staff(g, true);
+            //Pen p = new Pen(Color.Black, 5);
+            //Point p1 = new Point(100, 60);
+            //Point p2 = new Point(100, 80);
+            //Point p3 = new Point(100, 100);
+            //Point p4 = new Point(100, 120);
+            //Point p5 = new Point(100, 140);
 
-            g.DrawLine(p, new Point(1190, 58), new Point(1190, 143));
-            g.DrawLine(new Pen(Color.Black, 10), new Point(1200, 58), new Point(1200, 143));
+            //g.DrawLine(p, p1, p1 + new Size(1100, 0));
+            //g.DrawLine(p, p2, p2 + new Size(1100, 0));
+            //g.DrawLine(p, p3, p3 + new Size(1100, 0));
+            //g.DrawLine(p, p4, p4 + new Size(1100, 0));
+            //g.DrawLine(p, p5, p5 + new Size(1100, 0));
 
-            Image treble_clef = Image.FromFile(@"extra\cheie.png");
-            g.DrawImage(treble_clef, 75, 25, 90, 155);
+            //g.DrawLine(p, new Point(1190, 58), new Point(1190, 143));
+            //g.DrawLine(new Pen(Color.Black, 10), new Point(1200, 58), new Point(1200, 143));
+
+            //Image treble_clef = Image.FromFile(@"extra\cheie.png");
+            //g.DrawImage(treble_clef, 75, 25, 90, 155);
 
             //Point[] points = new Point[] { p1, p2, p3, p4, p5 };
             //g.DrawLine(p, p1, p1 + new Size(100, 0));
@@ -264,27 +267,29 @@ namespace GatewayToTheWorldOfMusic
         {
             g.Clear(BackColor);
             sung.Clear();
-            //locatie = 100;
+            staff.draw_staff(g, true);
             Pen p = new Pen(Color.Black, 5);
-            Point p1 = new Point(100, 60);
-            Point p2 = new Point(100, 80);
-            Point p3 = new Point(100, 100);
-            Point p4 = new Point(100, 120);
-            Point p5 = new Point(100, 140);
-            //Point[] points = new Point[] { p1, p2, p3, p4, p5 };
-            //g.DrawLine(p, p1, p1 + new Size(100, 0));
-            //g.DrawLines(p, points);
-            g.DrawLine(p, p1, p1 + new Size(1100, 0));
-            g.DrawLine(p, p2, p2 + new Size(1100, 0));
-            g.DrawLine(p, p3, p3 + new Size(1100, 0));
-            g.DrawLine(p, p4, p4 + new Size(1100, 0));
-            g.DrawLine(p, p5, p5 + new Size(1100, 0));
+            //locatie = 100;
+            //Pen p = new Pen(Color.Black, 5);
+            //Point p1 = new Point(100, 60);
+            //Point p2 = new Point(100, 80);
+            //Point p3 = new Point(100, 100);
+            //Point p4 = new Point(100, 120);
+            //Point p5 = new Point(100, 140);
+            ////Point[] points = new Point[] { p1, p2, p3, p4, p5 };
+            ////g.DrawLine(p, p1, p1 + new Size(100, 0));
+            ////g.DrawLines(p, points);
+            //g.DrawLine(p, p1, p1 + new Size(1100, 0));
+            //g.DrawLine(p, p2, p2 + new Size(1100, 0));
+            //g.DrawLine(p, p3, p3 + new Size(1100, 0));
+            //g.DrawLine(p, p4, p4 + new Size(1100, 0));
+            //g.DrawLine(p, p5, p5 + new Size(1100, 0));
 
-            g.DrawLine(p, new Point(1190, 58), new Point(1190, 143));
-            g.DrawLine(new Pen(Color.Black, 10), new Point(1200, 58), new Point(1200, 143));
+            //g.DrawLine(p, new Point(1190, 58), new Point(1190, 143));
+            //g.DrawLine(new Pen(Color.Black, 10), new Point(1200, 58), new Point(1200, 143));
 
-            Image treble_clef = Image.FromFile(@"extra\cheie.png");
-            g.DrawImage(treble_clef, 75, 25, 90, 155);
+            //Image treble_clef = Image.FromFile(@"extra\cheie.png");
+            //g.DrawImage(treble_clef, 75, 25, 90, 155);
 
             /*Brush brush = new SolidBrush(Color.Black);
             Pen pen = new Pen(Color.Black, 6);

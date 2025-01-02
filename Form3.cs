@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PortalSpreLumeaMuzicii;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -22,10 +23,12 @@ namespace GatewayToTheWorldOfMusic
         {
             //webBrowser1.Navigate("www.wikipedia.com");
             g = this.CreateGraphics();
-            draw_staff(sender, e);
+            staff.draw_staff(g, true);
+            //draw_staff(sender, e);
         }
 
         Graphics g;
+        Staff staff = new Staff();
         Pen pen = new Pen(Color.MediumPurple, 5);
 
         Image treble_clef = Image.FromFile(@"extra\cheie.png");
@@ -65,26 +68,26 @@ namespace GatewayToTheWorldOfMusic
 
         }
 
-        private void draw_staff(object sender, EventArgs e)
-        {
-            Pen p = new Pen(Color.Black, 5);
-            Point p1 = new Point(100, 60);
-            Point p2 = new Point(100, 80);
-            Point p3 = new Point(100, 100);
-            Point p4 = new Point(100, 120);
-            Point p5 = new Point(100, 140);
+        //private void draw_staff(object sender, EventArgs e)
+        //{
+        //    Pen p = new Pen(Color.Black, 5);
+        //    Point p1 = new Point(100, 60);
+        //    Point p2 = new Point(100, 80);
+        //    Point p3 = new Point(100, 100);
+        //    Point p4 = new Point(100, 120);
+        //    Point p5 = new Point(100, 140);
             
-            g.DrawLine(p, p1, p1 + new Size(1100, 0));
-            g.DrawLine(p, p2, p2 + new Size(1100, 0));
-            g.DrawLine(p, p3, p3 + new Size(1100, 0));
-            g.DrawLine(p, p4, p4 + new Size(1100, 0));
-            g.DrawLine(p, p5, p5 + new Size(1100, 0));
+        //    g.DrawLine(p, p1, p1 + new Size(1100, 0));
+        //    g.DrawLine(p, p2, p2 + new Size(1100, 0));
+        //    g.DrawLine(p, p3, p3 + new Size(1100, 0));
+        //    g.DrawLine(p, p4, p4 + new Size(1100, 0));
+        //    g.DrawLine(p, p5, p5 + new Size(1100, 0));
 
-            g.DrawLine(p, new Point(1190, 58), new Point(1190, 143));
-            g.DrawLine(new Pen(Color.Black, 10), new Point(1200, 58), new Point(1200, 143));
+        //    g.DrawLine(p, new Point(1190, 58), new Point(1190, 143));
+        //    g.DrawLine(new Pen(Color.Black, 10), new Point(1200, 58), new Point(1200, 143));
 
-            g.DrawImage(treble_clef, 75, 25, 90, 155);
-        }
+        //    g.DrawImage(treble_clef, 75, 25, 90, 155);
+        //}
 
         private void c4_Click(object sender, EventArgs e)
         {
@@ -280,7 +283,7 @@ namespace GatewayToTheWorldOfMusic
         {
             g.Clear(BackColor);
             location = 100;
-            draw_staff(sender, e);
+            staff.draw_staff(g, true);
         }
     }
 }
