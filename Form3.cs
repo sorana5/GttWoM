@@ -23,12 +23,12 @@ namespace GatewayToTheWorldOfMusic
         {
             //webBrowser1.Navigate("www.wikipedia.com");
             g = this.CreateGraphics();
-            staff.draw_staff(g, true);
+            Staff.draw_staff(g, true);
             //draw_staff(sender, e);
         }
 
         Graphics g;
-        Staff staff = new Staff();
+        //Staff staff = new Staff();
         Pen pen = new Pen(Color.MediumPurple, 5);
 
         Image treble_clef = Image.FromFile(@"extra\cheie.png");
@@ -46,27 +46,28 @@ namespace GatewayToTheWorldOfMusic
             player.Play();
         }
 
-        void press_note(object sender, EventArgs e, int nota)
+        void press_note(object sender, EventArgs e, int note)
         {
             location += 100;
             if (location <= 1100)
             {
-                Point point = new Point(location, nota);
-                draw_note(sender, e, point, pen);
+                Point point = new Point(location, note);
+                Note.draw_note(g, point, pen);
+                //draw_note(sender, e, point, pen);
             }
         }
 
-        private void draw_note(object sender, EventArgs e, Point point, Pen p)
-        {
-            g.DrawEllipse(p, point.X, point.Y, 30, 20);
-            if (point.Y == 150)
-                g.DrawLine(p, point - new Size(10, -10), point + new Size(40, 10));
-            if (point.Y == 30 || point.Y == 20 || point.Y == 10)
-                g.DrawLine(p, new Point(point.X, 30) - new Size(10, -10), new Point(point.X, 30) + new Size(40, 10));
-            if (point.Y == 10)
-                g.DrawLine(p, point - new Size(10, -10), point + new Size(40, 10));
+        //private void draw_note(object sender, EventArgs e, Point point, Pen p)
+        //{
+        //    g.DrawEllipse(p, point.X, point.Y, 30, 20);
+        //    if (point.Y == 150)
+        //        g.DrawLine(p, point - new Size(10, -10), point + new Size(40, 10));
+        //    if (point.Y == 30 || point.Y == 20 || point.Y == 10)
+        //        g.DrawLine(p, new Point(point.X, 30) - new Size(10, -10), new Point(point.X, 30) + new Size(40, 10));
+        //    if (point.Y == 10)
+        //        g.DrawLine(p, point - new Size(10, -10), point + new Size(40, 10));
 
-        }
+        //}
 
         //private void draw_staff(object sender, EventArgs e)
         //{
@@ -283,7 +284,7 @@ namespace GatewayToTheWorldOfMusic
         {
             g.Clear(BackColor);
             location = 100;
-            staff.draw_staff(g, true);
+            Staff.draw_staff(g, true);
         }
     }
 }

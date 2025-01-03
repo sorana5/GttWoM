@@ -24,7 +24,7 @@ namespace GatewayToTheWorldOfMusic
 
         string notes = "";
         Graphics g;
-        Staff staff = new Staff();
+        //Staff staff = new Staff();
         Random random = new Random();
         List <int> generated = new List<int>();
         List <int> sung = new List<int>();
@@ -41,7 +41,7 @@ namespace GatewayToTheWorldOfMusic
             //webBrowser1.Navigate("www.wikipedia.com");
             
             g = this.CreateGraphics();
-            staff.draw_staff(g, true);
+            Staff.draw_staff(g, true);
             //Pen p = new Pen(Color.Black, 5);
             //Point p1 = new Point(100, 60);
             //Point p2 = new Point(100, 80);
@@ -267,8 +267,8 @@ namespace GatewayToTheWorldOfMusic
         {
             g.Clear(BackColor);
             sung.Clear();
-            staff.draw_staff(g, true);
-            Pen p = new Pen(Color.Black, 5);
+            Staff.draw_staff(g, true);
+            Pen black_pen = new Pen(Color.Black, 5);
             //locatie = 100;
             //Pen p = new Pen(Color.Black, 5);
             //Point p1 = new Point(100, 60);
@@ -321,23 +321,24 @@ namespace GatewayToTheWorldOfMusic
                 if (note <= 1100)
                 {
                     Point point = new Point(note, elem);
-                    draw_note(sender, e, point, p);
+                    Note.draw_note(g, point, black_pen);
+                    //draw_note(sender, e, point, black_pen);
                 }
             }
 
         }
 
-        private void draw_note(object sender, EventArgs e, Point point, Pen p)
-        {
-            g.DrawEllipse(p, point.X, point.Y, 30, 20);
-            if (point.Y == 150)
-                g.DrawLine(p, point - new Size (10, -10), point + new Size(40, 10));
-            if (point.Y == 30 || point.Y == 20 || point.Y == 10)
-                g.DrawLine(p, new Point(point.X, 30) - new Size(10, -10), new Point(point.X, 30) + new Size(40, 10));
-            if (point.Y == 10)
-                g.DrawLine(p, point - new Size(10, -10), point + new Size(40, 10));
+        //private void draw_note(object sender, EventArgs e, Point point, Pen p)
+        //{
+        //    g.DrawEllipse(p, point.X, point.Y, 30, 20);
+        //    if (point.Y == 150)
+        //        g.DrawLine(p, point - new Size (10, -10), point + new Size(40, 10));
+        //    if (point.Y == 30 || point.Y == 20 || point.Y == 10)
+        //        g.DrawLine(p, new Point(point.X, 30) - new Size(10, -10), new Point(point.X, 30) + new Size(40, 10));
+        //    if (point.Y == 10)
+        //        g.DrawLine(p, point - new Size(10, -10), point + new Size(40, 10));
 
-        }
+        //}
 
         /*private void pictureBox1_Click(object sender, EventArgs e)
         {
@@ -347,29 +348,31 @@ namespace GatewayToTheWorldOfMusic
         private void button2_Click(object sender, EventArgs e)
         {
             int note_number = 100;
-            Pen p = new Pen(Color.Black, 5);
+            Pen black_pen = new Pen(Color.Black, 5);
             foreach (int element in generated)
             {
                 note_number += 100;
                 if (note_number <= 1100)
                 {
                     Point point = new Point(note_number, element);
-                    draw_note(sender, e, point, p);
+                    Note.draw_note(g, point, black_pen);
+                    //draw_note(sender, e, point, p);
                 }
             }
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Pen p = new Pen(Color.MediumPurple, 5);
+            Pen purple_pen = new Pen(Color.MediumPurple, 5);
             int x = 100;
-            foreach (int nota in sung)
+            foreach (int note in sung)
             {
                 x += 100;
                 if (x <= 1100)
                 {
-                    Point point = new Point(x, nota);
-                    draw_note(sender, e, point, p);
+                    Point point = new Point(x, note);
+                    Note.draw_note(g, point, purple_pen);
+                    //draw_note(sender, e, point, p);
                 }
             }
         }

@@ -24,7 +24,7 @@ namespace GatewayToTheWorldOfMusic
 
         string note = "";
         Graphics g;
-        Staff staff = new Staff();
+        //Staff staff = new Staff();
         Random random = new Random();
 
         Image treble_clef = Image.FromFile(@"extra\cheie.png");
@@ -68,7 +68,7 @@ namespace GatewayToTheWorldOfMusic
         private void Form6_Load(object sender, EventArgs e)
         {
             g = this.CreateGraphics();
-            staff.draw_staff(g, false);
+            Staff.draw_staff(g, false);
             //Pen black_pen = new Pen(Color.Black, 5);
             //Point p1 = new Point(100, 60);
             //Point p2 = new Point(100, 80);
@@ -125,7 +125,8 @@ namespace GatewayToTheWorldOfMusic
             if (staff_number <= number_staffs && location <= (song[staff_number-1].Count()+1) * 100)
             {
                 Point point = new Point(location, nota);
-                draw_note(sender, e, point, purple_pen);
+                Note.draw_note(g, point, purple_pen);
+                //draw_note(sender, e, point, purple_pen);
             }
         }
         //if (nrPortativ <= 8 && locatie <= (nrNote[nrPortativ-1]+1) * 100
@@ -331,7 +332,7 @@ namespace GatewayToTheWorldOfMusic
             location = 100;
             element = 0;
             staff_number = 0;
-            staff.draw_staff(g, false);
+            Staff.draw_staff(g, false);
             Pen black_pen = new Pen(Color.Black, 5);
             //Point p1 = new Point(100, 60);
             //Point p2 = new Point(100, 80);
@@ -387,7 +388,8 @@ namespace GatewayToTheWorldOfMusic
                     g.DrawImage(flat, current_note - 40, element - 15, 35, 35);
                 if (element % 10 == 3)
                     g.DrawImage(natural, current_note - 35, element - 8, 25, 35);
-                draw_note(sender, e, point, black_pen);
+                Note.draw_note(g, point, black_pen);
+                //draw_note(sender, e, point, black_pen);
             }
             //label1.Visible = true;
             //label1.Text = label1.Text + Convert.ToString(element);
@@ -443,7 +445,7 @@ namespace GatewayToTheWorldOfMusic
         private void button3_Click(object sender, EventArgs e)
         {
             g.Clear(BackColor);
-            staff.draw_staff(g, true);
+            Staff.draw_staff(g, true);
             Pen black_pen = new Pen(Color.Black, 5);
             //Point p1 = new Point(100, 60);
             //Point p2 = new Point(100, 80);
@@ -485,7 +487,8 @@ namespace GatewayToTheWorldOfMusic
                         g.DrawImage(flat, nota - 40, element - 15, 35, 35);
                     if (element % 10 == 3)
                         g.DrawImage(natural, nota - 35, element - 8, 25, 35);
-                    draw_note(sender, e, point, black_pen);
+                    Note.draw_note(g, point, black_pen);
+                    //draw_note(sender, e, point, black_pen);
                 }
                 staff_number++;
                 location = 100;

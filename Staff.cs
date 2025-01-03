@@ -9,7 +9,7 @@ namespace PortalSpreLumeaMuzicii
 {
     internal class Staff
     {
-        public void draw_staff(Graphics graphics, bool ending)
+        public static void draw_staff(Graphics graphics, bool ending)
         {
             Pen black_pen = new Pen(Color.Black, 5);
             Point p1 = new Point(100, 60);
