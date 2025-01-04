@@ -32,10 +32,10 @@ namespace GatewayToTheWorldOfMusic
 
             var services = new ServiceCollection();
 
-            var configuration = new ConfigurationBuilder()
-                .SetBasePath(AppDomain.CurrentDomain.BaseDirectory)  // Ensure the path is correct
-                .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
-                .Build();
+            //var configuration = new ConfigurationBuilder()
+            //    .SetBasePath(AppDomain.CurrentDomain.BaseDirectory)  // Ensure the path is correct
+            //    .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
+            //    .Build();
 
             services.AddDbContext<AppDbContext>(/*options =>
                 options.UseNpgsql("Host=localhost;Port=5432;Database=gateway;Username=postgres;Password=password")*/);

@@ -19,7 +19,7 @@ namespace GatewayToTheWorldOfMusic.Data
         //{
         //    optionsBuilder.UseSqlServer("Your Connection String");
         //}
-
+       
         //protected readonly IConfiguration configuration;
 
         public AppDbContext(/*IConfiguration configuration*/)

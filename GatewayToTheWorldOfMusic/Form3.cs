@@ -24,7 +24,7 @@ namespace GatewayToTheWorldOfMusic
         {
             //webBrowser1.Navigate("www.wikipedia.com");
             
-            draw_staff(g, true);
+            Staff.draw_staff(g, true);
             //draw_staff(sender, e);
         }
 
@@ -53,7 +53,7 @@ namespace GatewayToTheWorldOfMusic
             if (location <= 1100)
             {
                 Point point = new Point(location, note);
-                draw_note(g, point, pen);
+                Note.draw_note(g, point, pen);
                 //draw_note(sender, e, point, pen);
             }
         }
@@ -333,7 +333,7 @@ namespace GatewayToTheWorldOfMusic
         {
             g.Clear(BackColor);
             location = 100;
-            draw_staff(g, true);
+            Staff.draw_staff(g, true);
         }
     }
 }
