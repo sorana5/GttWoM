@@ -23,7 +23,7 @@ namespace GatewayToTheWorldOfMusic
         private void Form3_Load(object sender, EventArgs e)
         {
             //webBrowser1.Navigate("www.wikipedia.com");
-            
+
             Staff.draw_staff(g, true);
             //draw_staff(sender, e);
         }
@@ -43,7 +43,7 @@ namespace GatewayToTheWorldOfMusic
 
         public void Play(string notePath)
         {
-            System.Media.SoundPlayer player = new System.Media.SoundPlayer(notePath); 
+            System.Media.SoundPlayer player = new System.Media.SoundPlayer(notePath);
             player.Play();
         }
 
@@ -58,28 +58,28 @@ namespace GatewayToTheWorldOfMusic
             }
         }
 
-        public static void draw_note(Graphics graphics, Point point, Pen pen)
-        {
-            graphics.DrawEllipse(pen, point.X, point.Y, 30, 20);
-            if (point.Y == 150)
-                graphics.DrawLine(pen, point - new Size(10, -10), point + new Size(40, 10));
-            if (point.Y == 30 || point.Y == 20 || point.Y == 10)
-                graphics.DrawLine(pen, new Point(point.X, 30) - new Size(10, -10), new Point(point.X, 30) + new Size(40, 10));
-            if (point.Y == 10)
-                graphics.DrawLine(pen, point - new Size(10, -10), point + new Size(40, 10));
+        //public static void draw_note(Graphics graphics, Point point, Pen pen)
+        //{
+        //    graphics.DrawEllipse(pen, point.X, point.Y, 30, 20);
+        //    if (point.Y == 150)
+        //        graphics.DrawLine(pen, point - new Size(10, -10), point + new Size(40, 10));
+        //    if (point.Y == 30 || point.Y == 20 || point.Y == 10)
+        //        graphics.DrawLine(pen, new Point(point.X, 30) - new Size(10, -10), new Point(point.X, 30) + new Size(40, 10));
+        //    if (point.Y == 10)
+        //        graphics.DrawLine(pen, point - new Size(10, -10), point + new Size(40, 10));
 
-            Image flat = Image.FromFile(@"extra\bemol.png");
-            Image sharp = Image.FromFile(@"extra\diez.png");
-            Image natural = Image.FromFile(@"extra\becar.png");
+        //    Image flat = Image.FromFile(@"extra\bemol.png");
+        //    Image sharp = Image.FromFile(@"extra\diez.png");
+        //    Image natural = Image.FromFile(@"extra\becar.png");
 
-            //if (alteration)
-            //    g.DrawImage(sharp, current_note - 38, element - 8, 35, 35);
-            //if (element % 10 == 2)
-            //    g.DrawImage(flat, current_note - 40, element - 15, 35, 35);
-            //if (element % 10 == 3)
-            //    g.DrawImage(natural, current_note - 35, element - 8, 25, 35);
+        //    //if (alteration)
+        //    //    g.DrawImage(sharp, current_note - 38, element - 8, 35, 35);
+        //    //if (element % 10 == 2)
+        //    //    g.DrawImage(flat, current_note - 40, element - 15, 35, 35);
+        //    //if (element % 10 == 3)
+        //    //    g.DrawImage(natural, current_note - 35, element - 8, 25, 35);
 
-        }
+        //}
 
         //private void draw_note(object sender, EventArgs e, Point point, Pen p)
         //{
@@ -129,7 +129,7 @@ namespace GatewayToTheWorldOfMusic
             Play(path);
             press_note(sender, e, 120);
         }
-        
+
         private void csharp_Click(object sender, EventArgs e)
         {
             string fileName = "c4sharp.wav";
@@ -334,6 +334,11 @@ namespace GatewayToTheWorldOfMusic
             g.Clear(BackColor);
             location = 100;
             Staff.draw_staff(g, true);
+        }
+
+        private void sButton1_CheckedChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
