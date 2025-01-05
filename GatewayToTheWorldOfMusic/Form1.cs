@@ -115,15 +115,26 @@ namespace GatewayToTheWorldOfMusic
                 string title = sr.ReadLine();
                 string scale = sr.ReadLine();
                 string values = sr.ReadLine();
-                List<List<int>> notes = new List<List<int>>();
+                List<List<Note>> notes = new List<List<Note>>();
                 int line = 0;
                 while (values[0] != '.')
                 {
                     string[] notes_names = values.Split(' ');
-                    List <int> staff = new List<int>();
+                    List <Note> current_staff = new List<Note>();
                     foreach (var name in notes_names)
-                        staff.Add(convert_notes[name]);
-                    notes.Add(staff);
+                    {
+                        int converted_note = convert_notes[name];
+                        if (converted_note % 10 == 1)
+                            current_staff.Add(new Note(1, converted_note));
+                        else if (converted_note % 10 == 2)
+                            current_staff.Add(new Note(-1, converted_note));
+                        else if (converted_note % 10 == 3)
+                            current_staff.Add(new Note(10, converted_note));
+                        else
+                            current_staff.Add(new Note(0, converted_note));
+                    }
+                        //current_staff.Add(new Note(0, convert_notes[name]));
+                    notes.Add(current_staff);
                     line++;
                     values = sr.ReadLine();
                 }

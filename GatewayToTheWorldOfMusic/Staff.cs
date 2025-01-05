@@ -33,5 +33,34 @@ namespace GatewayToTheWorldOfMusic
             Image treble_clef = Image.FromFile(@"extra\cheie.png");
             graphics.DrawImage(treble_clef, 75, 25, 90, 155);
         }
+
+        public static void draw_key_signature(Graphics graphics, string scale)
+        {
+            Image flat = Image.FromFile(@"extra\flat_black.png");
+            Image sharp = Image.FromFile(@"extra\sharp_black.png");
+            Image natural = Image.FromFile(@"extra\natural_black.png");
+
+            if (scale == "Sol Major")
+                graphics.DrawImage(sharp, 140, 45, 33, 33);
+            if (scale == "Fa Major")
+                graphics.DrawImage(flat, 143, 78, 33, 33);
+
+            //if (alteration == 1)
+            //    graphics.DrawImage(sharp, 100, altitude - 8, 35, 35);
+            //if (alteration == 2)
+            //    graphics.DrawImage(flat, 100, altitude - 15, 35, 35);
+            //if (alteration == 3)
+            //    graphics.DrawImage(natural, 100, altitude - 8, 25, 35);
+        }
+
+        public static void draw_current_staff(Graphics graphics, List<Note> current_staff, Pen pen)
+        {
+            int location = 100;
+            foreach (Note note in current_staff)
+            {
+                location += 100;
+                note.draw_it(graphics, location, pen);
+            }
+        }
     }
 }

@@ -9,7 +9,7 @@ namespace GatewayToTheWorldOfMusic
     public class Song
     {
         public int _number_of_staffs;
-        public List<List<int>> _note = new List<List<int>>();
+        public List<List<Note>> _note = new List<List<Note>>();
         public string _title;
         public string _scale;
 
@@ -18,7 +18,7 @@ namespace GatewayToTheWorldOfMusic
         public bool Sung
         { get { return _sung; } set { _sung = value; } }
 
-        public List < List <int>> Notes
+        public List < List <Note>> Notes
         { get { return _note; } set { _note = value; } }
 
         public string Title
@@ -30,7 +30,7 @@ namespace GatewayToTheWorldOfMusic
         public int NumberOfStaffs
         { get { return _number_of_staffs; } set { _number_of_staffs = value; } }
 
-        public Song(string title, string scale, int number_of_staffs, List<List<int>> notes)
+        public Song(string title, string scale, int number_of_staffs, List<List<Note>> notes)
         {
             Title = title;
             Scale = scale;
