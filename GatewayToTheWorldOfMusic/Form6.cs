@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Formats.Asn1.AsnWriter;
 
 namespace GatewayToTheWorldOfMusic
 {
@@ -100,7 +101,7 @@ namespace GatewayToTheWorldOfMusic
             song_number = random.Next(0, Start.number_of_songs);
             song = songs[song_number]._note;
             label1.Text = "You just played " + songs[song_number]._title + "!";
-            current_score.Text = "Your current score is " + total_score + "!";
+            current_score.Text = "Your current score is " + total_score;
             number_staffs = songs[song_number]._number_of_staffs;
             
             /*int nota = 100;
@@ -151,6 +152,19 @@ namespace GatewayToTheWorldOfMusic
                 sung.Add(new Note(alteration, altitude));
                 Point point = new Point(location, altitude);
                 Note.draw_note(g, point, purple_pen);
+
+                //int absolute_value_sung = altitude;
+                //if (alteration != 10)
+                int absolute_value_sung = altitude - alteration * 5;
+
+                int index = location / 100 - 2;
+                int absolute_expected_value = song[staff_number - 1][index].absolute_value(songs[song_number]._scale);
+                //if (song[staff_number - 1][index].alteration != 10)
+                //    absolute_expected_value = song[staff_number - 1][index].altitude - song[staff_number - 1][index].alteration * 5;
+
+                if (absolute_value_sung == absolute_expected_value)
+                    total_score += 10;
+                current_score.Text = "Your current score is " + total_score + " " + absolute_value_sung + " " + absolute_expected_value + " " + location;
                 //draw_note(sender, e, point, purple_pen);
             }
         }
@@ -355,7 +369,7 @@ namespace GatewayToTheWorldOfMusic
             string fileName = "f5sharp.wav";
             string path = Path.Combine(Environment.CurrentDirectory, @"note\", fileName);
             Play(path);
-            press_note(sender, e, 0, 50);
+            press_note(sender, e, 1, 50);
             //g.DrawImage(diez, locatie - 38, 50 - 8, 35, 35);
         }
 
@@ -517,8 +531,8 @@ namespace GatewayToTheWorldOfMusic
             //label1.Text = Convert.ToString(nrPortative);
 
             //Pen p = new Pen(Color.Black, 5);
-            total_score += calculate_score(sung, song[staff_number-1]);
-            current_score.Text = "Your current score is " + total_score + "!";
+            //total_score += calculate_score(sung, song[staff_number-1]);
+            current_score.Text = "Your current score is " + total_score;
             if (staff_number < number_staffs)
             {
                 Staff.draw_current_staff(g, song[staff_number], black_pen);

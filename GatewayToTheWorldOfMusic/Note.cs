@@ -20,6 +20,18 @@ namespace GatewayToTheWorldOfMusic
             this.alteration = alteration;
         }
 
+        public int absolute_value(string scale)
+        {
+            int av = altitude;
+            if (alteration != 10)
+                av = altitude - alteration * 5;
+            if (scale == "Sol Major" && (altitude == 120 || altitude == 50))
+                av -= 5;
+            if (scale == "Fa Major" && (altitude == 90 || altitude == 20))
+                av += 5;
+            return av;
+        }
+
         public static void draw_note(Graphics graphics, Point point, Pen pen)
         {
             graphics.DrawEllipse(pen, point.X, point.Y, 30, 20);
