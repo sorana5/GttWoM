@@ -58,6 +58,7 @@
             button2 = new Button();
             button4 = new Button();
             switchButton = new SButton();
+            score = new Label();
             SuspendLayout();
             // 
             // c4
@@ -480,6 +481,15 @@
             switchButton.TabIndex = 33;
             switchButton.UseVisualStyleBackColor = true;
             // 
+            // score
+            // 
+            score.AutoSize = true;
+            score.Location = new Point(1376, 194);
+            score.Name = "score";
+            score.Size = new Size(38, 15);
+            score.TabIndex = 34;
+            score.Text = "label1";
+            // 
             // Testing
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -487,6 +497,7 @@
             AutoScroll = true;
             BackColor = SystemColors.Control;
             ClientSize = new Size(1684, 906);
+            Controls.Add(score);
             Controls.Add(switchButton);
             Controls.Add(button4);
             Controls.Add(button2);
@@ -558,5 +569,6 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button4;
         private SButton switchButton;
+        private Label score;
     }
 }

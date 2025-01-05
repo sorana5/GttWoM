@@ -28,488 +28,499 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.c4 = new System.Windows.Forms.Button();
-            this.g4 = new System.Windows.Forms.Button();
-            this.c5 = new System.Windows.Forms.Button();
-            this.a4 = new System.Windows.Forms.Button();
-            this.b4 = new System.Windows.Forms.Button();
-            this.f4 = new System.Windows.Forms.Button();
-            this.e4 = new System.Windows.Forms.Button();
-            this.d4 = new System.Windows.Forms.Button();
-            this.e5 = new System.Windows.Forms.Button();
-            this.d5 = new System.Windows.Forms.Button();
-            this.f5 = new System.Windows.Forms.Button();
-            this.g5 = new System.Windows.Forms.Button();
-            this.c6 = new System.Windows.Forms.Button();
-            this.b5 = new System.Windows.Forms.Button();
-            this.a5 = new System.Windows.Forms.Button();
-            this.csharp = new System.Windows.Forms.Button();
-            this.d4sharp = new System.Windows.Forms.Button();
-            this.f4sharp = new System.Windows.Forms.Button();
-            this.g4sharp = new System.Windows.Forms.Button();
-            this.a4sharp = new System.Windows.Forms.Button();
-            this.c5sharp = new System.Windows.Forms.Button();
-            this.d5sharp = new System.Windows.Forms.Button();
-            this.f5sharp = new System.Windows.Forms.Button();
-            this.g5sharp = new System.Windows.Forms.Button();
-            this.a5sharp = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.SuspendLayout();
+            c4 = new Button();
+            g4 = new Button();
+            c5 = new Button();
+            a4 = new Button();
+            b4 = new Button();
+            f4 = new Button();
+            e4 = new Button();
+            d4 = new Button();
+            e5 = new Button();
+            d5 = new Button();
+            f5 = new Button();
+            g5 = new Button();
+            c6 = new Button();
+            b5 = new Button();
+            a5 = new Button();
+            csharp = new Button();
+            d4sharp = new Button();
+            f4sharp = new Button();
+            g4sharp = new Button();
+            a4sharp = new Button();
+            c5sharp = new Button();
+            d5sharp = new Button();
+            f5sharp = new Button();
+            g5sharp = new Button();
+            a5sharp = new Button();
+            button1 = new Button();
+            button3 = new Button();
+            button2 = new Button();
+            label1 = new Label();
+            current_score = new Label();
+            SuspendLayout();
             // 
             // c4
             // 
-            this.c4.BackColor = System.Drawing.Color.White;
-            this.c4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.c4.Location = new System.Drawing.Point(42, 334);
-            this.c4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.c4.Name = "c4";
-            this.c4.Size = new System.Drawing.Size(150, 806);
-            this.c4.TabIndex = 1;
-            this.c4.Text = "C";
-            this.c4.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.c4.UseVisualStyleBackColor = false;
-            this.c4.Click += new System.EventHandler(this.c4_Click);
+            c4.BackColor = Color.White;
+            c4.ForeColor = SystemColors.ActiveCaptionText;
+            c4.Location = new Point(33, 250);
+            c4.Margin = new Padding(3, 4, 3, 4);
+            c4.Name = "c4";
+            c4.Size = new Size(117, 604);
+            c4.TabIndex = 1;
+            c4.Text = "C";
+            c4.TextAlign = ContentAlignment.BottomCenter;
+            c4.UseVisualStyleBackColor = false;
+            c4.Click += c4_Click;
             // 
             // g4
             // 
-            this.g4.BackColor = System.Drawing.Color.White;
-            this.g4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.g4.Location = new System.Drawing.Point(642, 334);
-            this.g4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.g4.Name = "g4";
-            this.g4.Size = new System.Drawing.Size(150, 806);
-            this.g4.TabIndex = 2;
-            this.g4.Text = "G";
-            this.g4.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.g4.UseVisualStyleBackColor = false;
-            this.g4.Click += new System.EventHandler(this.g4_Click);
+            g4.BackColor = Color.White;
+            g4.ForeColor = SystemColors.ActiveCaptionText;
+            g4.Location = new Point(499, 250);
+            g4.Margin = new Padding(3, 4, 3, 4);
+            g4.Name = "g4";
+            g4.Size = new Size(117, 604);
+            g4.TabIndex = 2;
+            g4.Text = "G";
+            g4.TextAlign = ContentAlignment.BottomCenter;
+            g4.UseVisualStyleBackColor = false;
+            g4.Click += g4_Click;
             // 
             // c5
             // 
-            this.c5.BackColor = System.Drawing.Color.White;
-            this.c5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.c5.Location = new System.Drawing.Point(1095, 334);
-            this.c5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.c5.Name = "c5";
-            this.c5.Size = new System.Drawing.Size(150, 806);
-            this.c5.TabIndex = 3;
-            this.c5.Text = "C";
-            this.c5.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.c5.UseVisualStyleBackColor = false;
-            this.c5.Click += new System.EventHandler(this.c5_Click);
+            c5.BackColor = Color.White;
+            c5.ForeColor = SystemColors.ActiveCaptionText;
+            c5.Location = new Point(852, 250);
+            c5.Margin = new Padding(3, 4, 3, 4);
+            c5.Name = "c5";
+            c5.Size = new Size(117, 604);
+            c5.TabIndex = 3;
+            c5.Text = "C";
+            c5.TextAlign = ContentAlignment.BottomCenter;
+            c5.UseVisualStyleBackColor = false;
+            c5.Click += c5_Click;
             // 
             // a4
             // 
-            this.a4.BackColor = System.Drawing.Color.White;
-            this.a4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.a4.Location = new System.Drawing.Point(792, 334);
-            this.a4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.a4.Name = "a4";
-            this.a4.Size = new System.Drawing.Size(150, 806);
-            this.a4.TabIndex = 4;
-            this.a4.Text = "A";
-            this.a4.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.a4.UseVisualStyleBackColor = false;
-            this.a4.Click += new System.EventHandler(this.a4_Click);
+            a4.BackColor = Color.White;
+            a4.ForeColor = SystemColors.ActiveCaptionText;
+            a4.Location = new Point(616, 250);
+            a4.Margin = new Padding(3, 4, 3, 4);
+            a4.Name = "a4";
+            a4.Size = new Size(117, 604);
+            a4.TabIndex = 4;
+            a4.Text = "A";
+            a4.TextAlign = ContentAlignment.BottomCenter;
+            a4.UseVisualStyleBackColor = false;
+            a4.Click += a4_Click;
             // 
             // b4
             // 
-            this.b4.BackColor = System.Drawing.Color.White;
-            this.b4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.b4.Location = new System.Drawing.Point(944, 334);
-            this.b4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.b4.Name = "b4";
-            this.b4.Size = new System.Drawing.Size(150, 806);
-            this.b4.TabIndex = 5;
-            this.b4.Text = "B";
-            this.b4.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.b4.UseVisualStyleBackColor = false;
-            this.b4.Click += new System.EventHandler(this.b4_Click);
+            b4.BackColor = Color.White;
+            b4.ForeColor = SystemColors.ActiveCaptionText;
+            b4.Location = new Point(734, 250);
+            b4.Margin = new Padding(3, 4, 3, 4);
+            b4.Name = "b4";
+            b4.Size = new Size(117, 604);
+            b4.TabIndex = 5;
+            b4.Text = "B";
+            b4.TextAlign = ContentAlignment.BottomCenter;
+            b4.UseVisualStyleBackColor = false;
+            b4.Click += b4_Click;
             // 
             // f4
             // 
-            this.f4.BackColor = System.Drawing.Color.White;
-            this.f4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.f4.Location = new System.Drawing.Point(492, 334);
-            this.f4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.f4.Name = "f4";
-            this.f4.Size = new System.Drawing.Size(150, 806);
-            this.f4.TabIndex = 6;
-            this.f4.Text = "F";
-            this.f4.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.f4.UseVisualStyleBackColor = false;
-            this.f4.Click += new System.EventHandler(this.button6_Click);
+            f4.BackColor = Color.White;
+            f4.ForeColor = SystemColors.ActiveCaptionText;
+            f4.Location = new Point(383, 250);
+            f4.Margin = new Padding(3, 4, 3, 4);
+            f4.Name = "f4";
+            f4.Size = new Size(117, 604);
+            f4.TabIndex = 6;
+            f4.Text = "F";
+            f4.TextAlign = ContentAlignment.BottomCenter;
+            f4.UseVisualStyleBackColor = false;
+            f4.Click += button6_Click;
             // 
             // e4
             // 
-            this.e4.BackColor = System.Drawing.Color.White;
-            this.e4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.e4.Location = new System.Drawing.Point(342, 334);
-            this.e4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.e4.Name = "e4";
-            this.e4.Size = new System.Drawing.Size(150, 806);
-            this.e4.TabIndex = 7;
-            this.e4.Text = "E";
-            this.e4.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.e4.UseVisualStyleBackColor = false;
-            this.e4.Click += new System.EventHandler(this.e4_Click);
+            e4.BackColor = Color.White;
+            e4.ForeColor = SystemColors.ActiveCaptionText;
+            e4.Location = new Point(266, 250);
+            e4.Margin = new Padding(3, 4, 3, 4);
+            e4.Name = "e4";
+            e4.Size = new Size(117, 604);
+            e4.TabIndex = 7;
+            e4.Text = "E";
+            e4.TextAlign = ContentAlignment.BottomCenter;
+            e4.UseVisualStyleBackColor = false;
+            e4.Click += e4_Click;
             // 
             // d4
             // 
-            this.d4.BackColor = System.Drawing.Color.White;
-            this.d4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.d4.Location = new System.Drawing.Point(192, 334);
-            this.d4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.d4.Name = "d4";
-            this.d4.Size = new System.Drawing.Size(150, 806);
-            this.d4.TabIndex = 8;
-            this.d4.Text = "D";
-            this.d4.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.d4.UseVisualStyleBackColor = false;
-            this.d4.Click += new System.EventHandler(this.d4_Click);
+            d4.BackColor = Color.White;
+            d4.ForeColor = SystemColors.ActiveCaptionText;
+            d4.Location = new Point(149, 250);
+            d4.Margin = new Padding(3, 4, 3, 4);
+            d4.Name = "d4";
+            d4.Size = new Size(117, 604);
+            d4.TabIndex = 8;
+            d4.Text = "D";
+            d4.TextAlign = ContentAlignment.BottomCenter;
+            d4.UseVisualStyleBackColor = false;
+            d4.Click += d4_Click;
             // 
             // e5
             // 
-            this.e5.BackColor = System.Drawing.Color.White;
-            this.e5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.e5.Location = new System.Drawing.Point(1398, 334);
-            this.e5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.e5.Name = "e5";
-            this.e5.Size = new System.Drawing.Size(150, 806);
-            this.e5.TabIndex = 9;
-            this.e5.Text = "E";
-            this.e5.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.e5.UseVisualStyleBackColor = false;
-            this.e5.Click += new System.EventHandler(this.e5_Click);
+            e5.BackColor = Color.White;
+            e5.ForeColor = SystemColors.ActiveCaptionText;
+            e5.Location = new Point(1087, 250);
+            e5.Margin = new Padding(3, 4, 3, 4);
+            e5.Name = "e5";
+            e5.Size = new Size(117, 604);
+            e5.TabIndex = 9;
+            e5.Text = "E";
+            e5.TextAlign = ContentAlignment.BottomCenter;
+            e5.UseVisualStyleBackColor = false;
+            e5.Click += e5_Click;
             // 
             // d5
             // 
-            this.d5.BackColor = System.Drawing.Color.White;
-            this.d5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.d5.Location = new System.Drawing.Point(1246, 334);
-            this.d5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.d5.Name = "d5";
-            this.d5.Size = new System.Drawing.Size(150, 806);
-            this.d5.TabIndex = 10;
-            this.d5.Text = "D";
-            this.d5.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.d5.UseVisualStyleBackColor = false;
-            this.d5.Click += new System.EventHandler(this.d5_Click);
+            d5.BackColor = Color.White;
+            d5.ForeColor = SystemColors.ActiveCaptionText;
+            d5.Location = new Point(969, 250);
+            d5.Margin = new Padding(3, 4, 3, 4);
+            d5.Name = "d5";
+            d5.Size = new Size(117, 604);
+            d5.TabIndex = 10;
+            d5.Text = "D";
+            d5.TextAlign = ContentAlignment.BottomCenter;
+            d5.UseVisualStyleBackColor = false;
+            d5.Click += d5_Click;
             // 
             // f5
             // 
-            this.f5.BackColor = System.Drawing.Color.White;
-            this.f5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.f5.Location = new System.Drawing.Point(1549, 334);
-            this.f5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.f5.Name = "f5";
-            this.f5.Size = new System.Drawing.Size(150, 806);
-            this.f5.TabIndex = 11;
-            this.f5.Text = "F";
-            this.f5.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.f5.UseVisualStyleBackColor = false;
-            this.f5.Click += new System.EventHandler(this.f5_Click);
+            f5.BackColor = Color.White;
+            f5.ForeColor = SystemColors.ActiveCaptionText;
+            f5.Location = new Point(1205, 250);
+            f5.Margin = new Padding(3, 4, 3, 4);
+            f5.Name = "f5";
+            f5.Size = new Size(117, 604);
+            f5.TabIndex = 11;
+            f5.Text = "F";
+            f5.TextAlign = ContentAlignment.BottomCenter;
+            f5.UseVisualStyleBackColor = false;
+            f5.Click += f5_Click;
             // 
             // g5
             // 
-            this.g5.BackColor = System.Drawing.Color.White;
-            this.g5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.g5.Location = new System.Drawing.Point(1701, 334);
-            this.g5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.g5.Name = "g5";
-            this.g5.Size = new System.Drawing.Size(150, 806);
-            this.g5.TabIndex = 12;
-            this.g5.Text = "G";
-            this.g5.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.g5.UseVisualStyleBackColor = false;
-            this.g5.Click += new System.EventHandler(this.g5_Click);
+            g5.BackColor = Color.White;
+            g5.ForeColor = SystemColors.ActiveCaptionText;
+            g5.Location = new Point(1323, 250);
+            g5.Margin = new Padding(3, 4, 3, 4);
+            g5.Name = "g5";
+            g5.Size = new Size(117, 604);
+            g5.TabIndex = 12;
+            g5.Text = "G";
+            g5.TextAlign = ContentAlignment.BottomCenter;
+            g5.UseVisualStyleBackColor = false;
+            g5.Click += g5_Click;
             // 
             // c6
             // 
-            this.c6.BackColor = System.Drawing.Color.White;
-            this.c6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.c6.Location = new System.Drawing.Point(2157, 334);
-            this.c6.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.c6.Name = "c6";
-            this.c6.Size = new System.Drawing.Size(150, 806);
-            this.c6.TabIndex = 13;
-            this.c6.Text = "C";
-            this.c6.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.c6.UseVisualStyleBackColor = false;
-            this.c6.Click += new System.EventHandler(this.c6_Click);
+            c6.BackColor = Color.White;
+            c6.ForeColor = SystemColors.ActiveCaptionText;
+            c6.Location = new Point(1678, 250);
+            c6.Margin = new Padding(3, 4, 3, 4);
+            c6.Name = "c6";
+            c6.Size = new Size(117, 604);
+            c6.TabIndex = 13;
+            c6.Text = "C";
+            c6.TextAlign = ContentAlignment.BottomCenter;
+            c6.UseVisualStyleBackColor = false;
+            c6.Click += c6_Click;
             // 
             // b5
             // 
-            this.b5.BackColor = System.Drawing.Color.White;
-            this.b5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.b5.Location = new System.Drawing.Point(2004, 334);
-            this.b5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.b5.Name = "b5";
-            this.b5.Size = new System.Drawing.Size(150, 806);
-            this.b5.TabIndex = 14;
-            this.b5.Text = "B";
-            this.b5.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.b5.UseVisualStyleBackColor = false;
-            this.b5.Click += new System.EventHandler(this.b5_Click);
+            b5.BackColor = Color.White;
+            b5.ForeColor = SystemColors.ActiveCaptionText;
+            b5.Location = new Point(1559, 250);
+            b5.Margin = new Padding(3, 4, 3, 4);
+            b5.Name = "b5";
+            b5.Size = new Size(117, 604);
+            b5.TabIndex = 14;
+            b5.Text = "B";
+            b5.TextAlign = ContentAlignment.BottomCenter;
+            b5.UseVisualStyleBackColor = false;
+            b5.Click += b5_Click;
             // 
             // a5
             // 
-            this.a5.BackColor = System.Drawing.Color.White;
-            this.a5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.a5.Location = new System.Drawing.Point(1853, 334);
-            this.a5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.a5.Name = "a5";
-            this.a5.Size = new System.Drawing.Size(150, 806);
-            this.a5.TabIndex = 15;
-            this.a5.Text = "A";
-            this.a5.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.a5.UseVisualStyleBackColor = false;
-            this.a5.Click += new System.EventHandler(this.a5_Click);
+            a5.BackColor = Color.White;
+            a5.ForeColor = SystemColors.ActiveCaptionText;
+            a5.Location = new Point(1441, 250);
+            a5.Margin = new Padding(3, 4, 3, 4);
+            a5.Name = "a5";
+            a5.Size = new Size(117, 604);
+            a5.TabIndex = 15;
+            a5.Text = "A";
+            a5.TextAlign = ContentAlignment.BottomCenter;
+            a5.UseVisualStyleBackColor = false;
+            a5.Click += a5_Click;
             // 
             // csharp
             // 
-            this.csharp.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.csharp.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.csharp.Location = new System.Drawing.Point(136, 334);
-            this.csharp.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.csharp.Name = "csharp";
-            this.csharp.Size = new System.Drawing.Size(107, 466);
-            this.csharp.TabIndex = 16;
-            this.csharp.Text = "C#";
-            this.csharp.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.csharp.UseVisualStyleBackColor = false;
-            this.csharp.Click += new System.EventHandler(this.csharp_Click);
+            csharp.BackColor = SystemColors.ActiveCaptionText;
+            csharp.ForeColor = SystemColors.ButtonFace;
+            csharp.Location = new Point(106, 250);
+            csharp.Margin = new Padding(3, 4, 3, 4);
+            csharp.Name = "csharp";
+            csharp.Size = new Size(83, 350);
+            csharp.TabIndex = 16;
+            csharp.Text = "C#";
+            csharp.TextAlign = ContentAlignment.BottomCenter;
+            csharp.UseVisualStyleBackColor = false;
+            csharp.Click += csharp_Click;
             // 
             // d4sharp
             // 
-            this.d4sharp.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.d4sharp.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.d4sharp.Location = new System.Drawing.Point(284, 334);
-            this.d4sharp.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.d4sharp.Name = "d4sharp";
-            this.d4sharp.Size = new System.Drawing.Size(107, 466);
-            this.d4sharp.TabIndex = 17;
-            this.d4sharp.Text = "D#";
-            this.d4sharp.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.d4sharp.UseVisualStyleBackColor = false;
-            this.d4sharp.Click += new System.EventHandler(this.d4sharp_Click);
+            d4sharp.BackColor = SystemColors.ActiveCaptionText;
+            d4sharp.ForeColor = SystemColors.ButtonFace;
+            d4sharp.Location = new Point(221, 250);
+            d4sharp.Margin = new Padding(3, 4, 3, 4);
+            d4sharp.Name = "d4sharp";
+            d4sharp.Size = new Size(83, 350);
+            d4sharp.TabIndex = 17;
+            d4sharp.Text = "D#";
+            d4sharp.TextAlign = ContentAlignment.BottomCenter;
+            d4sharp.UseVisualStyleBackColor = false;
+            d4sharp.Click += d4sharp_Click;
             // 
             // f4sharp
             // 
-            this.f4sharp.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.f4sharp.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.f4sharp.Location = new System.Drawing.Point(586, 334);
-            this.f4sharp.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.f4sharp.Name = "f4sharp";
-            this.f4sharp.Size = new System.Drawing.Size(107, 466);
-            this.f4sharp.TabIndex = 18;
-            this.f4sharp.Text = "F#";
-            this.f4sharp.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.f4sharp.UseVisualStyleBackColor = false;
-            this.f4sharp.Click += new System.EventHandler(this.f4sharp_Click);
+            f4sharp.BackColor = SystemColors.ActiveCaptionText;
+            f4sharp.ForeColor = SystemColors.ButtonFace;
+            f4sharp.Location = new Point(456, 250);
+            f4sharp.Margin = new Padding(3, 4, 3, 4);
+            f4sharp.Name = "f4sharp";
+            f4sharp.Size = new Size(83, 350);
+            f4sharp.TabIndex = 18;
+            f4sharp.Text = "F#";
+            f4sharp.TextAlign = ContentAlignment.BottomCenter;
+            f4sharp.UseVisualStyleBackColor = false;
+            f4sharp.Click += f4sharp_Click;
             // 
             // g4sharp
             // 
-            this.g4sharp.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.g4sharp.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.g4sharp.Location = new System.Drawing.Point(739, 334);
-            this.g4sharp.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.g4sharp.Name = "g4sharp";
-            this.g4sharp.Size = new System.Drawing.Size(107, 466);
-            this.g4sharp.TabIndex = 19;
-            this.g4sharp.Text = "G#";
-            this.g4sharp.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.g4sharp.UseVisualStyleBackColor = false;
-            this.g4sharp.Click += new System.EventHandler(this.g4sharp_Click);
+            g4sharp.BackColor = SystemColors.ActiveCaptionText;
+            g4sharp.ForeColor = SystemColors.ButtonFace;
+            g4sharp.Location = new Point(575, 250);
+            g4sharp.Margin = new Padding(3, 4, 3, 4);
+            g4sharp.Name = "g4sharp";
+            g4sharp.Size = new Size(83, 350);
+            g4sharp.TabIndex = 19;
+            g4sharp.Text = "G#";
+            g4sharp.TextAlign = ContentAlignment.BottomCenter;
+            g4sharp.UseVisualStyleBackColor = false;
+            g4sharp.Click += g4sharp_Click;
             // 
             // a4sharp
             // 
-            this.a4sharp.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.a4sharp.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.a4sharp.Location = new System.Drawing.Point(888, 334);
-            this.a4sharp.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.a4sharp.Name = "a4sharp";
-            this.a4sharp.Size = new System.Drawing.Size(107, 466);
-            this.a4sharp.TabIndex = 20;
-            this.a4sharp.Text = "A#";
-            this.a4sharp.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.a4sharp.UseVisualStyleBackColor = false;
-            this.a4sharp.Click += new System.EventHandler(this.a4sharp_Click);
+            a4sharp.BackColor = SystemColors.ActiveCaptionText;
+            a4sharp.ForeColor = SystemColors.ButtonFace;
+            a4sharp.Location = new Point(691, 250);
+            a4sharp.Margin = new Padding(3, 4, 3, 4);
+            a4sharp.Name = "a4sharp";
+            a4sharp.Size = new Size(83, 350);
+            a4sharp.TabIndex = 20;
+            a4sharp.Text = "A#";
+            a4sharp.TextAlign = ContentAlignment.BottomCenter;
+            a4sharp.UseVisualStyleBackColor = false;
+            a4sharp.Click += a4sharp_Click;
             // 
             // c5sharp
             // 
-            this.c5sharp.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.c5sharp.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.c5sharp.Location = new System.Drawing.Point(1188, 334);
-            this.c5sharp.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.c5sharp.Name = "c5sharp";
-            this.c5sharp.Size = new System.Drawing.Size(107, 466);
-            this.c5sharp.TabIndex = 21;
-            this.c5sharp.Text = "C#";
-            this.c5sharp.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.c5sharp.UseVisualStyleBackColor = false;
-            this.c5sharp.Click += new System.EventHandler(this.c5sharp_Click);
+            c5sharp.BackColor = SystemColors.ActiveCaptionText;
+            c5sharp.ForeColor = SystemColors.ButtonFace;
+            c5sharp.Location = new Point(924, 250);
+            c5sharp.Margin = new Padding(3, 4, 3, 4);
+            c5sharp.Name = "c5sharp";
+            c5sharp.Size = new Size(83, 350);
+            c5sharp.TabIndex = 21;
+            c5sharp.Text = "C#";
+            c5sharp.TextAlign = ContentAlignment.BottomCenter;
+            c5sharp.UseVisualStyleBackColor = false;
+            c5sharp.Click += c5sharp_Click;
             // 
             // d5sharp
             // 
-            this.d5sharp.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.d5sharp.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.d5sharp.Location = new System.Drawing.Point(1336, 334);
-            this.d5sharp.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.d5sharp.Name = "d5sharp";
-            this.d5sharp.Size = new System.Drawing.Size(107, 466);
-            this.d5sharp.TabIndex = 22;
-            this.d5sharp.Text = "D#";
-            this.d5sharp.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.d5sharp.UseVisualStyleBackColor = false;
-            this.d5sharp.Click += new System.EventHandler(this.d5sharp_Click);
+            d5sharp.BackColor = SystemColors.ActiveCaptionText;
+            d5sharp.ForeColor = SystemColors.ButtonFace;
+            d5sharp.Location = new Point(1039, 250);
+            d5sharp.Margin = new Padding(3, 4, 3, 4);
+            d5sharp.Name = "d5sharp";
+            d5sharp.Size = new Size(83, 350);
+            d5sharp.TabIndex = 22;
+            d5sharp.Text = "D#";
+            d5sharp.TextAlign = ContentAlignment.BottomCenter;
+            d5sharp.UseVisualStyleBackColor = false;
+            d5sharp.Click += d5sharp_Click;
             // 
             // f5sharp
             // 
-            this.f5sharp.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.f5sharp.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.f5sharp.Location = new System.Drawing.Point(1628, 334);
-            this.f5sharp.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.f5sharp.Name = "f5sharp";
-            this.f5sharp.Size = new System.Drawing.Size(107, 466);
-            this.f5sharp.TabIndex = 23;
-            this.f5sharp.Text = "F#";
-            this.f5sharp.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.f5sharp.UseVisualStyleBackColor = false;
-            this.f5sharp.Click += new System.EventHandler(this.f5sharp_Click);
+            f5sharp.BackColor = SystemColors.ActiveCaptionText;
+            f5sharp.ForeColor = SystemColors.ButtonFace;
+            f5sharp.Location = new Point(1266, 250);
+            f5sharp.Margin = new Padding(3, 4, 3, 4);
+            f5sharp.Name = "f5sharp";
+            f5sharp.Size = new Size(83, 350);
+            f5sharp.TabIndex = 23;
+            f5sharp.Text = "F#";
+            f5sharp.TextAlign = ContentAlignment.BottomCenter;
+            f5sharp.UseVisualStyleBackColor = false;
+            f5sharp.Click += f5sharp_Click;
             // 
             // g5sharp
             // 
-            this.g5sharp.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.g5sharp.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.g5sharp.Location = new System.Drawing.Point(1799, 334);
-            this.g5sharp.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.g5sharp.Name = "g5sharp";
-            this.g5sharp.Size = new System.Drawing.Size(107, 466);
-            this.g5sharp.TabIndex = 24;
-            this.g5sharp.Text = "G#";
-            this.g5sharp.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.g5sharp.UseVisualStyleBackColor = false;
-            this.g5sharp.Click += new System.EventHandler(this.g5sharp_Click);
+            g5sharp.BackColor = SystemColors.ActiveCaptionText;
+            g5sharp.ForeColor = SystemColors.ButtonFace;
+            g5sharp.Location = new Point(1399, 250);
+            g5sharp.Margin = new Padding(3, 4, 3, 4);
+            g5sharp.Name = "g5sharp";
+            g5sharp.Size = new Size(83, 350);
+            g5sharp.TabIndex = 24;
+            g5sharp.Text = "G#";
+            g5sharp.TextAlign = ContentAlignment.BottomCenter;
+            g5sharp.UseVisualStyleBackColor = false;
+            g5sharp.Click += g5sharp_Click;
             // 
             // a5sharp
             // 
-            this.a5sharp.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.a5sharp.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.a5sharp.Location = new System.Drawing.Point(1945, 334);
-            this.a5sharp.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.a5sharp.Name = "a5sharp";
-            this.a5sharp.Size = new System.Drawing.Size(107, 466);
-            this.a5sharp.TabIndex = 25;
-            this.a5sharp.Text = "A#";
-            this.a5sharp.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.a5sharp.UseVisualStyleBackColor = false;
-            this.a5sharp.Click += new System.EventHandler(this.a5sharp_Click);
+            a5sharp.BackColor = SystemColors.ActiveCaptionText;
+            a5sharp.ForeColor = SystemColors.ButtonFace;
+            a5sharp.Location = new Point(1513, 250);
+            a5sharp.Margin = new Padding(3, 4, 3, 4);
+            a5sharp.Name = "a5sharp";
+            a5sharp.Size = new Size(83, 350);
+            a5sharp.TabIndex = 25;
+            a5sharp.Text = "A#";
+            a5sharp.TextAlign = ContentAlignment.BottomCenter;
+            a5sharp.UseVisualStyleBackColor = false;
+            a5sharp.Click += a5sharp_Click;
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.Color.MediumPurple;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(1853, 195);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(150, 46);
-            this.button1.TabIndex = 27;
-            this.button1.Text = "Start";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            button1.BackColor = Color.MediumPurple;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button1.Location = new Point(1441, 146);
+            button1.Margin = new Padding(3, 4, 3, 4);
+            button1.Name = "button1";
+            button1.Size = new Size(117, 34);
+            button1.TabIndex = 27;
+            button1.Text = "Start";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
             // 
             // button3
             // 
-            this.button3.BackColor = System.Drawing.Color.MediumPurple;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.button3.Location = new System.Drawing.Point(1853, 85);
-            this.button3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(150, 46);
-            this.button3.TabIndex = 30;
-            this.button3.Text = "Continue";
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Visible = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            button3.BackColor = Color.MediumPurple;
+            button3.FlatStyle = FlatStyle.Flat;
+            button3.Font = new Font("Microsoft Sans Serif", 9.75F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            button3.ForeColor = SystemColors.ControlText;
+            button3.Location = new Point(1441, 64);
+            button3.Margin = new Padding(3, 4, 3, 4);
+            button3.Name = "button3";
+            button3.Size = new Size(117, 34);
+            button3.TabIndex = 30;
+            button3.Text = "Continue";
+            button3.UseVisualStyleBackColor = false;
+            button3.Visible = false;
+            button3.Click += button3_Click;
             // 
             // button2
             // 
-            this.button2.BackColor = System.Drawing.Color.Firebrick;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(2157, 85);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(37, 39);
-            this.button2.TabIndex = 31;
-            this.button2.Text = "X";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click_1);
+            button2.BackColor = Color.Firebrick;
+            button2.FlatStyle = FlatStyle.Flat;
+            button2.Location = new Point(1678, 64);
+            button2.Margin = new Padding(3, 4, 3, 4);
+            button2.Name = "button2";
+            button2.Size = new Size(29, 29);
+            button2.TabIndex = 31;
+            button2.Text = "X";
+            button2.UseVisualStyleBackColor = false;
+            button2.Click += button2_Click_1;
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.MediumPurple;
-            this.label1.Location = new System.Drawing.Point(544, 11);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(103, 38);
-            this.label1.TabIndex = 32;
-            this.label1.Text = "label1";
-            this.label1.Visible = false;
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            label1.AutoSize = true;
+            label1.Font = new Font("Microsoft Sans Serif", 19.8F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.MediumPurple;
+            label1.Location = new Point(423, 8);
+            label1.Margin = new Padding(2, 0, 2, 0);
+            label1.Name = "label1";
+            label1.Size = new Size(86, 31);
+            label1.TabIndex = 32;
+            label1.Text = "label1";
+            label1.Visible = false;
+            label1.Click += label1_Click;
+            // 
+            // current_score
+            // 
+            current_score.AutoSize = true;
+            current_score.Location = new Point(1367, 116);
+            current_score.Name = "current_score";
+            current_score.Size = new Size(38, 15);
+            current_score.TabIndex = 33;
+            current_score.Text = "label2";
             // 
             // Melody
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoScroll = true;
-            this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(3353, 1330);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.a5sharp);
-            this.Controls.Add(this.g5sharp);
-            this.Controls.Add(this.f5sharp);
-            this.Controls.Add(this.d5sharp);
-            this.Controls.Add(this.c5sharp);
-            this.Controls.Add(this.a4sharp);
-            this.Controls.Add(this.g4sharp);
-            this.Controls.Add(this.f4sharp);
-            this.Controls.Add(this.d4sharp);
-            this.Controls.Add(this.csharp);
-            this.Controls.Add(this.a5);
-            this.Controls.Add(this.b5);
-            this.Controls.Add(this.c6);
-            this.Controls.Add(this.g5);
-            this.Controls.Add(this.f5);
-            this.Controls.Add(this.d5);
-            this.Controls.Add(this.e5);
-            this.Controls.Add(this.d4);
-            this.Controls.Add(this.e4);
-            this.Controls.Add(this.f4);
-            this.Controls.Add(this.b4);
-            this.Controls.Add(this.a4);
-            this.Controls.Add(this.c5);
-            this.Controls.Add(this.g4);
-            this.Controls.Add(this.c4);
-            this.KeyPreview = true;
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.Name = "Melody";
-            this.Text = "Melodie";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.Form6_Load);
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            AutoScroll = true;
+            BackColor = SystemColors.Control;
+            ClientSize = new Size(2554, 796);
+            Controls.Add(current_score);
+            Controls.Add(label1);
+            Controls.Add(button2);
+            Controls.Add(button3);
+            Controls.Add(button1);
+            Controls.Add(a5sharp);
+            Controls.Add(g5sharp);
+            Controls.Add(f5sharp);
+            Controls.Add(d5sharp);
+            Controls.Add(c5sharp);
+            Controls.Add(a4sharp);
+            Controls.Add(g4sharp);
+            Controls.Add(f4sharp);
+            Controls.Add(d4sharp);
+            Controls.Add(csharp);
+            Controls.Add(a5);
+            Controls.Add(b5);
+            Controls.Add(c6);
+            Controls.Add(g5);
+            Controls.Add(f5);
+            Controls.Add(d5);
+            Controls.Add(e5);
+            Controls.Add(d4);
+            Controls.Add(e4);
+            Controls.Add(f4);
+            Controls.Add(b4);
+            Controls.Add(a4);
+            Controls.Add(c5);
+            Controls.Add(g4);
+            Controls.Add(c4);
+            KeyPreview = true;
+            Margin = new Padding(3, 4, 3, 4);
+            Name = "Melody";
+            Text = "Melodie";
+            WindowState = FormWindowState.Maximized;
+            Load += Form6_Load;
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -542,5 +553,6 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label1;
+        private Label current_score;
     }
 }

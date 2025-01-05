@@ -22,13 +22,14 @@ namespace GatewayToTheWorldOfMusic
             MessageBox.Show(message, title);
         }
 
-        string notes = "";
+        //string notes = "";
         Graphics g;
         //Staff staff = new Staff();
         Random random = new Random();
         List <Note> generated = new List<Note>();
         List <Note> sung = new List<Note>();
-        int nr;
+        int total_score = 0;
+
 
         public void Play(string notePath)
         {
@@ -42,6 +43,7 @@ namespace GatewayToTheWorldOfMusic
             
             g = this.CreateGraphics();
             Staff.draw_staff(g, true);
+            score.Text = "You scored " + total_score + " so far.";
             //Pen p = new Pen(Color.Black, 5);
             //Point p1 = new Point(100, 60);
             //Point p2 = new Point(100, 80);
@@ -319,11 +321,37 @@ namespace GatewayToTheWorldOfMusic
             }
             return true;
         }
+        public int calculate_score(List<Note> sung, List<Note> song)
+        {
+            int score = 0;
+            int i = 0;
+            foreach (Note note in sung)
+            {
+                if (note.altitude == song[i].altitude && note.alteration == song[i].alteration)
+                    score += 10;
+                //int absolute_value_sung = note.altitude;
+                //if (note.alteration != 10)
+                //    absolute_value_sung = note.altitude - note.alteration * 10;
+
+                //int absolute_expected_value = song[i].altitude;
+                //if (song[i].alteration != 10)
+                //    absolute_expected_value = song[i].altitude - song[i].alteration * 10;
+
+                //if (absolute_value_sung == absolute_expected_value)
+                //    score += 10;
+                i++;
+            }
+            return score;
+        }
+
 
         private void button1_Click(object sender, EventArgs e)
         {
             g.Clear(BackColor);
             sung.Clear();
+            generated.Clear();
+            total_score = 0;
+            score.Text = "You scored " + total_score + " so far.";
             Staff.draw_staff(g, true);
             Pen black_pen = new Pen(Color.Black, 5);
             //locatie = 100;
@@ -376,19 +404,21 @@ namespace GatewayToTheWorldOfMusic
                 //generated.Add(nr);
             }
 
-            int location = 100;
-            //Pen p = new Pen(Color.Black, 5);
-            foreach (Note elem in generated)
-            {
-                location += 100;
-                if (location <= 1100)
-                {
-                    elem.draw_it(g, location, black_pen);
-                    //Point point = new Point(location, elem);
-                    //Note.draw_note(g, point, black_pen);
-                    //draw_note(sender, e, point, black_pen);
-                }
-            }
+            Staff.draw_current_staff(g, generated, black_pen);
+
+            //int location = 100;
+            ////Pen p = new Pen(Color.Black, 5);
+            //foreach (Note elem in generated)
+            //{
+            //    location += 100;
+            //    if (location <= 1100)
+            //    {
+            //        elem.draw_it(g, location, black_pen);
+            //        //Point point = new Point(location, elem);
+            //        //Note.draw_note(g, point, black_pen);
+            //        //draw_note(sender, e, point, black_pen);
+            //    }
+            //}
 
         }
 
@@ -428,18 +458,21 @@ namespace GatewayToTheWorldOfMusic
         private void button3_Click(object sender, EventArgs e)
         {
             Pen purple_pen = new Pen(Color.MediumPurple, 5);
-            int location = 100;
-            foreach (Note note in sung)
-            {
-                location += 100;
-                if (location <= 1100)
-                {
-                    note.draw_it(g, location, purple_pen);
-                    //Point point = new Point(location, note);
-                    //Note.draw_note(g, point, purple_pen);
-                    //draw_note(sender, e, point, p);
-                }
-            }
+            Staff.draw_current_staff(g, sung, purple_pen);
+            total_score = calculate_score(sung, generated);
+            score.Text = "You scored " + total_score + " so far.";
+            //int location = 100;
+            //foreach (Note note in sung)
+            //{
+            //    location += 100;
+            //    if (location <= 1100)
+            //    {
+            //        note.draw_it(g, location, purple_pen);
+            //        //Point point = new Point(location, note);
+            //        //Note.draw_note(g, point, purple_pen);
+            //        //draw_note(sender, e, point, p);
+            //    }
+            //}
         }
         
         private void button2_Click_1(object sender, EventArgs e)
