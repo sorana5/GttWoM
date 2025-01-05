@@ -149,9 +149,8 @@ namespace GatewayToTheWorldOfMusic
             location += 100;
             if (staff_number <= number_staffs && location <= (song[staff_number-1].Count()+1) * 100)
             {
-                sung.Add(new Note(alteration, altitude));
-                Point point = new Point(location, altitude);
-                Note.draw_note(g, point, purple_pen);
+                Note note = new Note(alteration, altitude);
+                sung.Add(note);
 
                 //int absolute_value_sung = altitude;
                 //if (alteration != 10)
@@ -163,8 +162,20 @@ namespace GatewayToTheWorldOfMusic
                 //    absolute_expected_value = song[staff_number - 1][index].altitude - song[staff_number - 1][index].alteration * 5;
 
                 if (absolute_value_sung == absolute_expected_value)
+                {
                     total_score += 10;
-                current_score.Text = "Your current score is " + total_score + " " + absolute_value_sung + " " + absolute_expected_value + " " + location;
+                    song[staff_number - 1][index].draw_it(g, location, purple_pen);
+                    //Point point = new Point(location, song[staff_number-1][index].altitude);
+                    //Note.draw_note(g, point, purple_pen);
+                }
+                else
+                {
+                    //Point point = new Point(location, altitude);
+                    //Note note = new Note(alteration, altitude);
+                    note.draw_it(g, location, purple_pen);
+                    //Note.draw_note(g, point, purple_pen);
+                }
+                current_score.Text = "Your current score is " + total_score;// + " " + absolute_value_sung + " " + absolute_expected_value + " " + location;
                 //draw_note(sender, e, point, purple_pen);
             }
         }

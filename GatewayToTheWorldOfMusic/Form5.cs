@@ -39,7 +39,7 @@ namespace GatewayToTheWorldOfMusic
             [9] = "A semitone (or a half step) represents the distance between two adjacent keys on the piano.\nFor example, there is a semitone between the keys numbered 1 and 2, or 2 and 3.",
             [10] = "A tone (or a whole step) is made up of 2 semitones, for example, between keys 1 and 3 is a tone.\nThus, it can be seen that between most notes there are tones, except between mi-fa and si-do.",
             [11] = "In order to access the note between do and re, the black key that is a semitone from both do and re, accidentals are used. Thus, do sharp will represent that note, since the sharp raises any note by a semitone.",
-            [12] = "At the same time, re flat has the same value as do sharp, since the flat lowers any note by a semitone.",
+            [12] = "At the same time, re flat has the same value as do sharp, since the flat lowers any note by a semitone. These accidentals keep their effect only in the same measure or until a natural is met.",
             [13] = "The accidentals are, in order: double flat, which lowers the note by a tone; flat, which lowers the note by a semitone; natural, which returns the note to its natural form; sharp, which raises the note by a semitone; and double sharp, which raises the note by a tone.",
             [14] = "For example, to obtain do double sharp, we raise the note by a tone (2 semitones), or 2 keys, reaching the note re.",
             [15] = "This is the C Major scale. Any major scale has semitones between the III-IV and VII-VIII degrees, and tones between the other degrees. The illustrated scale is called C Major because it satisfies this condition of intervals and starts on the note C.",

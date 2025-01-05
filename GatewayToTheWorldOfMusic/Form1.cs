@@ -125,13 +125,13 @@ namespace GatewayToTheWorldOfMusic
                     {
                         int converted_note = convert_notes[name];
                         if (converted_note % 10 == 1)
-                            current_staff.Add(new Note(1, converted_note));
+                            current_staff.Add(new Note(1, converted_note / 10 * 10));
                         else if (converted_note % 10 == 2)
-                            current_staff.Add(new Note(-1, converted_note));
+                            current_staff.Add(new Note(-1, converted_note / 10 * 10));
                         else if (converted_note % 10 == 3)
-                            current_staff.Add(new Note(10, converted_note));
+                            current_staff.Add(new Note(10, converted_note / 10 * 10));
                         else
-                            current_staff.Add(new Note(0, converted_note));
+                            current_staff.Add(new Note(0, converted_note / 10 * 10));
                     }
                         //current_staff.Add(new Note(0, convert_notes[name]));
                     notes.Add(current_staff);

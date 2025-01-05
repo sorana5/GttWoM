@@ -25,6 +25,11 @@ namespace GatewayToTheWorldOfMusic
             //webBrowser1.Navigate("www.wikipedia.com");
 
             Staff.draw_staff(g, true);
+            Image flat = Image.FromFile(@"extra\flat_black.png");
+            g.DrawImage(flat, 1400, 97, 30, 30);
+            Image sharp = Image.FromFile(@"extra\sharp_black.png");
+            g.DrawImage(sharp, 1310, 97, 30, 30);
+
             //List<Note> notes = new List<Note>();
             //draw_staff(sender, e);
         }

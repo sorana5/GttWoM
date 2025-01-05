@@ -470,7 +470,7 @@
             // switchButton
             // 
             switchButton.AutoSize = true;
-            switchButton.Location = new Point(1369, 129);
+            switchButton.Location = new Point(1336, 111);
             switchButton.MinimumSize = new Size(45, 22);
             switchButton.Name = "switchButton";
             switchButton.OffBackColor = Color.MediumPurple;

@@ -20,6 +20,11 @@ namespace GatewayToTheWorldOfMusic
             string message = "Try to play the randomly generated notes, and afterwards you can check.";
             string title = "Try it yourself!";
             MessageBox.Show(message, title);
+            //Staff.draw_staff(g, true);
+            //Image flat = Image.FromFile(@"extra\flat_black.png");
+            //g.DrawImage(flat, 1400, 100, 30, 30);
+            //Image sharp = Image.FromFile(@"extra\sharp_black.png");
+            //g.DrawImage(sharp, 1300, 100, 30, 30);
         }
 
         //string notes = "";
@@ -44,6 +49,10 @@ namespace GatewayToTheWorldOfMusic
             g = this.CreateGraphics();
             Staff.draw_staff(g, true);
             score.Text = "You scored " + total_score + " so far.";
+            Image flat = Image.FromFile(@"extra\flat_black.png");
+            g.DrawImage(flat, 1385, 105, 30, 30);
+            Image sharp = Image.FromFile(@"extra\sharp_black.png");
+            g.DrawImage(sharp, 1300, 105, 30, 30);
             //Pen p = new Pen(Color.Black, 5);
             //Point p1 = new Point(100, 60);
             //Point p2 = new Point(100, 80);
