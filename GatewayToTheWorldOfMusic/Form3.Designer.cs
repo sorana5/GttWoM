@@ -54,7 +54,7 @@
             g5sharp = new Button();
             a5sharp = new Button();
             button1 = new Button();
-            sButton1 = new SButton();
+            switchButton = new SButton();
             SuspendLayout();
             // 
             // c4
@@ -420,20 +420,20 @@
             button1.UseVisualStyleBackColor = false;
             button1.Click += button1_Click;
             // 
-            // sButton1
+            // switchButton
             // 
-            sButton1.AutoSize = true;
-            sButton1.Location = new Point(1495, 164);
-            sButton1.MinimumSize = new Size(45, 22);
-            sButton1.Name = "sButton1";
-            sButton1.OffBackColor = Color.Gray;
-            sButton1.OffToggleColor = Color.Gainsboro;
-            sButton1.OnBackColor = Color.MediumSlateBlue;
-            sButton1.OnToggleColor = Color.WhiteSmoke;
-            sButton1.Size = new Size(45, 22);
-            sButton1.TabIndex = 27;
-            sButton1.UseVisualStyleBackColor = true;
-            sButton1.CheckedChanged += sButton1_CheckedChanged;
+            switchButton.AutoSize = true;
+            switchButton.Location = new Point(1495, 165);
+            switchButton.MinimumSize = new Size(45, 22);
+            switchButton.Name = "switchButton";
+            switchButton.OffBackColor = Color.MediumPurple;
+            switchButton.OffToggleColor = Color.Gainsboro;
+            switchButton.OnBackColor = Color.MediumPurple;
+            switchButton.OnToggleColor = Color.WhiteSmoke;
+            switchButton.Size = new Size(45, 22);
+            switchButton.TabIndex = 28;
+            switchButton.UseVisualStyleBackColor = true;
+            switchButton.CheckedChanged += switchButton_CheckedChanged;
             // 
             // Piano
             // 
@@ -441,7 +441,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Control;
             ClientSize = new Size(1605, 732);
-            Controls.Add(sButton1);
+            Controls.Add(switchButton);
             Controls.Add(button1);
             Controls.Add(a5sharp);
             Controls.Add(g5sharp);
@@ -505,7 +505,7 @@
         private System.Windows.Forms.Button g5sharp;
         private System.Windows.Forms.Button a5sharp;
         private System.Windows.Forms.Button button1;
-        private SButton sButton1;
+        private SButton switchButton;
         //private CheckBox toggle;
     }
 }
