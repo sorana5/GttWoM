@@ -66,6 +66,11 @@ namespace GatewayToTheWorldOfMusic
                         MessageBox.Show("Username already exists!");
                         return;
                     }
+                    if (username.Text.Length < 3 || password.Text.Length < 3 || name.Text.Length < 3)
+                    {
+                        MessageBox.Show("Username, password and name must have at least 3 characters!");
+                        return;
+                    }
                     var newTeacher = new Teacher
                     {
                         Id = Teacher.generate_index() + 1,
@@ -76,6 +81,15 @@ namespace GatewayToTheWorldOfMusic
 
                     context.Teachers.Add(newTeacher);
                     current_teacher = newTeacher;
+
+                    context.SaveChanges();
+                    MessageBox.Show("Teacher account created successfully!");
+
+                    this.Hide();
+                    ManageClass manageClass = new ManageClass();
+                    manageClass.ShowDialog();
+                    manageClass = null;
+                    this.Show();
                 }
                 else
                 {
@@ -84,9 +98,14 @@ namespace GatewayToTheWorldOfMusic
                         MessageBox.Show("Username already exists!");
                         return;
                     }
+                    if (username.Text.Length < 3 || password.Text.Length < 3 || name.Text.Length < 3)
+                    {
+                        MessageBox.Show("Username, password and name must have at least 3 characters!");
+                        return;
+                    }
                     var newStudent = new Student
                     {
-                        Id = Student.generate_index() + 1,
+                        Id = Student.generate_index(),
                         Username = username.Text,
                         Password = encrypt(password.Text, "SecretEncryptKey"),
                         Name = name.Text,
@@ -95,20 +114,21 @@ namespace GatewayToTheWorldOfMusic
 
                     context.Students.Add(newStudent);
                     current_student = newStudent;
+
+                    context.SaveChanges();
+                    MessageBox.Show("Student account created successfully!");
+
+                    this.Hide();
+                    Cuprins cuprins = new Cuprins();
+                    cuprins.ShowDialog();
+                    cuprins = null;
+                    this.Show();
                 }
 
-
-                context.SaveChanges();
-                MessageBox.Show("Account created successfully!");
                 username.Clear();
                 password.Clear();
                 name.Clear();
 
-                this.Hide();
-                Cuprins cuprins = new Cuprins();
-                cuprins.ShowDialog();
-                cuprins = null;
-                this.Show();
             }
         }
 
@@ -118,36 +138,44 @@ namespace GatewayToTheWorldOfMusic
             {
                 if (switchButton.Checked)
                 {
-                    var teacher = context.Teachers.FirstOrDefault(s => s.Username == username.Text && s.Password == password.Text);
+                    var teacher = context.Teachers.FirstOrDefault(s => s.Username == username.Text && s.Password == encrypt(password.Text, "SecretEncryptKey"));
                     if (teacher == null)
                     {
                         MessageBox.Show("Invalid username or password!");
                         return;
                     }
                     current_teacher = teacher;
+
+                    this.Hide();
+                    ManageClass manageClass = new ManageClass();
+                    manageClass.ShowDialog();
+                    manageClass = null;
+                    this.Show();
                 }
                 else
                 {
-                    var student = context.Students.FirstOrDefault(s => s.Username == username.Text && s.Password == password.Text);
+                    var student = context.Students.FirstOrDefault(s => s.Username == username.Text && s.Password == encrypt(password.Text, "SecretEncryptKey"));
                     if (student == null)
                     {
                         MessageBox.Show("Invalid username or password!");
                         return;
                     }
                     current_student = student;
+                    
+                    this.Hide();
+                    Cuprins cuprins = new Cuprins();
+                    cuprins.ShowDialog();
+                    cuprins = null;
+                    this.Show();
                 }
 
                 //context.SaveChanges();
                 //MessageBox.Show("Account created successfully!");
-                //username.Clear();
-                //password.Clear();
-                //name.Clear();
+                username.Clear();
+                password.Clear();
+                name.Clear();
 
-                this.Hide();
-                Cuprins cuprins = new Cuprins();
-                cuprins.ShowDialog();
-                cuprins = null;
-                this.Show();
+
             }
         }
 

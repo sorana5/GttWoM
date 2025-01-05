@@ -28,8 +28,15 @@ namespace GatewayToTheWorldOfMusic.Data
         {
             using (var context = new AppDbContext())
             {
-                var students = context.Students.ToList();
-                return students.Count;
+                int index = 1;
+                var students = context.Students.OrderBy(s => s.Id).ToList();
+                foreach(Student student in students)
+                {
+                    if (student.Id != index)
+                        return index;
+                    index++;
+                }
+                return index;
             }
         }
     }
