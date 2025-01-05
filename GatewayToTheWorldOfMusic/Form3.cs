@@ -381,6 +381,10 @@ namespace GatewayToTheWorldOfMusic
             g.Clear(BackColor);
             location = 100;
             Staff.draw_staff(g, true);
+            Image flat = Image.FromFile(@"extra\flat_black.png");
+            g.DrawImage(flat, 1400, 97, 30, 30);
+            Image sharp = Image.FromFile(@"extra\sharp_black.png");
+            g.DrawImage(sharp, 1310, 97, 30, 30);
         }
 
         private void sButton1_CheckedChanged(object sender, EventArgs e)

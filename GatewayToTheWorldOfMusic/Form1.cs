@@ -168,10 +168,16 @@ namespace GatewayToTheWorldOfMusic
 
         private void button1_Click(object sender, EventArgs e)
         {
+            //this.Hide();
+            //Cuprins cuprins = new Cuprins();
+            //cuprins.ShowDialog();
+            //cuprins = null;
+            //this.Show();
+
             this.Hide();
-            Cuprins cuprins = new Cuprins();
-            cuprins.ShowDialog();
-            cuprins = null;
+            Authentification authentification = new Authentification();
+            authentification.ShowDialog();
+            authentification = null;
             this.Show();
         }
 

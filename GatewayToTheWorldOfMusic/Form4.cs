@@ -1,4 +1,5 @@
 ﻿//using PortalSpreLumeaMuzicii;
+using GatewayToTheWorldOfMusic.Data;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,6 +21,7 @@ namespace GatewayToTheWorldOfMusic
             string message = "Try to play the randomly generated notes, and afterwards you can check.";
             string title = "Try it yourself!";
             MessageBox.Show(message, title);
+
             //Staff.draw_staff(g, true);
             //Image flat = Image.FromFile(@"extra\flat_black.png");
             //g.DrawImage(flat, 1400, 100, 30, 30);
@@ -362,6 +364,10 @@ namespace GatewayToTheWorldOfMusic
             total_score = 0;
             score.Text = "You scored " + total_score + " so far.";
             Staff.draw_staff(g, true);
+            Image flat = Image.FromFile(@"extra\flat_black.png");
+            g.DrawImage(flat, 1385, 105, 30, 30);
+            Image sharp = Image.FromFile(@"extra\sharp_black.png");
+            g.DrawImage(sharp, 1300, 105, 30, 30);
             Pen black_pen = new Pen(Color.Black, 5);
             //locatie = 100;
             //Pen p = new Pen(Color.Black, 5);
@@ -470,6 +476,16 @@ namespace GatewayToTheWorldOfMusic
             Staff.draw_current_staff(g, sung, purple_pen);
             total_score = calculate_score(sung, generated);
             score.Text = "You scored " + total_score + " so far.";
+
+            if (total_score > Authentification.current_student.Highscore)
+            {
+                Authentification.current_student.Highscore = total_score;
+                using (var context = new AppDbContext())
+                {
+                    context.Students.Update(Authentification.current_student);
+                    context.SaveChanges();
+                }
+            }
             //int location = 100;
             //foreach (Note note in sung)
             //{
