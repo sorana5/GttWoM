@@ -54,9 +54,20 @@ namespace GatewayToTheWorldOfMusic
             if (point.Y == 10)
                 graphics.DrawLine(pen, point - new Size(10, -10), point + new Size(40, 10));
 
-            Image flat = Image.FromFile(@"extra\bemol.png");
-            Image sharp = Image.FromFile(@"extra\diez.png");
-            Image natural = Image.FromFile(@"extra\becar.png");
+            Image flat, sharp, natural;
+            if (pen.Color == Color.Black)
+            {
+                flat = Image.FromFile(@"extra\flat_black.png");
+                sharp = Image.FromFile(@"extra\sharp_black.png");
+                natural = Image.FromFile(@"extra\natural_black.png");
+            }
+            else
+            {
+                flat = Image.FromFile(@"extra\flat_purple.png");
+                sharp = Image.FromFile(@"extra\sharp_purple.png");
+                natural = Image.FromFile(@"extra\natural_purple.png");
+            }
+
 
             if (alteration ==1)
                 graphics.DrawImage(sharp, point.X - 38, point.Y - 8, 35, 35);

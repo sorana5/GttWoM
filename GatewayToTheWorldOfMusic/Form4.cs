@@ -26,8 +26,8 @@ namespace GatewayToTheWorldOfMusic
         Graphics g;
         //Staff staff = new Staff();
         Random random = new Random();
-        List <int> generated = new List<int>();
-        List <int> sung = new List<int>();
+        List <Note> generated = new List<Note>();
+        List <Note> sung = new List<Note>();
         int nr;
 
         public void Play(string notePath)
@@ -77,7 +77,7 @@ namespace GatewayToTheWorldOfMusic
             string fileName = "f4.wav";
             string path = Path.Combine(Environment.CurrentDirectory, @"note\", fileName);
             Play(path);
-            sung.Add(120);
+            sung.Add(new Note(0, 120));
         }
 
         private void c4_Click(object sender, EventArgs e)
@@ -85,7 +85,7 @@ namespace GatewayToTheWorldOfMusic
             string fileName = "c4.wav";
             string path = Path.Combine(Environment.CurrentDirectory, @"note\", fileName);
             Play(path);
-            sung.Add(150);
+            sung.Add(new Note(0, 150));
         }
 
         private void csharp_Click(object sender, EventArgs e)
@@ -93,6 +93,10 @@ namespace GatewayToTheWorldOfMusic
             string fileName = "c4sharp.wav";
             string path = Path.Combine(Environment.CurrentDirectory, @"note\", fileName);
             Play(path);
+            if (switchButton.Checked)
+                sung.Add(new Note(-1, 140));
+            else
+                sung.Add(new Note(1, 150));
         }
 
         private void d4_Click(object sender, EventArgs e)
@@ -100,7 +104,7 @@ namespace GatewayToTheWorldOfMusic
             string fileName = "d4.wav";
             string path = Path.Combine(Environment.CurrentDirectory, @"note\", fileName);
             Play(path);
-            sung.Add(140);
+            sung.Add(new Note(0, 140));
         }
 
         private void d4sharp_Click(object sender, EventArgs e)
@@ -108,6 +112,10 @@ namespace GatewayToTheWorldOfMusic
             string fileName = "d4sharp.wav";
             string path = Path.Combine(Environment.CurrentDirectory, @"note\", fileName);
             Play(path);
+            if (switchButton.Checked)
+                sung.Add(new Note(-1, 130));
+            else
+                sung.Add(new Note(1, 140));
         }
 
         private void e4_Click(object sender, EventArgs e)
@@ -115,7 +123,7 @@ namespace GatewayToTheWorldOfMusic
             string fileName = "e4.wav";
             string path = Path.Combine(Environment.CurrentDirectory, @"note\", fileName);
             Play(path);
-            sung.Add(130);
+            sung.Add(new Note(0, 130));
         }
 
         private void g4_Click(object sender, EventArgs e)
@@ -123,7 +131,7 @@ namespace GatewayToTheWorldOfMusic
             string fileName = "g4.wav";
             string path = Path.Combine(Environment.CurrentDirectory, @"note\", fileName);
             Play(path);
-            sung.Add(110);
+            sung.Add(new Note(0, 110));
         }
 
         private void g4sharp_Click(object sender, EventArgs e)
@@ -131,6 +139,10 @@ namespace GatewayToTheWorldOfMusic
             string fileName = "g4sharp.wav";
             string path = Path.Combine(Environment.CurrentDirectory, @"note\", fileName);
             Play(path);
+            if (switchButton.Checked)
+                sung.Add(new Note(-1, 100));
+            else
+                sung.Add(new Note(1, 110));
         }
 
         private void a4_Click(object sender, EventArgs e)
@@ -138,7 +150,7 @@ namespace GatewayToTheWorldOfMusic
             string fileName = "a4.wav";
             string path = Path.Combine(Environment.CurrentDirectory, @"note\", fileName);
             Play(path);
-            sung.Add(100);
+            sung.Add(new Note(0, 100));
         }
 
         private void a4sharp_Click(object sender, EventArgs e)
@@ -146,6 +158,10 @@ namespace GatewayToTheWorldOfMusic
             string fileName = "a4sharp.wav";
             string path = Path.Combine(Environment.CurrentDirectory, @"note\", fileName);
             Play(path);
+            if (switchButton.Checked)
+                sung.Add(new Note(-1, 90));
+            else
+                sung.Add(new Note(1, 100));
         }
 
         private void b4_Click(object sender, EventArgs e)
@@ -153,7 +169,7 @@ namespace GatewayToTheWorldOfMusic
             string fileName = "b4.wav";
             string path = Path.Combine(Environment.CurrentDirectory, @"note\", fileName);
             Play(path);
-            sung.Add(90);
+            sung.Add(new Note(0, 90));
         }
 
         private void c5_Click(object sender, EventArgs e)
@@ -161,7 +177,7 @@ namespace GatewayToTheWorldOfMusic
             string fileName = "c5.wav";
             string path = Path.Combine(Environment.CurrentDirectory, @"note\", fileName);
             Play(path);
-            sung.Add(80);
+            sung.Add(new Note(0, 80));
         }
 
         private void c5sharp_Click(object sender, EventArgs e)
@@ -169,6 +185,10 @@ namespace GatewayToTheWorldOfMusic
             string fileName = "c5sharp.wav";
             string path = Path.Combine(Environment.CurrentDirectory, @"note\", fileName);
             Play(path);
+            if (switchButton.Checked)
+                sung.Add(new Note(-1, 70));
+            else
+                sung.Add(new Note(1, 80));
         }
 
         private void d5_Click(object sender, EventArgs e)
@@ -176,7 +196,7 @@ namespace GatewayToTheWorldOfMusic
             string fileName = "d5.wav";
             string path = Path.Combine(Environment.CurrentDirectory, @"note\", fileName);
             Play(path);
-            sung.Add(70);
+            sung.Add(new Note(0, 70));
         }
 
         private void d5sharp_Click(object sender, EventArgs e)
@@ -184,6 +204,10 @@ namespace GatewayToTheWorldOfMusic
             string fileName = "d5sharp.wav";
             string path = Path.Combine(Environment.CurrentDirectory, @"note\", fileName);
             Play(path);
+            if (switchButton.Checked)
+                sung.Add(new Note(-1, 60));
+            else
+                sung.Add(new Note(1, 70));
         }
 
         private void e5_Click(object sender, EventArgs e)
@@ -191,7 +215,7 @@ namespace GatewayToTheWorldOfMusic
             string fileName = "e5.wav";
             string path = Path.Combine(Environment.CurrentDirectory, @"note\", fileName);
             Play(path);
-            sung.Add(60);
+            sung.Add(new Note(0, 60));
         }
 
         private void f5_Click(object sender, EventArgs e)
@@ -199,7 +223,7 @@ namespace GatewayToTheWorldOfMusic
             string fileName = "f5.wav";
             string path = Path.Combine(Environment.CurrentDirectory, @"note\", fileName);
             Play(path);
-            sung.Add(50);
+            sung.Add(new Note(0, 50));
         }
 
         private void g5_Click(object sender, EventArgs e)
@@ -207,7 +231,7 @@ namespace GatewayToTheWorldOfMusic
             string fileName = "g5.wav";
             string path = Path.Combine(Environment.CurrentDirectory, @"note\", fileName);
             Play(path);
-            sung.Add(40);
+            sung.Add(new Note(0, 40));
         }
 
         private void g5sharp_Click(object sender, EventArgs e)
@@ -215,6 +239,10 @@ namespace GatewayToTheWorldOfMusic
             string fileName = "g5sharp.wav";
             string path = Path.Combine(Environment.CurrentDirectory, @"note\", fileName);
             Play(path);
+            if (switchButton.Checked)
+                sung.Add(new Note(-1, 30));
+            else
+                sung.Add(new Note(1, 40));
         }
 
         private void a5_Click(object sender, EventArgs e)
@@ -222,7 +250,7 @@ namespace GatewayToTheWorldOfMusic
             string fileName = "a5.wav";
             string path = Path.Combine(Environment.CurrentDirectory, @"note\", fileName);
             Play(path);
-            sung.Add(30);
+            sung.Add(new Note(0, 30));
         }
 
         private void a5sharp_Click(object sender, EventArgs e)
@@ -230,6 +258,10 @@ namespace GatewayToTheWorldOfMusic
             string fileName = "a5sharp.wav";
             string path = Path.Combine(Environment.CurrentDirectory, @"note\", fileName);
             Play(path);
+            if (switchButton.Checked)
+                sung.Add(new Note(-1, 20));
+            else
+                sung.Add(new Note(1, 30));
         }
 
         private void b5_Click(object sender, EventArgs e)
@@ -237,7 +269,7 @@ namespace GatewayToTheWorldOfMusic
             string fileName = "b5.wav";
             string path = Path.Combine(Environment.CurrentDirectory, @"note\", fileName);
             Play(path);
-            sung.Add(20);
+            sung.Add(new Note(0, 20));
         }
 
         private void c6_Click(object sender, EventArgs e)
@@ -245,7 +277,7 @@ namespace GatewayToTheWorldOfMusic
             string fileName = "c6.wav";
             string path = Path.Combine(Environment.CurrentDirectory, @"note\", fileName);
             Play(path);
-            sung.Add(10);
+            sung.Add(new Note(0, 10));
         }
 
         private void f4sharp_Click(object sender, EventArgs e)
@@ -253,6 +285,10 @@ namespace GatewayToTheWorldOfMusic
             string fileName = "f4sharp.wav";
             string path = Path.Combine(Environment.CurrentDirectory, @"note\", fileName);
             Play(path);
+            if (switchButton.Checked)
+                sung.Add(new Note(-1, 110));
+            else
+                sung.Add(new Note(1, 120));
         }
 
         private void f5sharp_Click(object sender, EventArgs e)
@@ -260,7 +296,28 @@ namespace GatewayToTheWorldOfMusic
             string fileName = "f5sharp.wav";
             string path = Path.Combine(Environment.CurrentDirectory, @"note\", fileName);
             Play(path);
+            if (switchButton.Checked)
+                sung.Add(new Note(-1, 40));
+            else
+                sung.Add(new Note(1, 50));
 
+        }
+
+        private bool correctly_generated(Note note)
+        {
+            if (note.alteration == 1)
+            {
+                if (note.altitude == 130 || note.altitude == 90 || note.altitude == 60 || note.altitude == 20 || note.altitude == 10)
+                    return false;
+                return true;
+            }
+            if (note.alteration == -1)
+            {
+                if (note.altitude == 150 || note.altitude == 120 || note.altitude == 80 || note.altitude == 50 || note.altitude == 10)
+                    return false;
+                return true;
+            }
+            return true;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -307,21 +364,28 @@ namespace GatewayToTheWorldOfMusic
 
             for (int i = 1; i <= 10; i++)
             {
-                int nr = random.Next(10, 151);
-                while (nr % 10 != 0)
-                    nr = random.Next(10, 151);
-                generated.Add(nr);
+                int altitude = random.Next(10, 151);
+                while (altitude % 10 != 0)
+                    altitude = random.Next(10, 151);
+                int alteration = random.Next(-1, 2);
+                while (correctly_generated(new Note(alteration, altitude)) == false)
+                {
+                    alteration = random.Next(-1, 2);
+                }
+                generated.Add(new Note(alteration, altitude));
+                //generated.Add(nr);
             }
 
-            int note = 100;
+            int location = 100;
             //Pen p = new Pen(Color.Black, 5);
-            foreach (int elem in generated)
+            foreach (Note elem in generated)
             {
-                note += 100;
-                if (note <= 1100)
+                location += 100;
+                if (location <= 1100)
                 {
-                    Point point = new Point(note, elem);
-                    Note.draw_note(g, point, black_pen);
+                    elem.draw_it(g, location, black_pen);
+                    //Point point = new Point(location, elem);
+                    //Note.draw_note(g, point, black_pen);
                     //draw_note(sender, e, point, black_pen);
                 }
             }
@@ -345,33 +409,34 @@ namespace GatewayToTheWorldOfMusic
             pictureBox1.Visible = true;
         }*/
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-            int note_number = 100;
-            Pen black_pen = new Pen(Color.Black, 5);
-            foreach (int element in generated)
-            {
-                note_number += 100;
-                if (note_number <= 1100)
-                {
-                    Point point = new Point(note_number, element);
-                    Note.draw_note(g, point, black_pen);
-                    //draw_note(sender, e, point, p);
-                }
-            }
-        }
+        //private void button2_Click(object sender, EventArgs e)
+        //{
+        //    int note_number = 100;
+        //    Pen black_pen = new Pen(Color.Black, 5);
+        //    foreach (int element in generated)
+        //    {
+        //        note_number += 100;
+        //        if (note_number <= 1100)
+        //        {
+        //            Point point = new Point(note_number, element);
+        //            Note.draw_note(g, point, black_pen);
+        //            //draw_note(sender, e, point, p);
+        //        }
+        //    }
+        //}
 
         private void button3_Click(object sender, EventArgs e)
         {
             Pen purple_pen = new Pen(Color.MediumPurple, 5);
-            int x = 100;
-            foreach (int note in sung)
+            int location = 100;
+            foreach (Note note in sung)
             {
-                x += 100;
-                if (x <= 1100)
+                location += 100;
+                if (location <= 1100)
                 {
-                    Point point = new Point(x, note);
-                    Note.draw_note(g, point, purple_pen);
+                    note.draw_it(g, location, purple_pen);
+                    //Point point = new Point(location, note);
+                    //Note.draw_note(g, point, purple_pen);
                     //draw_note(sender, e, point, p);
                 }
             }
