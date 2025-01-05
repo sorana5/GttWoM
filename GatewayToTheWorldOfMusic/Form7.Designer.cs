@@ -33,6 +33,8 @@
             password = new TextBox();
             name = new TextBox();
             switchButton = new SButton();
+            logIn = new Button();
+            showPassword = new CheckBox();
             SuspendLayout();
             // 
             // username
@@ -80,11 +82,34 @@
             switchButton.TabIndex = 4;
             switchButton.UseVisualStyleBackColor = true;
             // 
+            // logIn
+            // 
+            logIn.Location = new Point(254, 194);
+            logIn.Name = "logIn";
+            logIn.Size = new Size(75, 23);
+            logIn.TabIndex = 5;
+            logIn.Text = "log in";
+            logIn.UseVisualStyleBackColor = true;
+            logIn.Click += logIn_Click;
+            // 
+            // showPassword
+            // 
+            showPassword.AutoSize = true;
+            showPassword.Location = new Point(485, 115);
+            showPassword.Name = "showPassword";
+            showPassword.Size = new Size(107, 19);
+            showPassword.TabIndex = 6;
+            showPassword.Text = "show password";
+            showPassword.UseVisualStyleBackColor = true;
+            showPassword.CheckedChanged += showPassword_CheckedChanged;
+            // 
             // Authentification
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(showPassword);
+            Controls.Add(logIn);
             Controls.Add(switchButton);
             Controls.Add(name);
             Controls.Add(password);
@@ -104,5 +129,7 @@
         private TextBox password;
         private TextBox name;
         private SButton switchButton;
+        private Button logIn;
+        private CheckBox showPassword;
     }
 }
