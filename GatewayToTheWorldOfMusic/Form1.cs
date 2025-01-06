@@ -19,27 +19,20 @@ namespace GatewayToTheWorldOfMusic
     public partial class Start : Form
     {
         private readonly AppDbContext _context;
+        public static int number_of_songs;
         public Start()
         {
             InitializeComponent();
             _context = Program.ServiceProvider.GetRequiredService<AppDbContext>();
         }
 
-        public static int number_of_songs;
 
-        //public void ConfigureServices(IServiceCollection services)
+        //private void LoadStudents()
         //{
-        //    //Some Code
-        //    services.AddDbContext<AppDbContext>();
-        //    //Some Code
+        //    var students = _context.Students.ToList();
+        //    // Display the students on your form, etc.
+        //    MessageBox.Show($"Number of students: {students.Count}");
         //}
-
-        private void LoadStudents()
-        {
-            var students = _context.Students.ToList();
-            // Display the students on your form, etc.
-            MessageBox.Show($"Number of students: {students.Count}");
-        }
 
 
         public void Form1_Load(object sender, EventArgs e)
@@ -57,49 +50,26 @@ namespace GatewayToTheWorldOfMusic
                 while (values[0] != '.')
                 {
                     string[] notes_names = values.Split(' ');
-                    List <Note> current_staff = new List<Note>();
+                    // creates the current staff (a list of nodes), which will be added to the list of staffs
+                    List<Note> current_staff = new List<Note>();
                     foreach (var name in notes_names)
                     {
                         int converted_note = Note.convert_notes[name];
-                        if (converted_note % 10 == 1)
+                        if (converted_note % 10 == 1)   // is sharp
                             current_staff.Add(new Note(1, converted_note / 10 * 10));
-                        else if (converted_note % 10 == 2)
+                        else if (converted_note % 10 == 2)  // is flat
                             current_staff.Add(new Note(-1, converted_note / 10 * 10));
-                        else if (converted_note % 10 == 3)
+                        else if (converted_note % 10 == 3)  // is natural
                             current_staff.Add(new Note(10, converted_note / 10 * 10));
-                        else
+                        else   // no accident
                             current_staff.Add(new Note(0, converted_note / 10 * 10));
                     }
-                        //current_staff.Add(new Note(0, convert_notes[name]));
                     notes.Add(current_staff);
                     line++;
                     values = sr.ReadLine();
                 }
                 Melody.songs.Add(new Song(title, scale, line, notes));
             }
-            /*foreach (List<int> portativ in Form6.cantece[0]._note)
-            {
-                foreach (int elem in portativ)
-                {
-                    //label1.Visible = true;
-                    titlu.Text = titlu.Text + ' ' + Convert.ToString(elem);
-                }
-                titlu.Text = titlu.Text + '\n';
-            }*/
-            /*while (!sr.EndOfStream)
-            {
-                string nume = sr.ReadLine();
-                //titlu.Text = nume;
-                string valori = sr.ReadLine();
-                string[] bits = valori.Split(' ');
-                //int nota = sr.Read();
-                List <int> note = new List <int>();
-                foreach (var bit in bits)
-                    note.Add(convertireNote[bit]);
-                Form6.cantece.Add(new Cantec(nume, note));
-                //foreach (var notes in note)
-                    //titlu.Text = titlu.Text + Convert.ToString(notes);
-            }*/
             sr.Close();
         }
 

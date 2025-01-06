@@ -8,10 +8,10 @@ namespace GatewayToTheWorldOfMusic
 {
     public class Song
     {
-        public int _number_of_staffs;
-        public List<List<Note>> _note = new List<List<Note>>();
-        public string _title;
-        public string _scale;
+        public int number_of_staffs;
+        public List<List<Note>> notes = new List<List<Note>>();
+        public string title;
+        public string scale;
 
         public bool _sung;
 
@@ -19,16 +19,16 @@ namespace GatewayToTheWorldOfMusic
         { get { return _sung; } set { _sung = value; } }
 
         public List < List <Note>> Notes
-        { get { return _note; } set { _note = value; } }
+        { get { return notes; } set { notes = value; } }
 
         public string Title
-        { get { return _title; } set { _title = value; } }
+        { get { return title; } set { title = value; } }
 
         public string Scale
-        { get { return _scale; } set { _scale = value; } }
+        { get { return scale; } set { scale = value; } }
 
         public int NumberOfStaffs
-        { get { return _number_of_staffs; } set { _number_of_staffs = value; } }
+        { get { return number_of_staffs; } set { number_of_staffs = value; } }
 
         public Song(string title, string scale, int number_of_staffs, List<List<Note>> notes)
         {

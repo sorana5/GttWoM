@@ -39,8 +39,6 @@ namespace GatewayToTheWorldOfMusic
         private void button4_Click(object sender, EventArgs e)
         {
             this.Close();
-            //Start start = new Start();
-            //start.Show();
         }
 
         private void button2_Click(object sender, EventArgs e)

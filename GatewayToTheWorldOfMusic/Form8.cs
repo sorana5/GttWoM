@@ -30,16 +30,11 @@ namespace GatewayToTheWorldOfMusic
             using (var context = new AppDbContext())
             {
                 var students = context.Students.OrderByDescending(student => student.Highscore).ThenBy(student => student.Id).ToList();
-                //var students = context.Students.OrderByDescending(highscore).ToList();
                 foreach (var student in students)
                 {
                     string[] newRow = { student.Id.ToString(), student.Username, student.Name, student.Highscore.ToString() };
                     ListViewItem item = new ListViewItem(newRow);
                     listView1.Items.Add(item);
-                    //item.SubItems.Add(student.Id);
-                    //item.SubItems.Add(student.Username);
-                    //item.SubItems.Add(student.Name);
-                    //item.SubItems.Add(student.Highscore.ToString());
                 }
             }
         }
@@ -61,21 +56,6 @@ namespace GatewayToTheWorldOfMusic
                     return;
                 }
                 context.Students.Remove(toDelete);
-                //var maxId = students.Max(s => s.Id);
-                //GatewayToTheWorldOfMusic.ExecuteSqlRaw($"SELECT setval('students_id_seq', {maxId}, true)");
-                //students.OrderBy(s => s.Id);
-                //int newId = 1;
-                //foreach (var student in students)
-                //{
-                //    student.Id = newId;
-                //    context.Students.Update(student);
-                //    newId++;
-                //}
-                //using (var context = new AppDbContext())
-                //{
-                //    context.Students.Update(Authentification.current_student);
-                //    context.SaveChanges();
-                //}
                 context.SaveChanges();
             }
             load_list();

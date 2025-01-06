@@ -21,9 +21,8 @@ namespace GatewayToTheWorldOfMusic
 
         private void Form7_Load(object sender, EventArgs e)
         {
-            // index = 0;
             password.UseSystemPasswordChar = true;
-            label3.Text = "If you don't have an account yet, \nenter your name and press Register.";
+            label3.Text = "If you don't have an account yet, \nenter also your name and press Register.";
         }
 
         public static Student current_student = null;
@@ -49,9 +48,15 @@ namespace GatewayToTheWorldOfMusic
                     }
                     return Convert.ToBase64String(msEncrypt.ToArray());
                 }
+            }
+        }
 
-                //byte[] encrypted = EncryptStringToBytes_Aes(password, myAes.Key, myAes.IV);
-                //return Encoding.Default.GetString(encrypted);
+        private void check_lenght()
+        {
+            if (username.Text.Length < 3 || password.Text.Length < 3 || name.Text.Length < 3)
+            {
+                MessageBox.Show("Username, password and name must have at least 3 characters!");
+                return;
             }
         }
 
@@ -67,11 +72,7 @@ namespace GatewayToTheWorldOfMusic
                         MessageBox.Show("Username already exists!");
                         return;
                     }
-                    if (username.Text.Length < 3 || password.Text.Length < 3 || name.Text.Length < 3)
-                    {
-                        MessageBox.Show("Username, password and name must have at least 3 characters!");
-                        return;
-                    }
+                    check_lenght();
                     var newTeacher = new Teacher
                     {
                         Id = Teacher.generate_index() + 1,
@@ -99,11 +100,7 @@ namespace GatewayToTheWorldOfMusic
                         MessageBox.Show("Username already exists!");
                         return;
                     }
-                    if (username.Text.Length < 3 || password.Text.Length < 3 || name.Text.Length < 3)
-                    {
-                        MessageBox.Show("Username, password and name must have at least 3 characters!");
-                        return;
-                    }
+                    check_lenght();
                     var newStudent = new Student
                     {
                         Id = Student.generate_index(),
@@ -169,13 +166,9 @@ namespace GatewayToTheWorldOfMusic
                     cuprins = null;
                     this.Show();
                 }
-
-                //context.SaveChanges();
-                //MessageBox.Show("Account created successfully!");
                 username.Clear();
                 password.Clear();
                 name.Clear();
-
 
             }
         }

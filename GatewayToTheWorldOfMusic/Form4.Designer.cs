@@ -533,7 +533,7 @@
             KeyPreview = true;
             Margin = new Padding(4);
             Name = "Testing";
-            Text = "Testare";
+            Text = "Testing";
             WindowState = FormWindowState.Maximized;
             Load += Form4_Load;
             ResumeLayout(false);

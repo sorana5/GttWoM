@@ -517,7 +517,7 @@
             KeyPreview = true;
             Margin = new Padding(3, 4, 3, 4);
             Name = "Melody";
-            Text = "Melodie";
+            Text = "Melody";
             WindowState = FormWindowState.Maximized;
             Load += Form6_Load;
             ResumeLayout(false);

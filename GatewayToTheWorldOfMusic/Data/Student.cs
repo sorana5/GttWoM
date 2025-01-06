@@ -10,19 +10,6 @@ namespace GatewayToTheWorldOfMusic.Data
         public string Name { get; set; }
         public int Highscore { get; set; }
 
-        //public static bool valid_username(string username)
-        //{
-        //    using (var context = new AppDbContext())
-        //    {
-        //        var students = context.Students.ToList();
-        //        foreach (Student student in students)
-        //        {
-        //            if (student.Username == username)
-        //                return false;
-        //        }
-        //        return true;
-        //    }
-        //}
 
         public static int generate_index()
         {
