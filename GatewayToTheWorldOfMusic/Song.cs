@@ -13,11 +13,6 @@ namespace GatewayToTheWorldOfMusic
         public string title;
         public string scale;
 
-        public bool _sung;
-
-        public bool Sung
-        { get { return _sung; } set { _sung = value; } }
-
         public List < List <Note>> Notes
         { get { return notes; } set { notes = value; } }
 

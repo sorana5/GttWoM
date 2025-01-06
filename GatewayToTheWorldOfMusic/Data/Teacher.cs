@@ -15,19 +15,5 @@
                 return teachers.Count;
             }
         }
-
-        public static bool valid_username(string username)
-        {
-            using (var context = new AppDbContext())
-            {
-                var teachers = context.Teachers.ToList();
-                foreach (Teacher teacher in teachers)
-                {
-                    if (teacher.Username == username)
-                        return false;
-                }
-                return true;
-            }
-        }
     }
 }
