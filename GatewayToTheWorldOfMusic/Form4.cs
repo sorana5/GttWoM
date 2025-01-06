@@ -33,28 +33,28 @@ namespace GatewayToTheWorldOfMusic
         Graphics g;
         //Staff staff = new Staff();
         Random random = new Random();
-        List <Note> generated = new List<Note>();
-        List <Note> sung = new List<Note>();
+        List<Note> generated = new List<Note>();
+        List<Note> sung = new List<Note>();
         int total_score = 0;
 
 
         public void Play(string notePath)
         {
-            System.Media.SoundPlayer player = new System.Media.SoundPlayer(notePath); 
+            System.Media.SoundPlayer player = new System.Media.SoundPlayer(notePath);
             player.Play();
         }
 
         private void Form4_Load(object sender, EventArgs e)
         {
             //webBrowser1.Navigate("www.wikipedia.com");
-            
+
             g = this.CreateGraphics();
             Staff.draw_staff(g, true);
             score.Text = "You scored " + total_score + " so far.";
             Image flat = Image.FromFile(@"extra\flat_black.png");
-            g.DrawImage(flat, 1385, 105, 30, 30);
+            g.DrawImage(flat, 1350, 65, 30, 30);
             Image sharp = Image.FromFile(@"extra\sharp_black.png");
-            g.DrawImage(sharp, 1300, 105, 30, 30);
+            g.DrawImage(sharp, 1257, 65, 31, 30);
             //Pen p = new Pen(Color.Black, 5);
             //Point p1 = new Point(100, 60);
             //Point p2 = new Point(100, 80);
@@ -82,7 +82,7 @@ namespace GatewayToTheWorldOfMusic
         //private void webBrowser1_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
         //{
         //    this.Text = e.Url.ToString() + "is loading...";
-            
+
         //}
 
         private void button6_Click(object sender, EventArgs e)
@@ -351,6 +351,14 @@ namespace GatewayToTheWorldOfMusic
                 //if (absolute_value_sung == absolute_expected_value)
                 //    score += 10;
                 i++;
+                if (i == 10)
+                    break;
+            }
+            if (score == 100)
+            {
+                string message = "Congratulations! You got all the notes right!";
+                string title = "Congratulations!";
+                MessageBox.Show(message, title);
             }
             return score;
         }
@@ -365,9 +373,9 @@ namespace GatewayToTheWorldOfMusic
             score.Text = "You scored " + total_score + " so far.";
             Staff.draw_staff(g, true);
             Image flat = Image.FromFile(@"extra\flat_black.png");
-            g.DrawImage(flat, 1385, 105, 30, 30);
+            g.DrawImage(flat, 1350, 65, 30, 30);
             Image sharp = Image.FromFile(@"extra\sharp_black.png");
-            g.DrawImage(sharp, 1300, 105, 30, 30);
+            g.DrawImage(sharp, 1257, 65, 31, 30);
             Pen black_pen = new Pen(Color.Black, 5);
             //locatie = 100;
             //Pen p = new Pen(Color.Black, 5);
@@ -499,7 +507,7 @@ namespace GatewayToTheWorldOfMusic
             //    }
             //}
         }
-        
+
         private void button2_Click_1(object sender, EventArgs e)
         {
             this.Close();
@@ -512,6 +520,11 @@ namespace GatewayToTheWorldOfMusic
             melody.ShowDialog();
             melody = null;
             this.Show();
+        }
+
+        private void score_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

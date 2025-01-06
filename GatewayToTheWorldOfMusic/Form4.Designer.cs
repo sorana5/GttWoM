@@ -470,7 +470,7 @@
             // switchButton
             // 
             switchButton.AutoSize = true;
-            switchButton.Location = new Point(1336, 111);
+            switchButton.Location = new Point(1295, 71);
             switchButton.MinimumSize = new Size(45, 22);
             switchButton.Name = "switchButton";
             switchButton.OffBackColor = Color.MediumPurple;
@@ -484,11 +484,13 @@
             // score
             // 
             score.AutoSize = true;
-            score.Location = new Point(1376, 194);
+            score.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            score.Location = new Point(1231, 148);
             score.Name = "score";
-            score.Size = new Size(38, 15);
+            score.Size = new Size(63, 25);
             score.TabIndex = 34;
             score.Text = "label1";
+            score.Click += score_Click;
             // 
             // Testing
             // 

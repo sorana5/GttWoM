@@ -470,9 +470,10 @@
             // current_score
             // 
             current_score.AutoSize = true;
-            current_score.Location = new Point(1367, 116);
+            current_score.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            current_score.Location = new Point(1602, 155);
             current_score.Name = "current_score";
-            current_score.Size = new Size(38, 15);
+            current_score.Size = new Size(63, 25);
             current_score.TabIndex = 33;
             current_score.Text = "label2";
             // 

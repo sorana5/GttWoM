@@ -23,6 +23,7 @@ namespace GatewayToTheWorldOfMusic
         {
             // index = 0;
             password.UseSystemPasswordChar = true;
+            label3.Text = "If you don't have an account yet, \nenter your name and press Register.";
         }
 
         public static Student current_student = null;

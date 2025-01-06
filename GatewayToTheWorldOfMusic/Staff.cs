@@ -60,6 +60,8 @@ namespace GatewayToTheWorldOfMusic
             {
                 location += 100;
                 note.draw_it(graphics, location, pen);
+                if (location >= 1100)
+                    return;
             }
         }
     }

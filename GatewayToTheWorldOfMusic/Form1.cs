@@ -41,69 +41,6 @@ namespace GatewayToTheWorldOfMusic
             MessageBox.Show($"Number of students: {students.Count}");
         }
 
-        private Dictionary<string, int> convert_notes = new Dictionary<string, int>()
-        {
-            ["do"] = 150,
-            ["dod"] = 151,
-            ["dob"] = 152,
-            ["don"] = 153,
-            ["re"] = 140,
-            ["red"] = 141,
-            ["reb"] = 142,
-            ["ren"] = 143,
-            ["mi"] = 130,
-            ["mid"] = 131,
-            ["mib"] = 132,
-            ["min"] = 133,
-            ["fa"] = 120,
-            ["fad"] = 121,
-            ["fab"] = 122,
-            ["fan"] = 123,
-            ["sol"] = 110,
-            ["sold"] = 111,
-            ["solb"] = 112,
-            ["soln"] = 113,
-            ["la"] = 100,
-            ["lad"] = 101,
-            ["lab"] = 102,
-            ["lan"] = 103,
-            ["si"] = 90,
-            ["sid"] = 91,
-            ["sib"] = 92,
-            ["sin"] = 93,
-            ["do2"] = 80,
-            ["do2d"] = 81,
-            ["do2b"] = 82,
-            ["do2n"] = 83,
-            ["re2"] = 70,
-            ["re2d"] = 71,
-            ["re2b"] = 72,
-            ["re2n"] = 73,
-            ["mi2"] = 60,
-            ["mi2d"] = 61,
-            ["mi2b"] = 62,
-            ["mi2n"] = 63,
-            ["fa2"] = 50,
-            ["fa2d"] = 51,
-            ["fa2b"] = 52,
-            ["fa2n"] = 53,
-            ["sol2"] = 40,
-            ["sol2d"] = 41,
-            ["sol2b"] = 42,
-            ["sol2n"] = 43,
-            ["la2"] = 30,
-            ["la2d"] = 31,
-            ["la2b"] = 32,
-            ["la2n"] = 33,
-            ["si2"] = 20,
-            ["si2d"] = 21,
-            ["si2b"] = 22,
-            ["si2n"] = 23,
-            ["do3"] = 10,
-            ["do3d"] = 11,
-            ["do3b"] = 12,
-            ["do3n"] = 13
-        };
 
         public void Form1_Load(object sender, EventArgs e)
         {
@@ -123,7 +60,7 @@ namespace GatewayToTheWorldOfMusic
                     List <Note> current_staff = new List<Note>();
                     foreach (var name in notes_names)
                     {
-                        int converted_note = convert_notes[name];
+                        int converted_note = Note.convert_notes[name];
                         if (converted_note % 10 == 1)
                             current_staff.Add(new Note(1, converted_note / 10 * 10));
                         else if (converted_note % 10 == 2)

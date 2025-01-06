@@ -21,6 +21,7 @@ namespace GatewayToTheWorldOfMusic
         private void Form8_Load(object sender, EventArgs e)
         {
             load_list();
+            instruction.Text = "To delete a student, enter the username \nin the text box and press the delete button: ";
         }
 
         private void load_list()
@@ -28,7 +29,7 @@ namespace GatewayToTheWorldOfMusic
             listView1.Items.Clear();
             using (var context = new AppDbContext())
             {
-                var students = context.Students.OrderByDescending(student => student.Highscore).ToList();
+                var students = context.Students.OrderByDescending(student => student.Highscore).ThenBy(student => student.Id).ToList();
                 //var students = context.Students.OrderByDescending(highscore).ToList();
                 foreach (var student in students)
                 {

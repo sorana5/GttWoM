@@ -1,4 +1,5 @@
 ﻿//using PortalSpreLumeaMuzicii;
+using GatewayToTheWorldOfMusic.Data;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -101,7 +102,7 @@ namespace GatewayToTheWorldOfMusic
             song_number = random.Next(0, Start.number_of_songs);
             song = songs[song_number]._note;
             label1.Text = "You just played " + songs[song_number]._title + "!";
-            current_score.Text = "Your current score is " + total_score;
+            current_score.Text = "Your current score is " + total_score + ".";
             number_staffs = songs[song_number]._number_of_staffs;
             
             /*int nota = 100;
@@ -147,7 +148,7 @@ namespace GatewayToTheWorldOfMusic
         void press_note(object sender, EventArgs e, int alteration, int altitude)
         {
             location += 100;
-            if (staff_number <= number_staffs && location <= (song[staff_number-1].Count()+1) * 100)
+            if (staff_number <= number_staffs && staff_number > 0 && location <= (song[staff_number-1].Count()+1) * 100)
             {
                 Note note = new Note(alteration, altitude);
                 sung.Add(note);
@@ -175,7 +176,16 @@ namespace GatewayToTheWorldOfMusic
                     note.draw_it(g, location, purple_pen);
                     //Note.draw_note(g, point, purple_pen);
                 }
-                current_score.Text = "Your current score is " + total_score;// + " " + absolute_value_sung + " " + absolute_expected_value + " " + location;
+                current_score.Text = "Your current score is " + total_score + "."; // + " " + absolute_value_sung + " " + absolute_expected_value + " " + location;
+                if (total_score > Authentification.current_student.Highscore)
+                {
+                    Authentification.current_student.Highscore = total_score;
+                    using (var context = new AppDbContext())
+                    {
+                        context.Students.Update(Authentification.current_student);
+                        context.SaveChanges();
+                    }
+                }
                 //draw_note(sender, e, point, purple_pen);
             }
         }
@@ -391,7 +401,7 @@ namespace GatewayToTheWorldOfMusic
             element = 0;
             staff_number = 0;
             total_score = 0;
-            current_score.Text = "Your current score is " + total_score;
+            current_score.Text = "Your current score is " + total_score + ".";
             sung.Clear();
             Staff.draw_staff(g, false);
             Pen black_pen = new Pen(Color.Black, 5);
@@ -543,7 +553,7 @@ namespace GatewayToTheWorldOfMusic
 
             //Pen p = new Pen(Color.Black, 5);
             //total_score += calculate_score(sung, song[staff_number-1]);
-            current_score.Text = "Your current score is " + total_score;
+            current_score.Text = "Your current score is " + total_score + ".";
             if (staff_number < number_staffs)
             {
                 Staff.draw_current_staff(g, song[staff_number], black_pen);
