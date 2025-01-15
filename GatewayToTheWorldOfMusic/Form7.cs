@@ -51,13 +51,14 @@ namespace GatewayToTheWorldOfMusic
             }
         }
 
-        private void check_lenght()
+        private bool check_lenght()
         {
             if (username.Text.Length < 3 || password.Text.Length < 3 || name.Text.Length < 3)
             {
                 MessageBox.Show("Username, password and name must have at least 3 characters!");
-                return;
+                return false;
             }
+            return true;
         }
 
         private void register_Click(object sender, EventArgs e)
@@ -72,7 +73,8 @@ namespace GatewayToTheWorldOfMusic
                         MessageBox.Show("Username already exists!");
                         return;
                     }
-                    check_lenght();
+                    if (!check_lenght())
+                        return;
                     var newTeacher = new Teacher
                     {
                         Id = Teacher.generate_index() + 1,
@@ -100,7 +102,8 @@ namespace GatewayToTheWorldOfMusic
                         MessageBox.Show("Username already exists!");
                         return;
                     }
-                    check_lenght();
+                    if (!check_lenght())
+                        return;
                     var newStudent = new Student
                     {
                         Id = Student.generate_index(),

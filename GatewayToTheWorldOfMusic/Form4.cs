@@ -20,6 +20,7 @@ namespace GatewayToTheWorldOfMusic
         List<Note> generated = new List<Note>();
         List<Note> sung = new List<Note>();
         int total_score = 0;
+        Lesson currentLesson;
 
         public Testing()
         {
@@ -344,6 +345,30 @@ namespace GatewayToTheWorldOfMusic
 
             Staff.draw_current_staff(g, generated, black_pen);
 
+            using (var context = new AppDbContext())
+            {
+                //var current_student = context.Students.FirstOrDefault(s => s.Id == Authentification.current_student.Id);
+                //if (current_student != null)
+                //{
+                //    current_student.Highscore = 0;
+                //    context.Students.Update(current_student);
+                //    context.SaveChanges();
+                //}
+                var newLesson = new Lesson
+                {
+                    lessonID = Lesson.generate_index() + 1,
+                    lessonType = "randomlyGenerated",
+                    studentID = Authentification.current_student.Id,
+                    date = DateTime.UtcNow,
+                    score = 0
+                };
+
+                context.Lessons.Add(newLesson);
+                context.SaveChanges();
+
+                currentLesson = newLesson;
+            }
+
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -354,15 +379,29 @@ namespace GatewayToTheWorldOfMusic
             total_score = calculate_score(sung, generated);
             score.Text = "You scored " + total_score + " so far.";
 
-            if (total_score > Authentification.current_student.Highscore)
+            using (var context = new AppDbContext())
             {
-                Authentification.current_student.Highscore = total_score;
-                using (var context = new AppDbContext())
+                currentLesson.score = total_score;
+                context.Lessons.Update(currentLesson);
+                context.SaveChanges();
+
+                if (total_score > Authentification.current_student.Highscore)
                 {
+                    Authentification.current_student.Highscore = total_score;
                     context.Students.Update(Authentification.current_student);
                     context.SaveChanges();
                 }
             }
+
+            //if (total_score > Authentification.current_student.Highscore)
+            //{
+            //    Authentification.current_student.Highscore = total_score;
+            //    using (var context = new AppDbContext())
+            //    {
+            //        context.Students.Update(Authentification.current_student);
+            //        context.SaveChanges();
+            //    }
+            //}
         }
 
         private void button2_Click_1(object sender, EventArgs e)

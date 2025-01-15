@@ -22,6 +22,7 @@ namespace GatewayToTheWorldOfMusic
         List<List<Note>> song = new List<List<Note>>();
         List<Note> sung = new List<Note>();
         int total_score = 0, staff_number = 0, location = 100, number_staffs, song_number;
+        Lesson currentLesson;
         public Melody()
         {
             InitializeComponent();
@@ -73,11 +74,25 @@ namespace GatewayToTheWorldOfMusic
                 }
                 current_score.Text = "Your current score is " + total_score + ".";
                 // update highscore
-                if (total_score > Authentification.current_student.Highscore)
+                //if (total_score > Authentification.current_student.Highscore)
+                //{
+                //    Authentification.current_student.Highscore = total_score;
+                //    using (var context = new AppDbContext())
+                //    {
+                //        context.Students.Update(Authentification.current_student);
+                //        context.SaveChanges();
+                //    }
+                //}
+
+                using (var context = new AppDbContext())
                 {
-                    Authentification.current_student.Highscore = total_score;
-                    using (var context = new AppDbContext())
+                    currentLesson.score = total_score;
+                    context.Lessons.Update(currentLesson);
+                    context.SaveChanges();
+
+                    if (total_score > Authentification.current_student.Highscore)
                     {
+                        Authentification.current_student.Highscore = total_score;
                         context.Students.Update(Authentification.current_student);
                         context.SaveChanges();
                     }
@@ -303,6 +318,23 @@ namespace GatewayToTheWorldOfMusic
             Staff.draw_key_signature(g, songs[song_number].scale);
             Staff.draw_current_staff(g, song[0], black_pen);
             staff_number++;
+
+            using (var context = new AppDbContext())
+            {
+                var newLesson = new Lesson
+                {
+                    lessonID = Lesson.generate_index() + 1,
+                    lessonType = "singASong",
+                    studentID = Authentification.current_student.Id,
+                    date = DateTime.UtcNow,
+                    score = 0
+                };
+
+                context.Lessons.Add(newLesson);
+                context.SaveChanges();
+
+                currentLesson = newLesson;
+            }
 
         }
 
