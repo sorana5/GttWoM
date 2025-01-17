@@ -20,11 +20,11 @@ namespace GatewayToTheWorldOfMusic
 
         private void Form8_Load(object sender, EventArgs e)
         {
-            load_list();
+            LoadList();
             instruction.Text = "To delete a student, enter the username \nin the text box and press the delete button: ";
         }
 
-        private void load_list()
+        private void LoadList()
         {
             listView1.Items.Clear();
             using (var context = new AppDbContext())
@@ -58,7 +58,7 @@ namespace GatewayToTheWorldOfMusic
                 context.Students.Remove(toDelete);
                 context.SaveChanges();
             }
-            load_list();
+            LoadList();
         }
     }
 }

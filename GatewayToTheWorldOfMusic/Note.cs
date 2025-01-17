@@ -20,7 +20,7 @@ namespace GatewayToTheWorldOfMusic
             this.alteration = alteration;
         }
 
-        public static Dictionary<string, int> convert_notes = new Dictionary<string, int>()
+        public static Dictionary<string, int> ConvertNotes = new Dictionary<string, int>()
         {
             ["do"] = 150,
             ["dod"] = 151,
@@ -84,19 +84,19 @@ namespace GatewayToTheWorldOfMusic
             ["do3n"] = 13
         };
 
-        public int absolute_value(string scale)
+        public int AbsoluteValue(string scale)
         {
-            int av = altitude;
+            int absoluteValue = altitude;
             if (alteration != 10)
-                av = altitude - alteration * 5;
+                absoluteValue = altitude - alteration * 5;
             if (scale == "Sol Major" && (altitude == 120 || altitude == 50))
-                av -= 5;
+                absoluteValue -= 5;
             if (scale == "Fa Major" && (altitude == 90 || altitude == 20))
-                av += 5;
-            return av;
+                absoluteValue += 5;
+            return absoluteValue;
         }
 
-        public void draw_it(Graphics graphics, int location, Pen pen)
+        public void DrawIt(Graphics graphics, int location, Pen pen)
         {
             Point point = new Point(location, altitude);
             graphics.DrawEllipse(pen, point.X, point.Y, 30, 20);

@@ -8,7 +8,7 @@ namespace GatewayToTheWorldOfMusic
 {
     public class Song
     {
-        public int number_of_staffs;
+        public int numberOfStaffs;
         public List<List<Note>> notes = new List<List<Note>>();
         public string title;
         public string scale;
@@ -23,7 +23,7 @@ namespace GatewayToTheWorldOfMusic
         { get { return scale; } set { scale = value; } }
 
         public int NumberOfStaffs
-        { get { return number_of_staffs; } set { number_of_staffs = value; } }
+        { get { return numberOfStaffs; } set { numberOfStaffs = value; } }
 
         public Song(string title, string scale, int number_of_staffs, List<List<Note>> notes)
         {

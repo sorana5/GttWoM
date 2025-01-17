@@ -7,7 +7,7 @@
         public string Password { get; set; }
         public string Name { get; set; }
 
-        public static int generate_index()
+        public static int GenerateIndex()
         {
             using (var context = new AppDbContext())
             {

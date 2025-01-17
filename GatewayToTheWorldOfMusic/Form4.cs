@@ -17,10 +17,10 @@ namespace GatewayToTheWorldOfMusic
     {
         Graphics g;
         Random random = new Random();
-        List<Note> generated = new List<Note>();
-        List<Note> sung = new List<Note>();
-        int total_score = 0;
-        Lesson currentLesson;
+        private List<Note> generated = new List<Note>();
+        private List<Note> sung = new List<Note>();
+        private int totalScore = 0;
+        private Lesson currentLesson;
 
         public Testing()
         {
@@ -40,8 +40,8 @@ namespace GatewayToTheWorldOfMusic
 
         private void Form4_Load(object sender, EventArgs e)
         {
-            Staff.draw_staff(g, true);
-            score.Text = "You scored " + total_score + " so far.";
+            Staff.DrawStaff(g, true);
+            score.Text = "You scored " + totalScore + " so far.";
             Image flat = Image.FromFile(@"extra\flat_black.png");
             g.DrawImage(flat, 1350, 65, 30, 30);
             Image sharp = Image.FromFile(@"extra\sharp_black.png");
@@ -279,7 +279,7 @@ namespace GatewayToTheWorldOfMusic
 
         }
 
-        private bool correctly_generated(Note note)
+        private bool CorrectlyGenerated(Note note)
         {
             if (note.alteration == 1)   // there can't be E4#, B4#, E5#, B5# or C6# 
             {
@@ -295,7 +295,7 @@ namespace GatewayToTheWorldOfMusic
             }
             return true;
         }
-        public int calculate_score(List<Note> sung, List<Note> song)
+        private int CalculateScore(List<Note> sung, List<Note> song)
         {
             int score = 0;
             int i = 0;
@@ -323,14 +323,14 @@ namespace GatewayToTheWorldOfMusic
             g.Clear(BackColor);
             sung.Clear();
             generated.Clear();
-            total_score = 0;
-            score.Text = "You scored " + total_score + " so far.";
-            Staff.draw_staff(g, true);
+            totalScore = 0;
+            score.Text = "You scored " + totalScore + " so far.";
+            Staff.DrawStaff(g, true);
             Image flat = Image.FromFile(@"extra\flat_black.png");
             g.DrawImage(flat, 1350, 65, 30, 30);
             Image sharp = Image.FromFile(@"extra\sharp_black.png");
             g.DrawImage(sharp, 1257, 65, 31, 30);
-            Pen black_pen = new Pen(Color.Black, 5);
+            Pen blackPen = new Pen(Color.Black, 5);
 
             for (int i = 1; i <= 10; i++)   // generates 10 random notes
             {
@@ -338,12 +338,12 @@ namespace GatewayToTheWorldOfMusic
                 while (altitude % 10 != 0)
                     altitude = random.Next(10, 151);
                 int alteration = random.Next(-1, 2);
-                while (correctly_generated(new Note(alteration, altitude)) == false)
+                while (CorrectlyGenerated(new Note(alteration, altitude)) == false)
                     alteration = random.Next(-1, 2);
                 generated.Add(new Note(alteration, altitude));
             }
 
-            Staff.draw_current_staff(g, generated, black_pen);
+            Staff.DrawCurrentStaff(g, generated, blackPen);
 
             using (var context = new AppDbContext())
             {
@@ -356,9 +356,9 @@ namespace GatewayToTheWorldOfMusic
                 //}
                 var newLesson = new Lesson
                 {
-                    lessonID = Lesson.generate_index() + 1,
+                    lessonID = Lesson.GenerateIndex() + 1,
                     lessonType = "randomlyGenerated",
-                    studentID = Authentification.current_student.Id,
+                    studentID = Authentification.currentStudent.Id,
                     date = DateTime.UtcNow,
                     score = 0
                 };
@@ -374,21 +374,21 @@ namespace GatewayToTheWorldOfMusic
         private void button3_Click(object sender, EventArgs e)
         {
             // shows the progress
-            Pen purple_pen = new Pen(Color.MediumPurple, 5);
-            Staff.draw_current_staff(g, sung, purple_pen);
-            total_score = calculate_score(sung, generated);
-            score.Text = "You scored " + total_score + " so far.";
+            Pen purplePen = new Pen(Color.MediumPurple, 5);
+            Staff.DrawCurrentStaff(g, sung, purplePen);
+            totalScore = CalculateScore(sung, generated);
+            score.Text = "You scored " + totalScore + " so far.";
 
             using (var context = new AppDbContext())
             {
-                currentLesson.score = total_score;
+                currentLesson.score = totalScore;
                 context.Lessons.Update(currentLesson);
                 context.SaveChanges();
 
-                if (total_score > Authentification.current_student.Highscore)
+                if (totalScore > Authentification.currentStudent.Highscore)
                 {
-                    Authentification.current_student.Highscore = total_score;
-                    context.Students.Update(Authentification.current_student);
+                    Authentification.currentStudent.Highscore = totalScore;
+                    context.Students.Update(Authentification.currentStudent);
                     context.SaveChanges();
                 }
             }

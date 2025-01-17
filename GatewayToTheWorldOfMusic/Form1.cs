@@ -19,7 +19,7 @@ namespace GatewayToTheWorldOfMusic
     public partial class Start : Form
     {
         private readonly AppDbContext _context;
-        public static int number_of_songs;
+        public static int numberOfSongs;
         public Start()
         {
             InitializeComponent();
@@ -39,8 +39,8 @@ namespace GatewayToTheWorldOfMusic
         {
             // reads the songs from the file
             StreamReader sr = new StreamReader(@"Cantece.txt");
-            number_of_songs = Convert.ToInt32(sr.ReadLine());
-            for (int i = 0; i < number_of_songs; i++)
+            numberOfSongs = Convert.ToInt32(sr.ReadLine());
+            for (int i = 0; i < numberOfSongs; i++)
             {
                 string title = sr.ReadLine();
                 string scale = sr.ReadLine();
@@ -49,22 +49,22 @@ namespace GatewayToTheWorldOfMusic
                 int line = 0;
                 while (values[0] != '.')
                 {
-                    string[] notes_names = values.Split(' ');
+                    string[] notesNames = values.Split(' ');
                     // creates the current staff (a list of nodes), which will be added to the list of staffs
-                    List<Note> current_staff = new List<Note>();
-                    foreach (var name in notes_names)
+                    List<Note> currentStaff = new List<Note>();
+                    foreach (var name in notesNames)
                     {
-                        int converted_note = Note.convert_notes[name];
-                        if (converted_note % 10 == 1)   // is sharp
-                            current_staff.Add(new Note(1, converted_note / 10 * 10));
-                        else if (converted_note % 10 == 2)  // is flat
-                            current_staff.Add(new Note(-1, converted_note / 10 * 10));
-                        else if (converted_note % 10 == 3)  // is natural
-                            current_staff.Add(new Note(10, converted_note / 10 * 10));
+                        int convertedNote = Note.ConvertNotes[name];
+                        if (convertedNote % 10 == 1)   // is sharp
+                            currentStaff.Add(new Note(1, convertedNote / 10 * 10));
+                        else if (convertedNote % 10 == 2)  // is flat
+                            currentStaff.Add(new Note(-1, convertedNote / 10 * 10));
+                        else if (convertedNote % 10 == 3)  // is natural
+                            currentStaff.Add(new Note(10, convertedNote / 10 * 10));
                         else   // no accident
-                            current_staff.Add(new Note(0, converted_note / 10 * 10));
+                            currentStaff.Add(new Note(0, convertedNote / 10 * 10));
                     }
-                    notes.Add(current_staff);
+                    notes.Add(currentStaff);
                     line++;
                     values = sr.ReadLine();
                 }

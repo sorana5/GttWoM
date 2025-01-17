@@ -25,8 +25,8 @@ namespace GatewayToTheWorldOfMusic
             label3.Text = "If you don't have an account yet, \nenter also your name and press Register.";
         }
 
-        public static Student current_student = null;
-        public static Teacher current_teacher = null;
+        public static Student currentStudent = null;
+        public static Teacher currentTeacher = null;
 
         private static string encrypt(string password, string key)
         {
@@ -51,7 +51,7 @@ namespace GatewayToTheWorldOfMusic
             }
         }
 
-        private bool check_lenght()
+        private bool CheckLenght()
         {
             if (username.Text.Length < 3 || password.Text.Length < 3 || name.Text.Length < 3)
             {
@@ -73,18 +73,18 @@ namespace GatewayToTheWorldOfMusic
                         MessageBox.Show("Username already exists!");
                         return;
                     }
-                    if (!check_lenght())
+                    if (!CheckLenght())
                         return;
                     var newTeacher = new Teacher
                     {
-                        Id = Teacher.generate_index() + 1,
+                        Id = Teacher.GenerateIndex() + 1,
                         Username = username.Text,
                         Password = encrypt(password.Text, "SecretEncryptKey"),
                         Name = name.Text
                     };
 
                     context.Teachers.Add(newTeacher);
-                    current_teacher = newTeacher;
+                    currentTeacher = newTeacher;
 
                     context.SaveChanges();
                     MessageBox.Show("Teacher account created successfully!");
@@ -102,11 +102,11 @@ namespace GatewayToTheWorldOfMusic
                         MessageBox.Show("Username already exists!");
                         return;
                     }
-                    if (!check_lenght())
+                    if (!CheckLenght())
                         return;
                     var newStudent = new Student
                     {
-                        Id = Student.generate_index(),
+                        Id = Student.GenerateIndex(),
                         Username = username.Text,
                         Password = encrypt(password.Text, "SecretEncryptKey"),
                         Name = name.Text,
@@ -114,7 +114,7 @@ namespace GatewayToTheWorldOfMusic
                     };
 
                     context.Students.Add(newStudent);
-                    current_student = newStudent;
+                    currentStudent = newStudent;
 
                     context.SaveChanges();
                     MessageBox.Show("Student account created successfully!");
@@ -145,7 +145,7 @@ namespace GatewayToTheWorldOfMusic
                         MessageBox.Show("Invalid username or password!");
                         return;
                     }
-                    current_teacher = teacher;
+                    currentTeacher = teacher;
 
                     this.Hide();
                     ManageClass manageClass = new ManageClass();
@@ -161,7 +161,7 @@ namespace GatewayToTheWorldOfMusic
                         MessageBox.Show("Invalid username or password!");
                         return;
                     }
-                    current_student = student;
+                    currentStudent = student;
                     
                     this.Hide();
                     Cuprins cuprins = new Cuprins();

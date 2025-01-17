@@ -21,8 +21,8 @@ namespace GatewayToTheWorldOfMusic
         public static List<Song> songs = new List<Song>();
         List<List<Note>> song = new List<List<Note>>();
         List<Note> sung = new List<Note>();
-        int total_score = 0, staff_number = 0, location = 100, number_staffs, song_number;
-        Lesson currentLesson;
+        int totalScore = 0, staffNumber = 0, location = 100, numberStaffs, songNumber;
+        private Lesson currentLesson;
         public Melody()
         {
             InitializeComponent();
@@ -40,39 +40,39 @@ namespace GatewayToTheWorldOfMusic
 
         private void Form6_Load(object sender, EventArgs e)
         {
-            Staff.draw_staff(g, false);
+            Staff.DrawStaff(g, false);
             sung.Clear();
-            song_number = random.Next(0, Start.number_of_songs);
-            song = songs[song_number].notes;
-            label1.Text = "You just played " + songs[song_number].title + "!";
-            current_score.Text = "Your current score is " + total_score + ".";
-            number_staffs = songs[song_number].number_of_staffs;
+            songNumber = random.Next(0, Start.numberOfSongs);
+            song = songs[songNumber].notes;
+            label1.Text = "You just played " + songs[songNumber].title + "!";
+            currentScore.Text = "Your current score is " + totalScore + ".";
+            numberStaffs = songs[songNumber].numberOfStaffs;
         }
 
-        void press_note(object sender, EventArgs e, int alteration, int altitude)
+        void PressNote(object sender, EventArgs e, int alteration, int altitude)
         {
             location += 100;
-            Pen purple_pen = new Pen(Color.MediumPurple, 5);
-            if (staff_number <= number_staffs && staff_number > 0 && location <= (song[staff_number-1].Count()+1) * 100)
+            Pen purplePen = new Pen(Color.MediumPurple, 5);
+            if (staffNumber <= numberStaffs && staffNumber > 0 && location <= (song[staffNumber-1].Count()+1) * 100)
             {
                 Note note = new Note(alteration, altitude);
                 sung.Add(note);
 
-                int absolute_value_sung = altitude - alteration * 5;
+                int absoluteValueSung = altitude - alteration * 5;
 
                 int index = location / 100 - 2;
-                int absolute_expected_value = song[staff_number - 1][index].absolute_value(songs[song_number].scale);
+                int absoluteExpectedValue = song[staffNumber - 1][index].AbsoluteValue(songs[songNumber].scale);
                 // verifies if the sung note is correct
-                if (absolute_value_sung == absolute_expected_value)
+                if (absoluteValueSung == absoluteExpectedValue)
                 {
-                    total_score += 10;
-                    song[staff_number - 1][index].draw_it(g, location, purple_pen);
+                    totalScore += 10;
+                    song[staffNumber - 1][index].DrawIt(g, location, purplePen);
                 }
                 else
                 {
-                    note.draw_it(g, location, purple_pen);
+                    note.DrawIt(g, location, purplePen);
                 }
-                current_score.Text = "Your current score is " + total_score + ".";
+                currentScore.Text = "Your current score is " + totalScore + ".";
                 // update highscore
                 //if (total_score > Authentification.current_student.Highscore)
                 //{
@@ -86,14 +86,14 @@ namespace GatewayToTheWorldOfMusic
 
                 using (var context = new AppDbContext())
                 {
-                    currentLesson.score = total_score;
+                    currentLesson.score = totalScore;
                     context.Lessons.Update(currentLesson);
                     context.SaveChanges();
 
-                    if (total_score > Authentification.current_student.Highscore)
+                    if (totalScore > Authentification.currentStudent.Highscore)
                     {
-                        Authentification.current_student.Highscore = total_score;
-                        context.Students.Update(Authentification.current_student);
+                        Authentification.currentStudent.Highscore = totalScore;
+                        context.Students.Update(Authentification.currentStudent);
                         context.SaveChanges();
                     }
                 }
@@ -105,7 +105,7 @@ namespace GatewayToTheWorldOfMusic
             string fileName = "f4.wav";
             string path = Path.Combine(Environment.CurrentDirectory, @"note\", fileName);
             Play(path);
-            press_note(sender, e, 0, 120);
+            PressNote(sender, e, 0, 120);
         }
 
         private void c4_Click(object sender, EventArgs e)
@@ -113,7 +113,7 @@ namespace GatewayToTheWorldOfMusic
             string fileName = "c4.wav";
             string path = Path.Combine(Environment.CurrentDirectory, @"note\", fileName);
             Play(path);
-            press_note(sender, e, 0, 150);
+            PressNote(sender, e, 0, 150);
         }
 
         private void csharp_Click(object sender, EventArgs e)
@@ -121,7 +121,7 @@ namespace GatewayToTheWorldOfMusic
             string fileName = "c4sharp.wav";
             string path = Path.Combine(Environment.CurrentDirectory, @"note\", fileName);
             Play(path);
-            press_note(sender, e, 1, 150);
+            PressNote(sender, e, 1, 150);
         }
 
         private void d4_Click(object sender, EventArgs e)
@@ -129,7 +129,7 @@ namespace GatewayToTheWorldOfMusic
             string fileName = "d4.wav";
             string path = Path.Combine(Environment.CurrentDirectory, @"note\", fileName);
             Play(path);
-            press_note(sender, e, 0, 140);
+            PressNote(sender, e, 0, 140);
         }
 
         private void d4sharp_Click(object sender, EventArgs e)
@@ -137,7 +137,7 @@ namespace GatewayToTheWorldOfMusic
             string fileName = "d4sharp.wav";
             string path = Path.Combine(Environment.CurrentDirectory, @"note\", fileName);
             Play(path);
-            press_note(sender, e, 1, 140);
+            PressNote(sender, e, 1, 140);
         }
 
         private void e4_Click(object sender, EventArgs e)
@@ -145,7 +145,7 @@ namespace GatewayToTheWorldOfMusic
             string fileName = "e4.wav";
             string path = Path.Combine(Environment.CurrentDirectory, @"note\", fileName);
             Play(path);
-            press_note(sender, e, 0, 130);
+            PressNote(sender, e, 0, 130);
         }
 
         private void g4_Click(object sender, EventArgs e)
@@ -153,7 +153,7 @@ namespace GatewayToTheWorldOfMusic
             string fileName = "g4.wav";
             string path = Path.Combine(Environment.CurrentDirectory, @"note\", fileName);
             Play(path);
-            press_note(sender, e, 0, 110);
+            PressNote(sender, e, 0, 110);
         }
 
         private void g4sharp_Click(object sender, EventArgs e)
@@ -161,7 +161,7 @@ namespace GatewayToTheWorldOfMusic
             string fileName = "g4sharp.wav";
             string path = Path.Combine(Environment.CurrentDirectory, @"note\", fileName);
             Play(path);
-            press_note(sender, e, 1, 110);
+            PressNote(sender, e, 1, 110);
         }
 
         private void a4_Click(object sender, EventArgs e)
@@ -169,7 +169,7 @@ namespace GatewayToTheWorldOfMusic
             string fileName = "a4.wav";
             string path = Path.Combine(Environment.CurrentDirectory, @"note\", fileName);
             Play(path);
-            press_note(sender, e, 0, 100);
+            PressNote(sender, e, 0, 100);
         }
 
         private void a4sharp_Click(object sender, EventArgs e)
@@ -177,7 +177,7 @@ namespace GatewayToTheWorldOfMusic
             string fileName = "a4sharp.wav";
             string path = Path.Combine(Environment.CurrentDirectory, @"note\", fileName);
             Play(path);
-            press_note(sender, e, 1, 100);
+            PressNote(sender, e, 1, 100);
         }
 
         private void b4_Click(object sender, EventArgs e)
@@ -185,7 +185,7 @@ namespace GatewayToTheWorldOfMusic
             string fileName = "b4.wav";
             string path = Path.Combine(Environment.CurrentDirectory, @"note\", fileName);
             Play(path);
-            press_note(sender, e, 0, 90);
+            PressNote(sender, e, 0, 90);
         }
 
         private void c5_Click(object sender, EventArgs e)
@@ -193,7 +193,7 @@ namespace GatewayToTheWorldOfMusic
             string fileName = "c5.wav";
             string path = Path.Combine(Environment.CurrentDirectory, @"note\", fileName);
             Play(path);
-            press_note(sender, e, 0, 80);
+            PressNote(sender, e, 0, 80);
         }
 
         private void c5sharp_Click(object sender, EventArgs e)
@@ -201,7 +201,7 @@ namespace GatewayToTheWorldOfMusic
             string fileName = "c5sharp.wav";
             string path = Path.Combine(Environment.CurrentDirectory, @"note\", fileName);
             Play(path);
-            press_note(sender, e, 1, 80);
+            PressNote(sender, e, 1, 80);
         }
 
         private void d5_Click(object sender, EventArgs e)
@@ -209,7 +209,7 @@ namespace GatewayToTheWorldOfMusic
             string fileName = "d5.wav";
             string path = Path.Combine(Environment.CurrentDirectory, @"note\", fileName);
             Play(path);
-            press_note(sender, e, 0, 70);
+            PressNote(sender, e, 0, 70);
         }
 
         private void d5sharp_Click(object sender, EventArgs e)
@@ -217,7 +217,7 @@ namespace GatewayToTheWorldOfMusic
             string fileName = "d5sharp.wav";
             string path = Path.Combine(Environment.CurrentDirectory, @"note\", fileName);
             Play(path);
-            press_note(sender, e, 1, 70);
+            PressNote(sender, e, 1, 70);
         }
 
         private void e5_Click(object sender, EventArgs e)
@@ -225,7 +225,7 @@ namespace GatewayToTheWorldOfMusic
             string fileName = "e5.wav";
             string path = Path.Combine(Environment.CurrentDirectory, @"note\", fileName);
             Play(path);
-            press_note(sender, e, 0, 60);
+            PressNote(sender, e, 0, 60);
         }
 
         private void f5_Click(object sender, EventArgs e)
@@ -233,7 +233,7 @@ namespace GatewayToTheWorldOfMusic
             string fileName = "f5.wav";
             string path = Path.Combine(Environment.CurrentDirectory, @"note\", fileName);
             Play(path);
-            press_note(sender, e, 0, 50);
+            PressNote(sender, e, 0, 50);
         }
 
         private void g5_Click(object sender, EventArgs e)
@@ -241,7 +241,7 @@ namespace GatewayToTheWorldOfMusic
             string fileName = "g5.wav";
             string path = Path.Combine(Environment.CurrentDirectory, @"note\", fileName);
             Play(path);
-            press_note(sender, e, 0, 40);
+            PressNote(sender, e, 0, 40);
         }
 
         private void g5sharp_Click(object sender, EventArgs e)
@@ -249,7 +249,7 @@ namespace GatewayToTheWorldOfMusic
             string fileName = "g5sharp.wav";
             string path = Path.Combine(Environment.CurrentDirectory, @"note\", fileName);
             Play(path);
-            press_note(sender, e, 1, 40);
+            PressNote(sender, e, 1, 40);
         }
 
         private void a5_Click(object sender, EventArgs e)
@@ -257,7 +257,7 @@ namespace GatewayToTheWorldOfMusic
             string fileName = "a5.wav";
             string path = Path.Combine(Environment.CurrentDirectory, @"note\", fileName);
             Play(path);
-            press_note(sender, e, 0, 30);
+            PressNote(sender, e, 0, 30);
         }
 
         private void a5sharp_Click(object sender, EventArgs e)
@@ -265,7 +265,7 @@ namespace GatewayToTheWorldOfMusic
             string fileName = "a5sharp.wav";
             string path = Path.Combine(Environment.CurrentDirectory, @"note\", fileName);
             Play(path);
-            press_note(sender, e, 1, 30);
+            PressNote(sender, e, 1, 30);
         }
 
         private void b5_Click(object sender, EventArgs e)
@@ -273,7 +273,7 @@ namespace GatewayToTheWorldOfMusic
             string fileName = "b5.wav";
             string path = Path.Combine(Environment.CurrentDirectory, @"note\", fileName);
             Play(path);
-            press_note(sender, e, 0, 20);
+            PressNote(sender, e, 0, 20);
         }
 
         private void c6_Click(object sender, EventArgs e)
@@ -281,7 +281,7 @@ namespace GatewayToTheWorldOfMusic
             string fileName = "c6.wav";
             string path = Path.Combine(Environment.CurrentDirectory, @"note\", fileName);
             Play(path);
-            press_note(sender, e, 0, 10);
+            PressNote(sender, e, 0, 10);
         }
 
         private void f4sharp_Click(object sender, EventArgs e)
@@ -289,7 +289,7 @@ namespace GatewayToTheWorldOfMusic
             string fileName = "f4sharp.wav";
             string path = Path.Combine(Environment.CurrentDirectory, @"note\", fileName);
             Play(path);
-            press_note(sender, e, 1, 120);
+            PressNote(sender, e, 1, 120);
         }
 
         private void f5sharp_Click(object sender, EventArgs e)
@@ -297,7 +297,7 @@ namespace GatewayToTheWorldOfMusic
             string fileName = "f5sharp.wav";
             string path = Path.Combine(Environment.CurrentDirectory, @"note\", fileName);
             Play(path);
-            press_note(sender, e, 1, 50);
+            PressNote(sender, e, 1, 50);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -305,27 +305,27 @@ namespace GatewayToTheWorldOfMusic
             // reset everything
             g.Clear(BackColor);
             this.location = 100;
-            staff_number = 0;
-            total_score = 0;
-            current_score.Text = "Your current score is " + total_score + ".";
+            staffNumber = 0;
+            totalScore = 0;
+            currentScore.Text = "Your current score is " + totalScore + ".";
             sung.Clear();
-            Staff.draw_staff(g, false);
-            Pen black_pen = new Pen(Color.Black, 5);
+            Staff.DrawStaff(g, false);
+            Pen blackPen = new Pen(Color.Black, 5);
 
             button3.Visible = true;
             label1.Visible = false;
 
-            Staff.draw_key_signature(g, songs[song_number].scale);
-            Staff.draw_current_staff(g, song[0], black_pen);
-            staff_number++;
+            Staff.DrawKeySignature(g, songs[songNumber].scale);
+            Staff.DrawCurrentStaff(g, song[0], blackPen);
+            staffNumber++;
 
             using (var context = new AppDbContext())
             {
                 var newLesson = new Lesson
                 {
-                    lessonID = Lesson.generate_index() + 1,
+                    lessonID = Lesson.GenerateIndex() + 1,
                     lessonType = "singASong",
-                    studentID = Authentification.current_student.Id,
+                    studentID = Authentification.currentStudent.Id,
                     date = DateTime.UtcNow,
                     score = 0
                 };
@@ -352,20 +352,20 @@ namespace GatewayToTheWorldOfMusic
         {
             // draws the next staff
             g.Clear(BackColor);
-            Staff.draw_staff(g, false);
-            Pen black_pen = new Pen(Color.Black, 5);
-            Staff.draw_key_signature(g, songs[song_number].scale);
+            Staff.DrawStaff(g, false);
+            Pen blackPen = new Pen(Color.Black, 5);
+            Staff.DrawKeySignature(g, songs[songNumber].scale);
 
-            current_score.Text = "Your current score is " + total_score + ".";
-            if (staff_number < number_staffs)
+            currentScore.Text = "Your current score is " + totalScore + ".";
+            if (staffNumber < numberStaffs)
             {
-                Staff.draw_current_staff(g, song[staff_number], black_pen);
-                staff_number++;
+                Staff.DrawCurrentStaff(g, song[staffNumber], blackPen);
+                staffNumber++;
                 this.location = 100;
                 sung.Clear();
-                if (staff_number == number_staffs)
+                if (staffNumber == numberStaffs)
                 {
-                    Staff.draw_staff(g, true);
+                    Staff.DrawStaff(g, true);
                     button3.Visible = false;
                     label1.Visible = true;
                 }

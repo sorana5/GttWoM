@@ -57,7 +57,7 @@
             button3 = new Button();
             button2 = new Button();
             label1 = new Label();
-            current_score = new Label();
+            currentScore = new Label();
             SuspendLayout();
             // 
             // c4
@@ -469,13 +469,13 @@
             // 
             // current_score
             // 
-            current_score.AutoSize = true;
-            current_score.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            current_score.Location = new Point(1602, 155);
-            current_score.Name = "current_score";
-            current_score.Size = new Size(63, 25);
-            current_score.TabIndex = 33;
-            current_score.Text = "label2";
+            currentScore.AutoSize = true;
+            currentScore.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            currentScore.Location = new Point(1602, 155);
+            currentScore.Name = "current_score";
+            currentScore.Size = new Size(63, 25);
+            currentScore.TabIndex = 33;
+            currentScore.Text = "label2";
             // 
             // Melody
             // 
@@ -484,7 +484,7 @@
             AutoScroll = true;
             BackColor = SystemColors.Control;
             ClientSize = new Size(2554, 796);
-            Controls.Add(current_score);
+            Controls.Add(currentScore);
             Controls.Add(label1);
             Controls.Add(button2);
             Controls.Add(button3);
@@ -554,6 +554,6 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label1;
-        private Label current_score;
+        private Label currentScore;
     }
 }

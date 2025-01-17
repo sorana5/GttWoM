@@ -11,7 +11,7 @@ namespace GatewayToTheWorldOfMusic.Data
         public int Highscore { get; set; }
 
 
-        public static int generate_index()
+        public static int GenerateIndex()
         {
             using (var context = new AppDbContext())
             {

@@ -24,7 +24,7 @@ namespace GatewayToTheWorldOfMusic
 
         private void Form3_Load(object sender, EventArgs e)
         {
-            Staff.draw_staff(g, true);
+            Staff.DrawStaff(g, true);
             Image flat = Image.FromFile(@"extra\flat_black.png");
             g.DrawImage(flat, 1400, 97, 30, 30);
             Image sharp = Image.FromFile(@"extra\sharp_black.png");
@@ -37,14 +37,14 @@ namespace GatewayToTheWorldOfMusic
             player.Play();
         }
 
-        void press_note(object sender, EventArgs e, Note note)
+        void PressNote(object sender, EventArgs e, Note note)
         {
             // a note was pressed and has to appear on the staff
-            Pen purple_pen = new Pen(Color.MediumPurple, 5);
+            Pen purplePen = new Pen(Color.MediumPurple, 5);
             location += 100;
             if (location <= 1100)
             {
-                note.draw_it(g, location, purple_pen);
+                note.DrawIt(g, location, purplePen);
             }
         }
 
@@ -53,7 +53,7 @@ namespace GatewayToTheWorldOfMusic
             string fileName = "c4.wav";
             string path = Path.Combine(Environment.CurrentDirectory, @"note\", fileName);
             Play(path);
-            press_note(sender, e, new Note(0, 150));
+            PressNote(sender, e, new Note(0, 150));
         }
 
         private void button6_Click(object sender, EventArgs e)
@@ -61,7 +61,7 @@ namespace GatewayToTheWorldOfMusic
             string fileName = "f4.wav";
             string path = Path.Combine(Environment.CurrentDirectory, @"note\", fileName);
             Play(path);
-            press_note(sender, e, new Note(0, 120));
+            PressNote(sender, e, new Note(0, 120));
         }
 
         private void csharp_Click(object sender, EventArgs e)
@@ -70,9 +70,9 @@ namespace GatewayToTheWorldOfMusic
             string path = Path.Combine(Environment.CurrentDirectory, @"note\", fileName);
             Play(path);
             if (switchButton.Checked)
-                press_note(sender, e, new Note(-1, 140));
+                PressNote(sender, e, new Note(-1, 140));
             else
-                press_note(sender, e, new Note(1, 150));
+                PressNote(sender, e, new Note(1, 150));
         }
 
         private void d4_Click(object sender, EventArgs e)
@@ -80,7 +80,7 @@ namespace GatewayToTheWorldOfMusic
             string fileName = "d4.wav";
             string path = Path.Combine(Environment.CurrentDirectory, @"note\", fileName);
             Play(path);
-            press_note(sender, e, new Note(0, 140));
+            PressNote(sender, e, new Note(0, 140));
         }
 
         private void d4sharp_Click(object sender, EventArgs e)
@@ -89,9 +89,9 @@ namespace GatewayToTheWorldOfMusic
             string path = Path.Combine(Environment.CurrentDirectory, @"note\", fileName);
             Play(path);
             if (switchButton.Checked)
-                press_note(sender, e, new Note(-1, 130));
+                PressNote(sender, e, new Note(-1, 130));
             else
-                press_note(sender, e, new Note(1, 140));
+                PressNote(sender, e, new Note(1, 140));
         }
 
         private void e4_Click(object sender, EventArgs e)
@@ -99,7 +99,7 @@ namespace GatewayToTheWorldOfMusic
             string fileName = "e4.wav";
             string path = Path.Combine(Environment.CurrentDirectory, @"note\", fileName);
             Play(path);
-            press_note(sender, e, new Note(0, 130));
+            PressNote(sender, e, new Note(0, 130));
         }
 
         private void g4_Click(object sender, EventArgs e)
@@ -107,7 +107,7 @@ namespace GatewayToTheWorldOfMusic
             string fileName = "g4.wav";
             string path = Path.Combine(Environment.CurrentDirectory, @"note\", fileName);
             Play(path);
-            press_note(sender, e, new Note(0, 110));
+            PressNote(sender, e, new Note(0, 110));
         }
 
         private void g4sharp_Click(object sender, EventArgs e)
@@ -116,9 +116,9 @@ namespace GatewayToTheWorldOfMusic
             string path = Path.Combine(Environment.CurrentDirectory, @"note\", fileName);
             Play(path);
             if (switchButton.Checked)
-                press_note(sender, e, new Note(-1, 100));
+                PressNote(sender, e, new Note(-1, 100));
             else
-                press_note(sender, e, new Note(1, 110));
+                PressNote(sender, e, new Note(1, 110));
         }
 
         private void a4_Click(object sender, EventArgs e)
@@ -126,7 +126,7 @@ namespace GatewayToTheWorldOfMusic
             string fileName = "a4.wav";
             string path = Path.Combine(Environment.CurrentDirectory, @"note\", fileName);
             Play(path);
-            press_note(sender, e, new Note(0, 100));
+            PressNote(sender, e, new Note(0, 100));
         }
 
         private void a4sharp_Click(object sender, EventArgs e)
@@ -135,9 +135,9 @@ namespace GatewayToTheWorldOfMusic
             string path = Path.Combine(Environment.CurrentDirectory, @"note\", fileName);
             Play(path);
             if (switchButton.Checked)
-                press_note(sender, e, new Note(-1, 90));
+                PressNote(sender, e, new Note(-1, 90));
             else
-                press_note(sender, e, new Note(1, 100));
+                PressNote(sender, e, new Note(1, 100));
         }
 
         private void b4_Click(object sender, EventArgs e)
@@ -145,7 +145,7 @@ namespace GatewayToTheWorldOfMusic
             string fileName = "b4.wav";
             string path = Path.Combine(Environment.CurrentDirectory, @"note\", fileName);
             Play(path);
-            press_note(sender, e, new Note(0, 90));
+            PressNote(sender, e, new Note(0, 90));
         }
 
         private void c5_Click(object sender, EventArgs e)
@@ -153,7 +153,7 @@ namespace GatewayToTheWorldOfMusic
             string fileName = "c5.wav";
             string path = Path.Combine(Environment.CurrentDirectory, @"note\", fileName);
             Play(path);
-            press_note(sender, e, new Note(0, 80));
+            PressNote(sender, e, new Note(0, 80));
         }
 
         private void c5sharp_Click(object sender, EventArgs e)
@@ -162,9 +162,9 @@ namespace GatewayToTheWorldOfMusic
             string path = Path.Combine(Environment.CurrentDirectory, @"note\", fileName);
             Play(path);
             if (switchButton.Checked)
-                press_note(sender, e, new Note(-1, 70));
+                PressNote(sender, e, new Note(-1, 70));
             else
-                press_note(sender, e, new Note(1, 80));
+                PressNote(sender, e, new Note(1, 80));
         }
 
         private void d5_Click(object sender, EventArgs e)
@@ -172,7 +172,7 @@ namespace GatewayToTheWorldOfMusic
             string fileName = "d5.wav";
             string path = Path.Combine(Environment.CurrentDirectory, @"note\", fileName);
             Play(path);
-            press_note(sender, e, new Note(0, 70));
+            PressNote(sender, e, new Note(0, 70));
         }
 
         private void d5sharp_Click(object sender, EventArgs e)
@@ -181,9 +181,9 @@ namespace GatewayToTheWorldOfMusic
             string path = Path.Combine(Environment.CurrentDirectory, @"note\", fileName);
             Play(path);
             if (switchButton.Checked)
-                press_note(sender, e, new Note(-1, 60));
+                PressNote(sender, e, new Note(-1, 60));
             else
-                press_note(sender, e, new Note(1, 70));
+                PressNote(sender, e, new Note(1, 70));
         }
 
         private void e5_Click(object sender, EventArgs e)
@@ -191,7 +191,7 @@ namespace GatewayToTheWorldOfMusic
             string fileName = "e5.wav";
             string path = Path.Combine(Environment.CurrentDirectory, @"note\", fileName);
             Play(path);
-            press_note(sender, e, new Note(0, 60));
+            PressNote(sender, e, new Note(0, 60));
         }
 
         private void f5_Click(object sender, EventArgs e)
@@ -199,7 +199,7 @@ namespace GatewayToTheWorldOfMusic
             string fileName = "f5.wav";
             string path = Path.Combine(Environment.CurrentDirectory, @"note\", fileName);
             Play(path);
-            press_note(sender, e, new Note(0, 50));
+            PressNote(sender, e, new Note(0, 50));
         }
 
         private void g5_Click(object sender, EventArgs e)
@@ -207,7 +207,7 @@ namespace GatewayToTheWorldOfMusic
             string fileName = "g5.wav";
             string path = Path.Combine(Environment.CurrentDirectory, @"note\", fileName);
             Play(path);
-            press_note(sender, e, new Note(0, 40));
+            PressNote(sender, e, new Note(0, 40));
         }
 
         private void g5sharp_Click(object sender, EventArgs e)
@@ -216,9 +216,9 @@ namespace GatewayToTheWorldOfMusic
             string path = Path.Combine(Environment.CurrentDirectory, @"note\", fileName);
             Play(path);
             if (switchButton.Checked)
-                press_note(sender, e, new Note(-1, 30));
+                PressNote(sender, e, new Note(-1, 30));
             else
-                press_note(sender, e, new Note(1, 40));
+                PressNote(sender, e, new Note(1, 40));
         }
 
         private void a5_Click(object sender, EventArgs e)
@@ -226,7 +226,7 @@ namespace GatewayToTheWorldOfMusic
             string fileName = "a5.wav";
             string path = Path.Combine(Environment.CurrentDirectory, @"note\", fileName);
             Play(path);
-            press_note(sender, e, new Note(0, 30));
+            PressNote(sender, e, new Note(0, 30));
         }
 
         private void a5sharp_Click(object sender, EventArgs e)
@@ -235,9 +235,9 @@ namespace GatewayToTheWorldOfMusic
             string path = Path.Combine(Environment.CurrentDirectory, @"note\", fileName);
             Play(path);
             if (switchButton.Checked)
-                press_note(sender, e, new Note(-1, 20));
+                PressNote(sender, e, new Note(-1, 20));
             else
-                press_note(sender, e, new Note(1, 30));
+                PressNote(sender, e, new Note(1, 30));
         }
 
         private void b5_Click(object sender, EventArgs e)
@@ -245,7 +245,7 @@ namespace GatewayToTheWorldOfMusic
             string fileName = "b5.wav";
             string path = Path.Combine(Environment.CurrentDirectory, @"note\", fileName);
             Play(path);
-            press_note(sender, e, new Note(0, 20));
+            PressNote(sender, e, new Note(0, 20));
         }
 
         private void c6_Click(object sender, EventArgs e)
@@ -253,7 +253,7 @@ namespace GatewayToTheWorldOfMusic
             string fileName = "c6.wav";
             string path = Path.Combine(Environment.CurrentDirectory, @"note\", fileName);
             Play(path);
-            press_note(sender, e, new Note(0, 10));
+            PressNote(sender, e, new Note(0, 10));
         }
 
         private void f4sharp_Click(object sender, EventArgs e)
@@ -262,9 +262,9 @@ namespace GatewayToTheWorldOfMusic
             string path = Path.Combine(Environment.CurrentDirectory, @"note\", fileName);
             Play(path);
             if (switchButton.Checked)
-                press_note(sender, e, new Note(-1, 110));
+                PressNote(sender, e, new Note(-1, 110));
             else
-                press_note(sender, e, new Note(1, 120));
+                PressNote(sender, e, new Note(1, 120));
         }
 
         private void f5sharp_Click(object sender, EventArgs e)
@@ -273,9 +273,9 @@ namespace GatewayToTheWorldOfMusic
             string path = Path.Combine(Environment.CurrentDirectory, @"note\", fileName);
             Play(path);
             if (switchButton.Checked)
-                press_note(sender, e, new Note(-1, 40));
+                PressNote(sender, e, new Note(-1, 40));
             else
-                press_note(sender, e, new Note(1, 50));
+                PressNote(sender, e, new Note(1, 50));
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -283,7 +283,7 @@ namespace GatewayToTheWorldOfMusic
             // resets everything
             g.Clear(BackColor);
             location = 100;
-            Staff.draw_staff(g, true);
+            Staff.DrawStaff(g, true);
             Image flat = Image.FromFile(@"extra\flat_black.png");
             g.DrawImage(flat, 1400, 97, 30, 30);
             Image sharp = Image.FromFile(@"extra\sharp_black.png");
